@@ -480,6 +480,21 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
 .vendor-card:hover .vendor-logo{filter:brightness(0) invert(1);transform:scale(1.1);}
 .vendor-name{font-size:.7rem;font-weight:700;color:rgba(11,29,58,.75);letter-spacing:.05em;text-transform:uppercase;transition:color .3s ease;}
 .vendor-card:hover .vendor-name{color:var(--gold2);}
+/* ===== OUR WORKS ===== */
+.works-section-bg { background: #fdfaf6; }
+.works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 48px; }
+.work-card { background: #fff; border-radius: 20px; border: 1.5px solid #e8ecf4; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(11,29,58,0.03); }
+.work-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11,29,58,0.1); border-color: var(--gold); }
+.work-img-wrap { height: 260px; overflow: hidden; background: #0F1E36; position: relative; }
+.work-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.work-card:hover .work-img-wrap img { transform: scale(1.05); }
+.work-content { padding: 24px; }
+.work-tag { display: inline-block; background: rgba(200, 148, 31, 0.1); color: var(--gold2); font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 50px; text-transform: uppercase; margin-bottom: 12px; }
+.work-title { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; font-family: 'Playfair Display', serif; }
+.work-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+@media(max-width:768px){
+  .works-grid { grid-template-columns: 1fr; }
+}
 
 /* ===== TESTIMONIALS ===== */
 .testi-bg{background:#ffffff;}
@@ -829,10 +844,12 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       </svg>
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="#brands">Brands</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#what-we-do">What We Do</a></li>
+    <li><a href="#edison-promise">The Edison Promise</a></li>
+    <li><a href="#our-works">Our Works</a></li>
+    <li><a href="#our-footprints">Our Footprints</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#get-in-touch">Get in Touch</a></li>
   </ul>
   <div class="nav-actions">
     <a class="nav-wa" href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank">
@@ -852,10 +869,12 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#why-us" onclick="toggleMenu()">Why Us</a>
-  <a href="#brands" onclick="toggleMenu()">Brands</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#what-we-do" onclick="toggleMenu()">What We Do</a>
+  <a href="#edison-promise" onclick="toggleMenu()">The Edison Promise</a>
+  <a href="#our-works" onclick="toggleMenu()">Our Works</a>
+  <a href="#our-footprints" onclick="toggleMenu()">Our Footprints</a>
+  <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+  <a href="#get-in-touch" onclick="toggleMenu()">Get in Touch</a>
   <a href="tel:+919964156781" style="color:var(--gold2);">📞 +91-9964156781</a>
   <a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank" style="color:#25D366; margin-top: 15px;">💬 WhatsApp</a>
 </div>
@@ -885,10 +904,10 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 </section>
 
 <!-- SERVICES -->
-<section class="section services-bg" id="services">
+<section class="section services-bg" id="what-we-do">
   <div class="section-inner">
     <div class="reveal">
-      <p class="sec-eyebrow">What Edison AMP Does</p>
+      <p class="sec-eyebrow">What We Do</p>
       <div class="gold-line"></div>
       <h2 class="sec-title interactive-title">
         <span class="i-word">End-to-End</span>
@@ -958,12 +977,12 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 </section>
 
 <!-- WHY US -->
-<section class="section why-section-bg" id="why-us">
+<section class="section why-section-bg" id="edison-promise">
   <div class="section-inner">
     <div class="why-grid">
       <div>
         <div class="reveal">
-          <p class="sec-eyebrow">Why Edison AMP</p>
+          <p class="sec-eyebrow">The Edison Promise</p>
           <div class="gold-line"></div>
           <h2 class="sec-title interactive-title">
             <span class="i-word">Power</span>
@@ -1049,10 +1068,69 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   </div>
 </section>
 
+<!-- OUR WORKS -->
+<section class="section works-section-bg" id="our-works">
+  <div class="section-inner">
+    <div class="reveal" style="text-align: center;">
+      <p class="sec-eyebrow">Our Works</p>
+      <div class="gold-line" style="margin: 0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">Projects</span>
+        <span class="i-word">We</span>
+        <em class="i-word-em"><span class="i-word">Commissioned</span></em>
+      </h2>
+      <p class="sec-sub" style="margin: 0 auto;">Take a look at how we design and deploy energy-saving layouts and heavy-duty electrical infrastructure for top-tier companies across Karnataka.</p>
+    </div>
+    <div class="works-grid">
+      <!-- 4 Work Cards -->
+      <div class="work-card reveal reveal-delay-1">
+        <div class="work-img-wrap"><img src="work_led.png" alt="Industrial LED Retrofit"/></div>
+        <div class="work-content">
+          <span class="work-tag">Peenya, Bangalore</span>
+          <div class="work-title">60,000 Sq. Ft. Warehouse LED Retrofit</div>
+          <p class="work-desc">Designed a full-scale, lux-optimized LED layout for a logistics giant. Upgraded legacy sodium vapors to smart high-bays, delivering 58% savings in annual lighting overheads.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-2">
+        <div class="work-img-wrap"><img src="work_transformer.png" alt="HT Substation"/></div>
+        <div class="work-content">
+          <span class="work-tag">Bidadi Area</span>
+          <div class="work-title">HT Cabling &amp; 250kVA Transformer Setup</div>
+          <p class="work-desc">Executed switchgear installations, overhead double pole structures, and HT line cabling. Handled end-to-end liaisoning for CEIG government approvals and BESCOM commissioning.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-3">
+        <div class="work-img-wrap"><img src="work_fan.png" alt="HVLS Fan Installation"/></div>
+        <div class="work-content">
+          <span class="work-tag">Whitefield Site</span>
+          <div class="work-title">Heavy-Duty HVLS Air Circulation Install</div>
+          <p class="work-desc">Fitted six 24-foot industrial HVLS ceiling fans across a manufacturing floor. Improved thermal comfort and humidity control, cutting ventilation power draw by 45%.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-4">
+        <div class="work-img-wrap"><img src="work_apfc.png" alt="Power Factor Panels"/></div>
+        <div class="work-content">
+          <span class="work-tag">Bommasandra</span>
+          <div class="work-title">250 kVAr Custom APFC Panel Commissioning</div>
+          <p class="work-desc">Designed and deployed an automated power factor correction panel to raise the client's average power factor from 0.82 to 0.99, eliminating utility penalty surcharges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- BRANDS / VENDORS -->
-<div class="vendors-section" id="brands">
+<!-- OUR FOOTPRINTS -->
+<div class="vendors-section" id="our-footprints">
   <div class="vendors-inner">
+    <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+      <p class="sec-eyebrow">Our Footprints</p>
+      <div class="gold-line" style="margin: 0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">Authorized</span>
+        <em class="i-word-em"><span class="i-word">Brands</span> <span class="i-word">&amp;</span> <span class="i-word">Partners</span></em>
+      </h2>
+      <p class="sec-sub" style="margin: 0 auto;">We integrate and install high-quality products from top-tier national and global manufacturers to ensure compliance and longevity.</p>
+    </div>
     <!-- Lighting Partners -->
     <div class="vendors-cat">
       <div class="vendors-cat-label">Lighting Partners</div>
@@ -1091,11 +1169,66 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     </div>
   </div>
 </div>
-<!-- CONTACT -->
-<section class="section contact-section-bg" id="contact">
+
+<!-- TESTIMONIALS -->
+<section class="section testi-bg" id="testimonials">
+  <div class="section-inner">
+    <div class="reveal" style="text-align: center;">
+      <p class="sec-eyebrow" style="color: var(--gold);">Testimonials</p>
+      <div class="gold-line" style="margin: 0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">What</span>
+        <span class="i-word">Our</span>
+        <em class="i-word-em"><span class="i-word">Clients</span> <span class="i-word">Say</span></em>
+      </h2>
+      <p class="sec-sub" style="margin: 0 auto; color: var(--muted);">Direct feedback from facility engineers, factory heads, and operations teams who rely on Edison AMP.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">“</div>
+        <p class="testi-text">The lighting quality improvement is incredible. Edison AMP upgraded our entire Peenya logistics warehouse lighting line-by-line without causing a single minute of downtime for our dispatch teams.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Rajesh Gowda</div>
+            <div class="testi-role">Operations Manager, Warehouse Hub</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">“</div>
+        <p class="testi-text">Getting HT approvals from BESCOM can be a nightmare. Edison AMP handled the drawing approvals, inspectorate clearances, and transformer commissioning flawlessly. A highly professional outfit.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Santhosh Kumar</div>
+            <div class="testi-role">Technical Director, Apex Infrastructure</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="stars">★★★★★</div>
+        <div class="testi-quote">“</div>
+        <p class="testi-text">Their priority AMC service is outstanding. We had a sudden LT switchgear trip at 10 PM. Their engineering team arrived within 90 minutes and had our production line back up and running.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Manoj Hegde</div>
+            <div class="testi-role">Maintenance Chief, Bommasandra Plastics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET IN TOUCH -->
+<section class="section contact-section-bg" id="get-in-touch">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;">
-      <p class="sec-eyebrow" style="color:var(--gold);">Contact Edison AMP</p>
+      <p class="sec-eyebrow" style="color:var(--gold);">Get in Touch</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title" style="color:var(--navy);">
         <span class="i-word">Let's</span>
