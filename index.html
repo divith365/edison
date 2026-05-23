@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mahalakshmi IT Solutions — Your Trusted Technology Partner — Reach Us Any Time</title>
-<meta name="description" content="Mahalakshmi IT Solutions — Your Trusted Technology Partner — Reach Us Any Time. We provide desktop, laptop, printer repairs, CCTV installation, networking, and AMC support."/>
+<title>Edison AMP — Premium LED Lights, HVLS Fans & Electrical Works</title>
+<meta name="description" content="Edison AMP — Premium LED Lights, HVLS Fans & HT/LT Electrical Works. We specialize in energy efficiency, heavy ventilation, switchgear setups, and AMC audits."/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet"/>
 <style>
 /* ===== TOKENS ===== */
 :root {
-  --navy:   #0b1d3a;
-  --navy2:  #132444;
-  --gold:   #c8941f;
-  --gold2:  #e8b84b;
-  --gold3:  #ffd97a;
+  --navy:   #0b1120;
+  --navy2:  #0F1E36;
+  --gold:   #FB923C;
+  --gold2:  #FFB000;
+  --gold3:  #ffd075;
   --white:  #ffffff;
-  --off:    #f4f2ee;
-  --light:  #eef1f8;
-  --muted:  #1a2a47;
-  --text:   #0c1524;
-  --border: #dde3ef;
-  --red:    #c0392b;
+  --off:    #f4f6f9;
+  --light:  #eef2f6;
+  --muted:  #475569;
+  --text:   #0f172a;
+  --border: #cbd5e1;
+  --red:    #ef4444;
   /* Section palette */
-  --sec-hero:    #0d1f3c;
+  --sec-hero:    #0f172a;
   --sec-service: #ffffff;
-  --sec-why:     #f8f6f2;
-  --sec-vendor:  #111c35;
-  --sec-contact: #0f1a2e;
-  --card-dark:   #162545;
-  --card-dark2:  #1d2f58;
+  --sec-why:     #f8fafc;
+  --sec-vendor:  #0f172a;
+  --sec-contact: #0b1120;
+  --card-dark:   #1e293b;
+  --card-dark2:  #334155;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -50,26 +50,26 @@ img{max-width:100%;display:block;}
 .float-icon{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
 
 /* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;background:rgba(255,252,247,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(200,148,31,.2);border-radius:0;display:flex;align-items:center;justify-content:space-between;height:72px;box-shadow:0 2px 20px rgba(11,29,58,.08);transition:all .3s ease;}
+.nav-bg-bar{position:fixed;top:0;left:0;right:0;height:152px;background:#0F1E36;z-index:999;border-bottom:1px solid rgba(255,255,255,.05);transition:all .3s ease;}
+nav{position:fixed;top:20px;left:40px;right:40px;z-index:1000;padding:0 40px;background:#0F1E36;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:2px solid #FB923C;border-radius:18px;display:flex;align-items:center;justify-content:space-between;height:112px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .3s ease;}
 .nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center;height:100%;text-decoration:none;}
-.nav-logo-mark{width:225px;height:36px;border-radius:0;overflow:hidden;display:flex;align-items:center;justify-content:center;background:transparent;flex-shrink:0;transition:transform .3s ease;}
-.nav-logo:hover .nav-logo-mark{transform:scale(1.02);}
-.nav-logo-mark img{width:225px;height:36px;object-fit:contain;object-position:left center;}
-.nav-tagline{font-family:'Plus Jakarta Sans',sans-serif;font-size:.56rem;font-weight:700;color:var(--navy);letter-spacing:.04em;text-transform:uppercase;margin-top:1px;position:relative;display:inline-block;padding-bottom:3px;transition:color .3s ease;}
-.nav-tagline::after{content:'';position:absolute;bottom:0;left:0;width:30px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .35s cubic-bezier(0.4,0,0.2,1);}
-.nav-logo:hover .nav-tagline{color:var(--gold);}
-.nav-logo:hover .nav-tagline::after{width:100%;}
+.nav-logo-svg{height:92px;width:auto;transition:transform .3s ease;}
+.nav-logo:hover .nav-logo-svg{transform:scale(1.02);}
+.footer-logo-svg{height:128px;width:auto;display:block;margin-bottom:8px;}
 .nav-brand{display:none;}
-.nav-logo:hover .nav-brand{color:var(--gold);}
+.nav-logo:hover .nav-brand{color:#FB923C;}
 .nav-brand span{display:none;}
-.nav-logo:hover .nav-brand span{color:var(--navy);}
+.nav-logo:hover .nav-brand span{color:#FFFFFF;}
 .nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:var(--navy);text-decoration:none;font-size:0.98rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;transition:width 0.3s ease;}
-.nav-links a:hover{color:#9a6a15;transform:scale(1.08);}
+.nav-links a{color:#FFFFFF;text-decoration:none;font-size:0.98rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#FB923C,#FDBA74);border-radius:2px;transition:width 0.3s ease;}
+.nav-links a:hover{color:#FB923C;transform:scale(1.08);}
 .nav-links a:hover::after{width:100%;}
-.nav-cta{background:var(--gold);color:#000;padding:9px 20px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .2s;}
+.nav-actions{display:flex;align-items:center;gap:10px;z-index:1001;}
+.nav-cta{background:var(--gold);color:#000;padding:0 20px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;}
 .nav-cta:hover{background:var(--gold2);transform:translateY(-1px);}
+.nav-wa{background:#25D366;color:#ffffff;padding:0 20px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;}
+.nav-wa:hover{background:#1ebe57;transform:translateY(-1px);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
 .hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:.3s;}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:20px;}
@@ -79,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 40px;background:r
 .mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;}
 
 /* ===== HERO ===== */
-.hero{min-height:100vh;background:linear-gradient(150deg,#fefcf7 0%,#fdf8ef 50%,#fefbf3 100%);display:flex;align-items:center;padding:110px 24px 60px;position:relative;overflow:hidden;perspective:1500px;}
+.hero{min-height:100vh;background:linear-gradient(150deg,#fefcf7 0%,#fdf8ef 50%,#fefbf3 100%);display:flex;align-items:center;padding:190px 24px 60px;position:relative;overflow:hidden;perspective:1500px;}
 .hero-bg-grid{display:none;}
 .hero-glow{position:absolute;top:-80px;right:-60px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,148,31,.15) 0%,transparent 65%);}
 .hero-glow2{position:absolute;bottom:-220px;left:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,148,31,.08) 0%,transparent 65%);}
@@ -548,15 +548,13 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   .footer-top{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:640px){
-  nav{top:0;left:0;right:0;padding:0 20px;height:64px;border-radius:0;}
-  .nav-logo{flex-direction:column;align-items:flex-start;gap:1px;}
-  .nav-logo-mark{width:160px;height:26px;}
-  .nav-logo-mark img{width:160px;height:26px;}
-  .nav-tagline{font-size:.44rem;letter-spacing:.02em;padding-bottom:2px;}
-  .nav-tagline::after{width:20px;height:1.5px;}
-  .nav-links,.nav-cta{display:none;}
+  .nav-bg-bar{height:108px;}
+  nav{top:10px;left:10px;right:10px;padding:0 16px;height:88px;border-radius:14px;border:2px solid #FB923C;box-shadow:0 8px 24px rgba(0,0,0,.25);}
+  .nav-logo{flex-direction:row;align-items:center;}
+  .nav-logo-svg{height:68px;}
+  .nav-links,.nav-cta,.nav-wa,.nav-actions{display:none;}
   .hamburger{display:flex;}
-  .hero{padding:110px 16px 60px;}
+  .hero{padding:150px 16px 60px;}
   .hero h1{font-size:1.5rem;white-space:normal;}
   .services-grid{grid-template-columns:1fr;}
   .testi-grid{grid-template-columns:1fr;}
@@ -708,9 +706,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <svg class="float-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
     <span class="float-label">Call Now</span>
   </a>
-  <a class="float-btn float-wa" href="https://wa.me/919964156781?text=Hello%20Mahalakshmi%20IT%20Solutions%2C%20I%20need%20your%20services!" target="_blank">
+  <a class="float-btn float-wa" href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank">
     <svg class="float-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="float-label">WhatsApp Us</span>
+    <span class="float-label">WhatsApp</span>
   </a>
 </div>
 
@@ -719,11 +717,125 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
 </a>
 
+<!-- BACKGROUND HEADER BAR -->
+<div class="nav-bg-bar"></div>
+
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#home">
-    <div class="nav-logo-mark"><img src="logo_horizontal.png" alt="Mahalakshmi IT Solutions Logo"/></div>
-    <span class="nav-tagline">Smart IT Solutions for Home &amp; Business</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="nav-logo-svg" viewBox="0 0 1500 350" width="100%" height="100%">
+        <defs>
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Fredoka:wght@600;700&family=Inter:wght@600;700&family=Montserrat:wght@600;700;800&family=Outfit:wght@600;700;800&family=Quicksand:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap');
+            .vector-base-container {
+              background-color: #0F1E36;
+              width: 1500px;
+              height: 350px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              box-sizing: border-box;
+              font-family: 'Fredoka', system-ui, sans-serif;
+            }
+            .text-row-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-transform: uppercase;
+              font-size: 120px;
+              letter-spacing: 0.08em;
+              font-weight: 600;
+              color: #FFFFFF;
+              line-height: 1;
+              white-space: nowrap;
+            }
+            .custom-o-graphic {
+              width: 1.05em;
+              height: 1.05em;
+              margin-left: -0.05em;
+              margin-right: -0.02em;
+              display: inline-block;
+            }
+            .suffix-amp-row {
+              margin-left: 0.35em;
+              color: #FFB000;
+            }
+            .tagline-container-block {
+              margin-top: 18px;
+              font-family: "Inter", sans-serif;
+              font-size: 39px;
+              letter-spacing: 0.12em;
+              color: #ECEFF1;
+              text-transform: uppercase;
+              font-weight: 500;
+              line-height: 1.2;
+              white-space: nowrap;
+              max-width: 100%;
+            }
+          </style>
+          
+          <filter id="glow-fx" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3.5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          
+          <filter id="bulb-glow-fx" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="5" result="b1" />
+            <feGaussianBlur stdDeviation="2" result="b2" />
+            <feMerge>
+              <feMergeNode in="b1" />
+              <feMergeNode in="b2" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <rect width="1500" height="350" fill="#0F1E36" />
+
+        <foreignObject x="0" y="0" width="1500" height="350">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="vector-base-container">
+            <div class="text-row-container">
+              <span>EDIS</span>
+              <div class="custom-o-graphic">
+                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                  <!-- O Ring -->
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#FFFFFF" stroke-width="11" />
+                  
+                  <!-- Internal Bulb -->
+                  <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
+                    <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" 
+                          fill="transparent" 
+                          stroke="#FFFFFF" 
+                          stroke-width="2" 
+                          filter="url(#bulb-glow-fx)" />
+                    
+                    <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#FFFFFF" />
+                    <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#FFFFFF" opacity="0.9" />
+
+                    
+                      <circle cx="50" cy="36" r="3.5" fill="#FF6B00" filter="url(#glow-fx)" />
+                      <circle cx="50" cy="45" r="3.5" fill="#00E396" filter="url(#glow-fx)" />
+                      <circle cx="50" cy="54" r="3.5" fill="#0052FF" filter="url(#glow-fx)" />
+                    
+                  </g>
+                </svg>
+              </div>
+              <span>N</span>
+              <span class="suffix-amp-row">AMP</span>
+            </div>
+
+            <div class="tagline-container-block">
+              <span style="color: #38BDF8;">LED LIGHTS</span>
+              <span style="color: #FB7185; margin: 0 10px;">|</span>
+              <span style="color: #4ADE80;">HVLS FANS</span>
+              <span style="color: #FB7185; margin: 0 10px;">|</span>
+              <span style="color: #FFB000;">HT &amp; LT ELECTRICAL WORKS</span>
+            </div>
+          </div>
+        </foreignObject>
+      </svg>
   </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
@@ -731,7 +843,16 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <li><a href="#brands">Brands</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="tel:+919964156781">📞 Call Now</a>
+  <div class="nav-actions">
+    <a class="nav-wa" href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="nav-cta" href="tel:+919964156781">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      <span>Call Now</span>
+    </a>
+  </div>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -745,6 +866,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   <a href="#brands" onclick="toggleMenu()">Brands</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="tel:+919964156781" style="color:var(--gold2);">📞 +91-9964156781</a>
+  <a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank" style="color:#25D366; margin-top: 15px;">💬 WhatsApp</a>
 </div>
 
 <!-- HERO -->
@@ -756,55 +878,53 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <!-- Left -->
     <div class="hero-left">
       <h1 class="interactive-title">
-        <span class="i-word">Your</span>
-        <span class="i-word">Trusted</span>
-        <em class="i-word-em"><span class="i-word">IT</span> <span class="i-word">Partner</span></em>
-        <span class="i-word">in</span>
-        <span class="i-word">Every</span>
-        <span class="i-word">Need</span>
+        <span class="i-word">Innovative</span>
+        <span class="i-word">Power</span>
+        <em class="i-word-em"><span class="i-word">&amp;</span> <span class="i-word">Lighting</span></em>
+        <span class="i-word">Solutions</span>
       </h1>
-      <p class="hero-desc">Mahalakshmi IT Solutions is a leading provider of comprehensive computer and CCTV solutions for individuals and businesses. Backed by a team of highly skilled technicians and a commitment to exceptional service, we help clients maximize the performance, safety, and efficiency of their systems. From hardware repairs and software installations to network setup and data recovery, we offer a wide range of services tailored to your unique needs.</p>
+      <p class="hero-desc">Edison AMP is a leading provider of high-efficiency LED lighting systems, industrial HVLS ventilation fans, and comprehensive HT &amp; LT electrical installations. Driven by energy-efficient designs and safety compliance, we help commercial, industrial, and residential clients minimize energy overheads and maximize systems reliability. From audits to complete turn-key contracting, we handle all your power needs.</p>
       <ul class="hero-services">
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
-            <img src="icon_devices.png" alt="Desktop &amp; Laptop"/>
+            <img src="icon_led.png" alt="LED Lighting"/>
           </span>
-          <span class="hero-svc-name">Desktop &amp; Laptop</span>
+          <span class="hero-svc-name">LED Lighting Systems</span>
           <span class="hero-svc-arrow">→</span>
         </li>
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
-            <img src="icon_printer.png" alt="Printers"/>
+            <img src="icon_fan.png" alt="HVLS Fans"/>
           </span>
-          <span class="hero-svc-name">Printers</span>
+          <span class="hero-svc-name">HVLS Industrial Fans</span>
           <span class="hero-svc-arrow">→</span>
         </li>
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
-            <img src="icon_cctv.png" alt="CCTV"/>
+            <img src="icon_power.png" alt="HT &amp; LT Installations"/>
           </span>
-          <span class="hero-svc-name">CCTV</span>
+          <span class="hero-svc-name">HT &amp; LT Installations</span>
           <span class="hero-svc-arrow">→</span>
         </li>
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
-            <img src="icon_network.png" alt="Router &amp; Switch Setup"/>
+            <img src="icon_audit.png" alt="Energy Auditing"/>
           </span>
-          <span class="hero-svc-name">Router &amp; Switch Setup</span>
+          <span class="hero-svc-name">Energy Auditing &amp; APFC</span>
           <span class="hero-svc-arrow">→</span>
         </li>
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
             <img src="icon_amc.png" alt="AMC Support"/>
           </span>
-          <span class="hero-svc-name">AMC Support</span>
+          <span class="hero-svc-name">Electrical AMC Support</span>
           <span class="hero-svc-arrow">→</span>
         </li>
         <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
           <span class="hero-svc-icon">
-            <img src="icon_software.png" alt="Software Solutions"/>
+            <img src="icon_panels.png" alt="Custom Control Panels"/>
           </span>
-          <span class="hero-svc-name">Software Solutions</span>
+          <span class="hero-svc-name">Custom Control Panels</span>
           <span class="hero-svc-arrow">→</span>
         </li>
       </ul>
@@ -830,12 +950,12 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <div class="hero-visual">
       <div class="hero-slideshow" id="heroSlideshow">
         <div class="slideshow-wrap" style="position:relative;">
-          <img src="devices_showcase.png" alt="Desktops &amp; Laptops" class="hero-slide active" />
-          <img src="cctv_showcase.png" alt="CCTV Security Systems" class="hero-slide" />
-          <img src="printers_showcase.png" alt="All Kinds of Printers" class="hero-slide" />
-          <img src="network_showcase.png" alt="Router &amp; Switch Connection" class="hero-slide" />
-          <img src="software_showcase.png" alt="Software Solutions" class="hero-slide" />
-          <div class="hero-slide-label" id="heroSlideLabel">Desktop &amp; Laptop</div>
+          <img src="led_showcase.png" alt="Premium LED Lighting" class="hero-slide active" />
+          <img src="fans_showcase.png" alt="HVLS Ventilation Fans" class="hero-slide" />
+          <img src="ht_lt_showcase.png" alt="HT &amp; LT Electrical Works" class="hero-slide" />
+          <img src="audit_showcase.png" alt="Energy Audit &amp; APFC" class="hero-slide" />
+          <img src="panels_showcase.png" alt="Custom Control Panels" class="hero-slide" />
+          <div class="hero-slide-label" id="heroSlideLabel">Premium LED Lighting</div>
         </div>
         <div class="hero-dots" id="heroDots">
           <button class="hero-dot active" onclick="goToSlide(0)"></button>
@@ -856,67 +976,65 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       <p class="sec-eyebrow">What We Do</p>
       <div class="gold-line"></div>
       <h2 class="sec-title interactive-title">
-        <span class="i-word">Complete</span>
-        <em class="i-word-em"><span class="i-word">IT</span> <span class="i-word">Services</span></em><br/>
-        <span class="i-word">Under</span>
-        <span class="i-word">One</span>
-        <span class="i-word">Roof</span>
+        <span class="i-word">Premium</span>
+        <em class="i-word-em"><span class="i-word">Electrical</span> <span class="i-word">&amp;</span> <span class="i-word">Energy</span></em><br/>
+        <span class="i-word">Solutions</span>
       </h2>
-      <p class="sec-sub">Whether you're a home user or a large business — we have the right solution for every technology challenge you face.</p>
+      <p class="sec-sub">Whether you're an industrial facility, commercial complex, or residential space — we deliver top-tier energy saving systems and robust power designs.</p>
     </div>
     <div class="services-grid">
 
       <div class="svc-card reveal reveal-delay-1">
-        <div class="svc-icon-wrap"><img src="icon_devices.png" alt="Desktop, Laptop &amp; Printer"/></div>
-        <div class="svc-title">Desktop, Laptop & Printer</div>
-        <p class="svc-desc">Sales, service, and repair of all major brands. Fast turnaround, genuine parts, and warranty-backed work for homes and offices.</p>
+        <div class="svc-icon-wrap"><img src="icon_led.png" alt="LED Lighting"/></div>
+        <div class="svc-title">Industrial &amp; Commercial LED Lighting</div>
+        <p class="svc-desc">High-efficiency LED fixtures, smart dimming controls, and customized layouts designed to maximize lux levels while reducing energy usage.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Sales</span><span class="svc-tag">Repair</span><span class="svc-tag">Service</span>
+          <span class="svc-tag">LED Fixtures</span><span class="svc-tag">Smart Controls</span><span class="svc-tag">Energy Savings</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-2">
-        <div class="svc-icon-wrap"><img src="icon_cctv.png" alt="CCTV"/></div>
-        <div class="svc-title">CCTV Installation</div>
-        <p class="svc-desc">Complete surveillance solutions — IP cameras, DVR/NVR setup, remote viewing, and maintenance for homes, shops, and warehouses.</p>
+        <div class="svc-icon-wrap"><img src="icon_fan.png" alt="HVLS Fans"/></div>
+        <div class="svc-title">HVLS Ventilation Fans</div>
+        <p class="svc-desc">Heavy-duty, energy-saving High-Volume Low-Speed ceiling fans to optimize air circulation and cooling in large warehouses and industrial spaces.</p>
         <div class="svc-tags">
-          <span class="svc-tag">IP Cameras</span><span class="svc-tag">DVR/NVR</span><span class="svc-tag">Remote View</span>
+          <span class="svc-tag">Ventilation</span><span class="svc-tag">HVLS Fans</span><span class="svc-tag">Low Noise</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-3">
-        <div class="svc-icon-wrap"><img src="icon_network.png" alt="Networking"/></div>
-        <div class="svc-title">Router & Switch Setup</div>
-        <p class="svc-desc">Structured LAN/Wi-Fi cabling, router & switch configuration, Fortinet firewall setup, and VPN solutions for secure business networks.</p>
+        <div class="svc-icon-wrap"><img src="icon_power.png" alt="HT &amp; LT Installations"/></div>
+        <div class="svc-title">HT &amp; LT Power Projects</div>
+        <p class="svc-desc">End-to-end substation setups, electrical panels, industrial wiring, cabling, transformer commissioning, and government licensing approvals.</p>
         <div class="svc-tags">
-          <span class="svc-tag">LAN/Wi-Fi</span><span class="svc-tag">Routers</span><span class="svc-tag">Switches</span>
+          <span class="svc-tag">HT Panels</span><span class="svc-tag">LT Panels</span><span class="svc-tag">Transformer</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-1">
-        <div class="svc-icon-wrap"><img src="icon_software.png" alt="Software"/></div>
-        <div class="svc-title">Software Solutions</div>
-        <p class="svc-desc">OS installation, antivirus setup, Microsoft Office, ERP/accounting software, and custom software procurement for your business needs.</p>
+        <div class="svc-icon-wrap"><img src="icon_audit.png" alt="Energy Auditing"/></div>
+        <div class="svc-title">Energy Auditing &amp; Retrofits</div>
+        <p class="svc-desc">Certified energy audits, power quality measurements, harmonic filtering, and targeted retrofits to eliminate utility penalties and losses.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Windows</span><span class="svc-tag">MS Office</span><span class="svc-tag">ERP</span>
+          <span class="svc-tag">Energy Audit</span><span class="svc-tag">APFC Panels</span><span class="svc-tag">Harmonics</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-2">
-        <div class="svc-icon-wrap"><img src="icon_backup.png" alt="Data Backup"/></div>
-        <div class="svc-title">Data Backup & Recovery</div>
-        <p class="svc-desc">Automated cloud & local backup solutions, hard drive recovery, RAID repair, and emergency data rescue from crashed systems.</p>
+        <div class="svc-icon-wrap"><img src="icon_amc.png" alt="AMC Support"/></div>
+        <div class="svc-title">Electrical AMC Support</div>
+        <p class="svc-desc">Annual maintenance contracts featuring scheduled checks, thermal imaging diagnostics, fast breakdown assistance, and safety code audits.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Cloud Backup</span><span class="svc-tag">HDD Recovery</span><span class="svc-tag">RAID</span>
+          <span class="svc-tag">24/7 Support</span><span class="svc-tag">Preventative</span><span class="svc-tag">Safety Audit</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-3">
-        <div class="svc-icon-wrap"><img src="icon_amc.png" alt="AMC Support"/></div>
-        <div class="svc-title">AMC Support</div>
-        <p class="svc-desc">Annual Maintenance Contracts for homes and offices — scheduled visits, priority response, and end-to-end IT management so you focus on your work.</p>
+        <div class="svc-icon-wrap"><img src="icon_panels.png" alt="Control Panels"/></div>
+        <div class="svc-title">Custom Control Panels</div>
+        <p class="svc-desc">In-house design and fabrication of APFC panels, VFD starters, PLC control panels, and automation boards for industrial equipment.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Home AMC</span><span class="svc-tag">Office AMC</span><span class="svc-tag">Priority</span>
+          <span class="svc-tag">APFC Panels</span><span class="svc-tag">VFD Starters</span><span class="svc-tag">Automation</span>
         </div>
       </div>
 
@@ -944,29 +1062,29 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           <div class="why-item reveal reveal-delay-1">
             <div class="why-num">01</div>
             <div class="why-body">
-              <strong>Certified & Experienced Technicians</strong>
-              <p>Our team is trained on the latest hardware and software, ensuring your devices are in expert hands.</p>
+              <strong>Licensed &amp; Certified Engineers</strong>
+              <p>Our team consists of certified A-grade licensed electrical contractors and energy auditors who ensure code compliance and safety.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-2">
             <div class="why-num">02</div>
             <div class="why-body">
-              <strong>Genuine Parts & Licensed Software</strong>
-              <p>We only use authentic components and licensed software — no shortcuts that cost you more later.</p>
+              <strong>Premium Quality &amp; Standards</strong>
+              <p>We use top-tier, certified components and follow strict safety guidelines to ensure the longevity of your electrical setups.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-3">
             <div class="why-num">03</div>
             <div class="why-body">
-              <strong>Fast Turnaround, Fair Pricing</strong>
-              <p>Most repairs completed same day. Transparent quotes upfront — no hidden charges, ever.</p>
+              <strong>Energy-Efficient Audited Designs</strong>
+              <p>Our installations are focused on reducing energy bills, eliminating power factor penalties, and maximizing overall power efficiency.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-4">
             <div class="why-num">04</div>
             <div class="why-body">
-              <strong>Doorstep Service Available</strong>
-              <p>Can't come to us? We'll come to you — on-site support for home and office customers.</p>
+              <strong>24/7 Breakdown &amp; AMC Support</strong>
+              <p>Edison AMP is always ready. We provide continuous maintenance, emergency breakdown assistance, and preventive auditing support.</p>
             </div>
           </div>
         </div>
@@ -1018,47 +1136,43 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 </section>
 
 
-<!-- VENDORS -->
+<!-- BRANDS / VENDORS -->
 <div class="vendors-section" id="brands">
   <div class="vendors-inner">
-    <!-- Technology Partners -->
+    <!-- Lighting Partners -->
     <div class="vendors-cat">
       <div class="vendors-cat-label">Category 01</div>
-      <div class="vendors-cat-title">Technology Partners</div>
+      <div class="vendors-cat-title">Lighting Partners</div>
       <div class="vendors-row">
-        <div class="vendor-card reveal"><img src="logo-microsoft.svg" alt="Microsoft" class="vendor-logo"><span class="vendor-name">Microsoft</span></div>
-        <div class="vendor-card reveal"><img src="logo-apple.svg" alt="Apple" class="vendor-logo"><span class="vendor-name">Apple</span></div>
-        <div class="vendor-card reveal"><img src="logo-intel.svg" alt="Intel" class="vendor-logo"><span class="vendor-name">Intel</span></div>
-        <div class="vendor-card reveal"><img src="logo-nvidia.svg" alt="NVIDIA" class="vendor-logo"><span class="vendor-name">NVIDIA</span></div>
-        <div class="vendor-card reveal"><img src="logo-amd.svg" alt="AMD" class="vendor-logo"><span class="vendor-name">AMD</span></div>
-        <div class="vendor-card reveal"><img src="logo-lenovo.svg" alt="Lenovo" class="vendor-logo"><span class="vendor-name">Lenovo</span></div>
-        <div class="vendor-card reveal"><img src="logo-dell.svg" alt="Dell" class="vendor-logo"><span class="vendor-name">Dell</span></div>
-        <div class="vendor-card reveal"><img src="logo-asus.svg" alt="ASUS" class="vendor-logo"><span class="vendor-name">ASUS</span></div>
-        <div class="vendor-card reveal"><img src="logo-hp.svg" alt="HP" class="vendor-logo"><span class="vendor-name">HP</span></div>
+        <div class="vendor-card reveal"><img src="logo-philips.svg" alt="Philips" class="vendor-logo"><span class="vendor-name">Philips</span></div>
+        <div class="vendor-card reveal"><img src="logo-wipro.svg" alt="Wipro" class="vendor-logo"><span class="vendor-name">Wipro</span></div>
+        <div class="vendor-card reveal"><img src="logo-havells.svg" alt="Havells" class="vendor-logo"><span class="vendor-name">Havells</span></div>
+        <div class="vendor-card reveal"><img src="logo-crompton.svg" alt="Crompton" class="vendor-logo"><span class="vendor-name">Crompton</span></div>
+        <div class="vendor-card reveal"><img src="logo-syska.svg" alt="Syska" class="vendor-logo"><span class="vendor-name">Syska</span></div>
+        <div class="vendor-card reveal"><img src="logo-osram.svg" alt="Osram" class="vendor-logo"><span class="vendor-name">Osram</span></div>
       </div>
     </div>
-    <!-- Printer Vendors -->
+    <!-- Power & Switchgear -->
     <div class="vendors-cat">
       <div class="vendors-cat-label">Category 02</div>
-      <div class="vendors-cat-title">Printer Vendors</div>
+      <div class="vendors-cat-title">Power &amp; Switchgear Partners</div>
       <div class="vendors-row">
-        <div class="vendor-card reveal"><img src="logo-hp.svg" alt="HP" class="vendor-logo"><span class="vendor-name">HP</span></div>
-        <div class="vendor-card reveal"><img src="logo-epson.svg" alt="Epson" class="vendor-logo"><span class="vendor-name">Epson</span></div>
-        <div class="vendor-card reveal"><img src="logo-canon.svg" alt="Canon" class="vendor-logo"><span class="vendor-name">Canon</span></div>
-        <div class="vendor-card reveal"><img src="logo-brother.svg" alt="Brother" class="vendor-logo"><span class="vendor-name">Brother</span></div>
-        <div class="vendor-card reveal"><img src="logo-ricoh.svg" alt="Ricoh" class="vendor-logo"><span class="vendor-name">Ricoh</span></div>
-        <div class="vendor-card reveal"><img src="logo-xerox.svg" alt="Xerox" class="vendor-logo"><span class="vendor-name">Xerox</span></div>
+        <div class="vendor-card reveal"><img src="logo-schneider.svg" alt="Schneider Electric" class="vendor-logo"><span class="vendor-name">Schneider Electric</span></div>
+        <div class="vendor-card reveal"><img src="logo-siemens.svg" alt="Siemens" class="vendor-logo"><span class="vendor-name">Siemens</span></div>
+        <div class="vendor-card reveal"><img src="logo-legrand.svg" alt="Legrand" class="vendor-logo"><span class="vendor-name">Legrand</span></div>
+        <div class="vendor-card reveal"><img src="logo-abb.svg" alt="ABB" class="vendor-logo"><span class="vendor-name">ABB</span></div>
+        <div class="vendor-card reveal"><img src="logo-lt.svg" alt="L&amp;T" class="vendor-logo"><span class="vendor-name">L&amp;T</span></div>
       </div>
     </div>
-    <!-- CCTV Vendors -->
+    <!-- Cables & Utilities -->
     <div class="vendors-cat">
       <div class="vendors-cat-label">Category 03</div>
-      <div class="vendors-cat-title">CCTV &amp; Security Vendors</div>
+      <div class="vendors-cat-title">Cables &amp; Utilities Partners</div>
       <div class="vendors-row">
-        <div class="vendor-card reveal"><img src="logo-hikvision.svg" alt="Hikvision" class="vendor-logo"><span class="vendor-name">Hikvision</span></div>
-        <div class="vendor-card reveal"><img src="logo-cpplus.svg" alt="CP Plus" class="vendor-logo"><span class="vendor-name">CP Plus</span></div>
-        <div class="vendor-card reveal"><img src="logo-tplink.svg" alt="TP-Link" class="vendor-logo"><span class="vendor-name">TP-Link</span></div>
-        <div class="vendor-card reveal"><img src="logo-honeywell.svg" alt="Honeywell" class="vendor-logo"><span class="vendor-name">Honeywell</span></div>
+        <div class="vendor-card reveal"><img src="logo-polycab.svg" alt="Polycab" class="vendor-logo"><span class="vendor-name">Polycab</span></div>
+        <div class="vendor-card reveal"><img src="logo-finolex.svg" alt="Finolex" class="vendor-logo"><span class="vendor-name">Finolex</span></div>
+        <div class="vendor-card reveal"><img src="logo-rrkabel.svg" alt="RR Kabel" class="vendor-logo"><span class="vendor-name">RR Kabel</span></div>
+        <div class="vendor-card reveal"><img src="logo-kei.svg" alt="KEI Cables" class="vendor-logo"><span class="vendor-name">KEI Cables</span></div>
       </div>
     </div>
   </div>
@@ -1074,7 +1188,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <span class="i-word">Us</span>
         <em class="i-word-em"><span class="i-word">Anytime</span></em>
       </h2>
-      <p class="sec-sub" style="color:var(--muted);margin:0 auto;">We're available Mon – Sat, 9 AM to 7 PM. Doorstep visits on request.</p>
+      <p class="sec-sub" style="color:var(--muted);margin:0 auto;">We're available Mon – Sat, 9 AM to 7 PM. On-site engineer visits on request.</p>
     </div>
     <div class="contact-cards reveal reveal-delay-1">
       <div class="contact-card">
@@ -1088,7 +1202,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <div class="ci-icon">✉️</div>
         <div>
           <div class="ci-label">Email Address</div>
-          <div class="ci-val"><a href="mailto:arun@mahalakshmiitsolutions.com">arun@mahalakshmiitsolutions.com</a></div>
+          <div class="ci-val"><a href="mailto:info@edisonamp.com">info@edisonamp.com</a></div>
         </div>
       </div>
       <div class="contact-card">
@@ -1107,9 +1221,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       </div>
     </div>
     <div class="contact-wa-row reveal reveal-delay-2">
-      <a href="https://wa.me/919964156781?text=Hi%2C%20I%20need%20IT%20support%20from%20Mahalakshmi%20IT%20Solutions!" target="_blank" class="wa-btn">
+      <a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank" class="wa-btn">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Chat on WhatsApp Now
+        WhatsApp
       </a>
     </div>
   </div>
@@ -1121,22 +1235,133 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <div class="footer-top">
       <div>
         <div style="margin-bottom:16px;">
-            <img src="logo_horizontal.png" alt="Mahalakshmi IT Solutions Logo" style="width:280px;height:44px;object-fit:contain;object-position:left center;display:block;margin-bottom:8px;"/>
-            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase;display:block;">Your Trusted Technology Partner — Reach Us Any Time</span>
+            <svg class="footer-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 350" width="100%" height="100%">
+        <defs>
+          <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Fredoka:wght@600;700&family=Inter:wght@600;700&family=Montserrat:wght@600;700;800&family=Outfit:wght@600;700;800&family=Quicksand:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap');
+            .vector-base-container-footer {
+              background-color: #0F1E36;
+              width: 1500px;
+              height: 350px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              box-sizing: border-box;
+              font-family: 'Fredoka', system-ui, sans-serif;
+            }
+            .text-row-container-footer {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-transform: uppercase;
+              font-size: 120px;
+              letter-spacing: 0.08em;
+              font-weight: 600;
+              color: #FFFFFF;
+              line-height: 1;
+              white-space: nowrap;
+            }
+            .custom-o-graphic-footer {
+              width: 1.05em;
+              height: 1.05em;
+              margin-left: -0.05em;
+              margin-right: -0.02em;
+              display: inline-block;
+            }
+            .suffix-amp-row-footer {
+              margin-left: 0.35em;
+              color: #FFB000;
+            }
+            .tagline-container-block-footer {
+              margin-top: 18px;
+              font-family: "Inter", sans-serif;
+              font-size: 39px;
+              letter-spacing: 0.12em;
+              color: #ECEFF1;
+              text-transform: uppercase;
+              font-weight: 500;
+              line-height: 1.2;
+              white-space: nowrap;
+              max-width: 100%;
+            }
+          </style>
+          
+          <filter id="glow-fx-footer" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3.5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+          
+          <filter id="bulb-glow-fx-footer-footer" x="-35%" y="-35%" width="170%" height="170%">
+            <feGaussianBlur stdDeviation="5" result="b1" />
+            <feGaussianBlur stdDeviation="2" result="b2" />
+            <feMerge>
+              <feMergeNode in="b1" />
+              <feMergeNode in="b2" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <rect width="1500" height="350" fill="#0F1E36" />
+
+        <foreignObject x="0" y="0" width="1500" height="350">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="vector-base-container-footer">
+            <div class="text-row-container-footer">
+              <span>EDIS</span>
+              <div class="custom-o-graphic-footer">
+                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                  <!-- O Ring -->
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#FFFFFF" stroke-width="11" />
+                  
+                  <!-- Internal Bulb -->
+                  <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
+                    <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" 
+                          fill="transparent" 
+                          stroke="#FFFFFF" 
+                          stroke-width="2" 
+                          filter="url(#bulb-glow-fx-footer-footer)" />
+                    
+                    <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#FFFFFF" />
+                    <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#FFFFFF" opacity="0.9" />
+
+                    
+                      <circle cx="50" cy="36" r="3.5" fill="#FF6B00" filter="url(#glow-fx-footer)" />
+                      <circle cx="50" cy="45" r="3.5" fill="#00E396" filter="url(#glow-fx-footer)" />
+                      <circle cx="50" cy="54" r="3.5" fill="#0052FF" filter="url(#glow-fx-footer)" />
+                    
+                  </g>
+                </svg>
+              </div>
+              <span>N</span>
+              <span class="suffix-amp-row-footer">AMP</span>
+            </div>
+
+            <div class="tagline-container-block-footer">
+              <span style="color: #38BDF8;">LED LIGHTS</span>
+              <span style="color: #FB7185; margin: 0 10px;">|</span>
+              <span style="color: #4ADE80;">HVLS FANS</span>
+              <span style="color: #FB7185; margin: 0 10px;">|</span>
+              <span style="color: #FFB000;">HT &amp; LT ELECTRICAL WORKS</span>
+            </div>
           </div>
-        <p class="footer-desc">Providing reliable, affordable and expert IT services for homes and businesses. Your technology problems, our solutions.</p>
+        </foreignObject>
+      </svg>
+          </div>
+        <p class="footer-desc">Premium industrial &amp; commercial lighting, ventilation systems, and HT/LT power engineering services. Certified quality and energy auditing solutions.</p>
       </div>
       <div>
         <p class="footer-col-title">Contact Us</p>
         <ul class="footer-links">
           <li><a href="tel:+919964156781">📞 +91-9964156781</a></li>
-          <li><a href="mailto:arun@mahalakshmiitsolutions.com">✉️ arun@mahalakshmiitsolutions.com</a></li>
-          <li><a href="https://wa.me/919964156781" target="_blank">💬 WhatsApp Us</a></li>
+          <li><a href="mailto:info@edisonamp.com">✉️ info@edisonamp.com</a></li>
+          <li><a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank">💬 WhatsApp</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 <span class="footer-gold">Mahalakshmi IT Solutions</span>. All rights reserved.</span>
+      <span>© 2026 <span class="footer-gold" style="color:var(--gold2);">Edison AMP</span>. All rights reserved.</span>
       <span style="font-size:0.7em;opacity:0.75;letter-spacing:0.02em;">by <a href="https://www.trustwork.co.in" target="_blank" style="color:var(--gold2);text-decoration:none;font-weight:700;">www.trustwork.co.in</a> | <a href="tel:+919353010107" style="color:inherit;text-decoration:none;">+91 93530 10107</a> | <a href="mailto:support@trustwork.co.in" style="color:inherit;text-decoration:none;">support@trustwork.co.in</a></span>
     </div>
   </div>
@@ -1171,15 +1396,28 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     });
   });
 
-  // Sticky nav shadow
+  // Sticky nav shadow and transition properties
   window.addEventListener('scroll',()=>{
     const nav = document.querySelector('nav');
+    const bgBar = document.querySelector('.nav-bg-bar');
     if(window.scrollY > 20){
-      nav.style.background = 'rgba(255,252,247,1)';
-      nav.style.boxShadow = '0 4px 24px rgba(11,29,58,.12)';
+      if(bgBar) bgBar.style.height = '112px';
+      if(window.innerWidth > 640){
+        nav.style.top = '10px';
+        nav.style.left = '20px';
+        nav.style.right = '20px';
+        nav.style.height = '92px';
+        nav.style.boxShadow = '0 10px 40px rgba(0,0,0,.4)';
+      }
     } else {
-      nav.style.background = 'rgba(255,252,247,.96)';
-      nav.style.boxShadow = '0 2px 20px rgba(11,29,58,.08)';
+      if(bgBar) bgBar.style.height = '152px';
+      if(window.innerWidth > 640){
+        nav.style.top = '20px';
+        nav.style.left = '40px';
+        nav.style.right = '40px';
+        nav.style.height = '112px';
+        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,.25)';
+      }
     }
   });
 
@@ -1196,11 +1434,11 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   // Hero image slideshow
   (function(){
     const labels = [
-      'Desktop & Laptop',
-      'CCTV Security Systems',
-      'All Kinds of Printers',
-      'Router & Switch Connection',
-      'Software Solutions'
+      'Premium LED Lighting',
+      'HVLS Ventilation Fans',
+      'HT & LT Electrical Works',
+      'Energy Audit & APFC',
+      'Custom Control Panels'
     ];
     let current = 0;
     const slides = document.querySelectorAll('.hero-slide');
