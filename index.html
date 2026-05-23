@@ -41,17 +41,17 @@ img{max-width:100%;display:block;}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px;}
 
 /* ===== FLOATING CONTACTS ===== */
-.float-group{position:fixed;bottom:20px;right:16px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;}
-.float-btn{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:50px;font-weight:700;font-size:0.82rem;text-decoration:none;white-space:nowrap;box-shadow:0 6px 24px rgba(0,0,0,0.2);transition:transform .2s,box-shadow .2s;cursor:pointer;}
-.float-btn:hover{transform:translateY(-2px);}
-.float-wa{background:#25D366;color:#fff;box-shadow:0 6px 24px rgba(37,211,102,.4);animation:fPulse 3s ease-in-out infinite;}
-.float-call{background:var(--gold);color:#000;font-weight:800;}
-@keyframes fPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4);}50%{box-shadow:0 6px 36px rgba(37,211,102,.7);transform:scale(1.03);}}
 .float-icon{width:20px;height:20px;fill:currentColor;flex-shrink:0;}
+
+/* ===== BORDER BEAM ===== */
+@property --border-angle{syntax:'<angle>';inherits:false;initial-value:0deg;}
+@keyframes border-spin{to{--border-angle:360deg;}}
 
 /* ===== NAV ===== */
 .nav-bg-bar{position:fixed;top:0;left:0;right:0;height:152px;background:#0F1E36;z-index:999;border-bottom:1px solid rgba(255,255,255,.05);transition:all .3s ease;}
-nav{position:fixed;top:20px;left:40px;right:40px;z-index:1000;padding:0 40px;background:#0F1E36;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:2px solid #FB923C;border-radius:18px;display:flex;align-items:center;justify-content:space-between;height:112px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .3s ease;}
+nav{position:fixed;top:20px;left:5%;right:5%;z-index:1000;padding:0 40px;background:#0F1E36;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:none;border-radius:18px;display:flex;align-items:center;justify-content:space-between;height:112px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .3s ease;isolation:isolate;}
+nav::before{content:'';position:absolute;inset:-2px;border-radius:20px;background:conic-gradient(from var(--border-angle),transparent 0%,transparent 65%,#FDBA74 75%,#FB923C 80%,#fff8 83%,#FB923C 86%,#FDBA74 91%,transparent 100%);animation:border-spin 3s linear infinite;z-index:-1;}
+nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radius:16px;z-index:-1;}
 .nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center;height:100%;text-decoration:none;}
 .nav-logo-svg{height:92px;width:auto;transition:transform .3s ease;}
 .nav-logo:hover .nav-logo-svg{transform:scale(1.02);}
@@ -701,16 +701,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <body>
 
 <!-- FLOATING CONTACTS -->
-<div class="float-group">
-  <a class="float-btn float-call" href="tel:+919964156781">
-    <svg class="float-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    <span class="float-label">Call Now</span>
-  </a>
-  <a class="float-btn float-wa" href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank">
-    <svg class="float-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="float-label">WhatsApp</span>
-  </a>
-</div>
+
 
 <!-- BACK TO TOP BUTTON -->
 <a id="backToTop" class="back-to-top" title="Go to Top">
@@ -878,94 +869,18 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <!-- Left -->
     <div class="hero-left">
       <h1 class="interactive-title">
-        <span class="i-word">Innovative</span>
-        <span class="i-word">Power</span>
-        <em class="i-word-em"><span class="i-word">&amp;</span> <span class="i-word">Lighting</span></em>
-        <span class="i-word">Solutions</span>
+        <!-- headline text coming soon -->
       </h1>
-      <p class="hero-desc">Edison AMP is a leading provider of high-efficiency LED lighting systems, industrial HVLS ventilation fans, and comprehensive HT &amp; LT electrical installations. Driven by energy-efficient designs and safety compliance, we help commercial, industrial, and residential clients minimize energy overheads and maximize systems reliability. From audits to complete turn-key contracting, we handle all your power needs.</p>
+      <p class="hero-desc">
+        <!-- description coming soon -->
+      </p>
       <ul class="hero-services">
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_led.png" alt="LED Lighting"/>
-          </span>
-          <span class="hero-svc-name">LED Lighting Systems</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_fan.png" alt="HVLS Fans"/>
-          </span>
-          <span class="hero-svc-name">HVLS Industrial Fans</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_power.png" alt="HT &amp; LT Installations"/>
-          </span>
-          <span class="hero-svc-name">HT &amp; LT Installations</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_audit.png" alt="Energy Auditing"/>
-          </span>
-          <span class="hero-svc-name">Energy Auditing &amp; APFC</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_amc.png" alt="AMC Support"/>
-          </span>
-          <span class="hero-svc-name">Electrical AMC Support</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
-        <li class="hero-svc-item" onclick="document.querySelector('#services').scrollIntoView({behavior:'smooth'})">
-          <span class="hero-svc-icon">
-            <img src="icon_panels.png" alt="Custom Control Panels"/>
-          </span>
-          <span class="hero-svc-name">Custom Control Panels</span>
-          <span class="hero-svc-arrow">→</span>
-        </li>
+        <!-- service items coming soon -->
       </ul>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num" data-target="6">0+</div>
-          <div class="stat-lbl">Core Services</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="10">0+</div>
-          <div class="stat-lbl">Brand Partners</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-num">24/7</div>
-          <div class="stat-lbl">AMC Support</div>
-        </div>
-      </div>
+
     </div>
 
-    <!-- Right — image slideshow -->
-    <div class="hero-visual">
-      <div class="hero-slideshow" id="heroSlideshow">
-        <div class="slideshow-wrap" style="position:relative;">
-          <img src="led_showcase.png" alt="Premium LED Lighting" class="hero-slide active" />
-          <img src="fans_showcase.png" alt="HVLS Ventilation Fans" class="hero-slide" />
-          <img src="ht_lt_showcase.png" alt="HT &amp; LT Electrical Works" class="hero-slide" />
-          <img src="audit_showcase.png" alt="Energy Audit &amp; APFC" class="hero-slide" />
-          <img src="panels_showcase.png" alt="Custom Control Panels" class="hero-slide" />
-          <div class="hero-slide-label" id="heroSlideLabel">Premium LED Lighting</div>
-        </div>
-        <div class="hero-dots" id="heroDots">
-          <button class="hero-dot active" onclick="goToSlide(0)"></button>
-          <button class="hero-dot" onclick="goToSlide(1)"></button>
-          <button class="hero-dot" onclick="goToSlide(2)"></button>
-          <button class="hero-dot" onclick="goToSlide(3)"></button>
-          <button class="hero-dot" onclick="goToSlide(4)"></button>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -973,68 +888,68 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <section class="section services-bg" id="services">
   <div class="section-inner">
     <div class="reveal">
-      <p class="sec-eyebrow">What We Do</p>
+      <p class="sec-eyebrow">What Edison AMP Does</p>
       <div class="gold-line"></div>
       <h2 class="sec-title interactive-title">
-        <span class="i-word">Premium</span>
+        <span class="i-word">End-to-End</span>
         <em class="i-word-em"><span class="i-word">Electrical</span> <span class="i-word">&amp;</span> <span class="i-word">Energy</span></em><br/>
-        <span class="i-word">Solutions</span>
+        <span class="i-word">Services</span>
       </h2>
-      <p class="sec-sub">Whether you're an industrial facility, commercial complex, or residential space — we deliver top-tier energy saving systems and robust power designs.</p>
+      <p class="sec-sub">From high-efficiency LED lighting and HVLS fans to HT &amp; LT power projects and AMC support — Edison AMP delivers complete electrical solutions for industrial, commercial, and residential clients across Bangalore.</p>
     </div>
     <div class="services-grid">
 
       <div class="svc-card reveal reveal-delay-1">
         <div class="svc-icon-wrap"><img src="icon_led.png" alt="LED Lighting"/></div>
-        <div class="svc-title">Industrial &amp; Commercial LED Lighting</div>
-        <p class="svc-desc">High-efficiency LED fixtures, smart dimming controls, and customized layouts designed to maximize lux levels while reducing energy usage.</p>
+        <div class="svc-title">LED Lighting Systems</div>
+        <p class="svc-desc">Edison AMP designs and installs high-efficiency LED lighting for factories, warehouses, offices, and residential buildings — cutting energy bills by up to 60% with smart, lux-optimised layouts.</p>
         <div class="svc-tags">
-          <span class="svc-tag">LED Fixtures</span><span class="svc-tag">Smart Controls</span><span class="svc-tag">Energy Savings</span>
+          <span class="svc-tag">Industrial LED</span><span class="svc-tag">Smart Controls</span><span class="svc-tag">60% Savings</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-2">
         <div class="svc-icon-wrap"><img src="icon_fan.png" alt="HVLS Fans"/></div>
-        <div class="svc-title">HVLS Ventilation Fans</div>
-        <p class="svc-desc">Heavy-duty, energy-saving High-Volume Low-Speed ceiling fans to optimize air circulation and cooling in large warehouses and industrial spaces.</p>
+        <div class="svc-title">HVLS Industrial Fans</div>
+        <p class="svc-desc">We supply and install High-Volume Low-Speed ceiling fans that deliver powerful air movement across large industrial and commercial spaces at a fraction of the power cost of conventional AC units.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Ventilation</span><span class="svc-tag">HVLS Fans</span><span class="svc-tag">Low Noise</span>
+          <span class="svc-tag">HVLS Fans</span><span class="svc-tag">Large Spaces</span><span class="svc-tag">Low Power</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-3">
         <div class="svc-icon-wrap"><img src="icon_power.png" alt="HT &amp; LT Installations"/></div>
-        <div class="svc-title">HT &amp; LT Power Projects</div>
-        <p class="svc-desc">End-to-end substation setups, electrical panels, industrial wiring, cabling, transformer commissioning, and government licensing approvals.</p>
+        <div class="svc-title">HT &amp; LT Installations</div>
+        <p class="svc-desc">Edison AMP handles complete HT &amp; LT electrical projects — from substation commissioning, transformer installation, and industrial cabling to government BESCOM approvals and safety compliance.</p>
         <div class="svc-tags">
-          <span class="svc-tag">HT Panels</span><span class="svc-tag">LT Panels</span><span class="svc-tag">Transformer</span>
+          <span class="svc-tag">HT Panels</span><span class="svc-tag">LT Panels</span><span class="svc-tag">BESCOM Approval</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-1">
         <div class="svc-icon-wrap"><img src="icon_audit.png" alt="Energy Auditing"/></div>
-        <div class="svc-title">Energy Auditing &amp; Retrofits</div>
-        <p class="svc-desc">Certified energy audits, power quality measurements, harmonic filtering, and targeted retrofits to eliminate utility penalties and losses.</p>
+        <div class="svc-title">Energy Auditing &amp; APFC</div>
+        <p class="svc-desc">Our certified engineers conduct detailed power quality audits, identify wastage hotspots, and install APFC panels to eliminate power factor penalties and reduce your EB tariff load.</p>
         <div class="svc-tags">
-          <span class="svc-tag">Energy Audit</span><span class="svc-tag">APFC Panels</span><span class="svc-tag">Harmonics</span>
+          <span class="svc-tag">Energy Audit</span><span class="svc-tag">APFC Panels</span><span class="svc-tag">Penalty-Free</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-2">
         <div class="svc-icon-wrap"><img src="icon_amc.png" alt="AMC Support"/></div>
         <div class="svc-title">Electrical AMC Support</div>
-        <p class="svc-desc">Annual maintenance contracts featuring scheduled checks, thermal imaging diagnostics, fast breakdown assistance, and safety code audits.</p>
+        <p class="svc-desc">Edison AMP's Annual Maintenance Contracts keep your electrical systems running without surprises — with scheduled inspections, thermal imaging, and priority breakdown response across Bangalore.</p>
         <div class="svc-tags">
-          <span class="svc-tag">24/7 Support</span><span class="svc-tag">Preventative</span><span class="svc-tag">Safety Audit</span>
+          <span class="svc-tag">Annual Contracts</span><span class="svc-tag">Priority Response</span><span class="svc-tag">Bangalore</span>
         </div>
       </div>
 
       <div class="svc-card reveal reveal-delay-3">
         <div class="svc-icon-wrap"><img src="icon_panels.png" alt="Control Panels"/></div>
         <div class="svc-title">Custom Control Panels</div>
-        <p class="svc-desc">In-house design and fabrication of APFC panels, VFD starters, PLC control panels, and automation boards for industrial equipment.</p>
+        <p class="svc-desc">We design and fabricate custom electrical panels in-house — including APFC panels, VFD motor starters, PLC-based automation boards, and distribution boards tailored to your plant requirements.</p>
         <div class="svc-tags">
-          <span class="svc-tag">APFC Panels</span><span class="svc-tag">VFD Starters</span><span class="svc-tag">Automation</span>
+          <span class="svc-tag">APFC</span><span class="svc-tag">VFD Starters</span><span class="svc-tag">PLC Automation</span>
         </div>
       </div>
 
@@ -1048,59 +963,59 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <div class="why-grid">
       <div>
         <div class="reveal">
-          <p class="sec-eyebrow">Why Choose Us</p>
+          <p class="sec-eyebrow">Why Edison AMP</p>
           <div class="gold-line"></div>
           <h2 class="sec-title interactive-title">
-            <span class="i-word">Technology</span>
+            <span class="i-word">Power</span>
             <span class="i-word">You</span>
             <span class="i-word">Can</span><br/>
-            <em class="i-word-em"><span class="i-word">Actually</span> <span class="i-word">Trust</span></em>
+            <em class="i-word-em"><span class="i-word">Rely</span> <span class="i-word">On</span></em>
           </h2>
-          <p class="sec-sub">We don't just fix problems — we build lasting relationships with every customer we serve.</p>
+          <p class="sec-sub">Edison AMP is built on trust, safety, and results. We don't just complete projects — we become your long-term electrical partner.</p>
         </div>
         <div class="why-list">
           <div class="why-item reveal reveal-delay-1">
             <div class="why-num">01</div>
             <div class="why-body">
-              <strong>Licensed &amp; Certified Engineers</strong>
-              <p>Our team consists of certified A-grade licensed electrical contractors and energy auditors who ensure code compliance and safety.</p>
+              <strong>A-Grade Licensed Electrical Contractor</strong>
+              <p>Edison AMP is a government-recognised, A-grade licensed electrical contracting firm — fully compliant with Karnataka Electrical Inspectorate standards and BESCOM norms.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-2">
             <div class="why-num">02</div>
             <div class="why-body">
-              <strong>Premium Quality &amp; Standards</strong>
-              <p>We use top-tier, certified components and follow strict safety guidelines to ensure the longevity of your electrical setups.</p>
+              <strong>Certified Energy Auditors on Team</strong>
+              <p>Our in-house certified energy auditors identify hidden power losses, optimise load distribution, and help clients achieve significant savings on monthly EB bills.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-3">
             <div class="why-num">03</div>
             <div class="why-body">
-              <strong>Energy-Efficient Audited Designs</strong>
-              <p>Our installations are focused on reducing energy bills, eliminating power factor penalties, and maximizing overall power efficiency.</p>
+              <strong>Branded Components, No Shortcuts</strong>
+              <p>Every project uses only certified, branded materials from partners like Philips, Schneider Electric, Polycab and L&amp;T — no cheap substitutes, ever.</p>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-4">
             <div class="why-num">04</div>
             <div class="why-body">
-              <strong>24/7 Breakdown &amp; AMC Support</strong>
-              <p>Edison AMP is always ready. We provide continuous maintenance, emergency breakdown assistance, and preventive auditing support.</p>
+              <strong>Fast Response &amp; Priority AMC Support</strong>
+              <p>With dedicated AMC contracts, Edison AMP guarantees priority breakdown response across Bangalore — keeping your operations running without costly downtime.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="reveal reveal-delay-2">
         <div class="why-visual">
-          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:24px;">Our Performance</p>
+          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:24px;">Edison AMP Performance</p>
           <div class="wv-row">
-            <span class="wv-label">Customer Satisfaction</span>
+            <span class="wv-label">Client Satisfaction</span>
             <div class="wv-bar-wrap"><div class="wv-bar" data-width="98"></div></div>
             <span class="wv-pct" data-target="98">0%</span>
           </div>
           <div class="wv-row">
-            <span class="wv-label">On-Time Delivery</span>
-            <div class="wv-bar-wrap"><div class="wv-bar" data-width="95"></div></div>
-            <span class="wv-pct" data-target="95">0%</span>
+            <span class="wv-label">On-Time Project Delivery</span>
+            <div class="wv-bar-wrap"><div class="wv-bar" data-width="96"></div></div>
+            <span class="wv-pct" data-target="96">0%</span>
           </div>
           <div class="wv-row">
             <span class="wv-label">First-Fix Success Rate</span>
@@ -1108,25 +1023,24 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             <span class="wv-pct" data-target="99">0%</span>
           </div>
           <div class="wv-row">
-            <span class="wv-label">Repeat Customers</span>
+            <span class="wv-label">Repeat &amp; Referred Clients</span>
             <div class="wv-bar-wrap"><div class="wv-bar" data-width="100"></div></div>
             <span class="wv-pct" data-target="100">0%</span>
           </div>
           <div class="wv-row">
-            <span class="wv-label">AMC Renewal Rate</span>
+            <span class="wv-label">AMC Contract Renewal Rate</span>
             <div class="wv-bar-wrap"><div class="wv-bar" data-width="99"></div></div>
             <span class="wv-pct" data-target="99">0%</span>
           </div>
-
           <div class="why-stats-row">
             <div class="why-stat-item">
               <div class="why-stat-num">5★</div>
-              <div class="why-stat-lbl">Rating</div>
+              <div class="why-stat-lbl">Client Rating</div>
             </div>
             <div class="why-stat-divider"></div>
             <div class="why-stat-item">
-              <div class="why-stat-num">2hr</div>
-              <div class="why-stat-lbl">Response</div>
+              <div class="why-stat-num">&lt;2hr</div>
+              <div class="why-stat-lbl">Breakdown Response</div>
             </div>
           </div>
         </div>
@@ -1141,8 +1055,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   <div class="vendors-inner">
     <!-- Lighting Partners -->
     <div class="vendors-cat">
-      <div class="vendors-cat-label">Category 01</div>
-      <div class="vendors-cat-title">Lighting Partners</div>
+      <div class="vendors-cat-label">Lighting Partners</div>
+      <div class="vendors-cat-title">LED &amp; Lighting Brands We Work With</div>
       <div class="vendors-row">
         <div class="vendor-card reveal"><img src="logo-philips.svg" alt="Philips" class="vendor-logo"><span class="vendor-name">Philips</span></div>
         <div class="vendor-card reveal"><img src="logo-wipro.svg" alt="Wipro" class="vendor-logo"><span class="vendor-name">Wipro</span></div>
@@ -1154,8 +1068,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     </div>
     <!-- Power & Switchgear -->
     <div class="vendors-cat">
-      <div class="vendors-cat-label">Category 02</div>
-      <div class="vendors-cat-title">Power &amp; Switchgear Partners</div>
+      <div class="vendors-cat-label">Power &amp; Switchgear Partners</div>
+      <div class="vendors-cat-title">Electrical &amp; Switchgear Brands We Install</div>
       <div class="vendors-row">
         <div class="vendor-card reveal"><img src="logo-schneider.svg" alt="Schneider Electric" class="vendor-logo"><span class="vendor-name">Schneider Electric</span></div>
         <div class="vendor-card reveal"><img src="logo-siemens.svg" alt="Siemens" class="vendor-logo"><span class="vendor-name">Siemens</span></div>
@@ -1166,8 +1080,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     </div>
     <!-- Cables & Utilities -->
     <div class="vendors-cat">
-      <div class="vendors-cat-label">Category 03</div>
-      <div class="vendors-cat-title">Cables &amp; Utilities Partners</div>
+      <div class="vendors-cat-label">Cable &amp; Wiring Partners</div>
+      <div class="vendors-cat-title">Cable &amp; Wiring Brands We Specify</div>
       <div class="vendors-row">
         <div class="vendor-card reveal"><img src="logo-polycab.svg" alt="Polycab" class="vendor-logo"><span class="vendor-name">Polycab</span></div>
         <div class="vendor-card reveal"><img src="logo-finolex.svg" alt="Finolex" class="vendor-logo"><span class="vendor-name">Finolex</span></div>
@@ -1181,14 +1095,14 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <section class="section contact-section-bg" id="contact">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;">
-      <p class="sec-eyebrow" style="color:var(--gold);">Get In Touch</p>
+      <p class="sec-eyebrow" style="color:var(--gold);">Contact Edison AMP</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title" style="color:var(--navy);">
-        <span class="i-word">Reach</span>
-        <span class="i-word">Us</span>
-        <em class="i-word-em"><span class="i-word">Anytime</span></em>
+        <span class="i-word">Let's</span>
+        <span class="i-word">Work</span>
+        <em class="i-word-em"><span class="i-word">Together</span></em>
       </h2>
-      <p class="sec-sub" style="color:var(--muted);margin:0 auto;">We're available Mon – Sat, 9 AM to 7 PM. On-site engineer visits on request.</p>
+      <p class="sec-sub" style="color:var(--muted);margin:0 auto;">Whether you need an energy audit, a new LED installation, or a full HT &amp; LT project — our team is ready to visit your site and deliver a free consultation. Available Mon – Sat, 9 AM to 7 PM.</p>
     </div>
     <div class="contact-cards reveal reveal-delay-1">
       <div class="contact-card">
@@ -1201,29 +1115,29 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       <div class="contact-card">
         <div class="ci-icon">✉️</div>
         <div>
-          <div class="ci-label">Email Address</div>
+          <div class="ci-label">Email Us</div>
           <div class="ci-val"><a href="mailto:info@edisonamp.com">info@edisonamp.com</a></div>
         </div>
       </div>
       <div class="contact-card">
         <div class="ci-icon">📍</div>
         <div>
-          <div class="ci-label">Office Address</div>
-          <div class="ci-val" style="font-size:0.88rem;line-height:1.5;">NO 33, 1st C Cross, Kaveri Layout, Amarajyothi Nagar, Vijayanagar, Bangalore - 560040</div>
+          <div class="ci-label">Edison AMP Office</div>
+          <div class="ci-val" style="font-size:0.88rem;line-height:1.5;">No. 33, 1st C Cross, Kaveri Layout, Amarajyothi Nagar, Vijayanagar, Bangalore – 560040</div>
         </div>
       </div>
       <div class="contact-card">
-        <div class="ci-icon">⏱️</div>
+        <div class="ci-icon">🕐</div>
         <div>
-          <div class="ci-label">Response &amp; Service</div>
-          <div class="ci-val">Mon to Sat — 9 AM to 7 PM<br><span style="font-size:0.88rem;opacity:0.85;">Doorstep visits available across Bangalore</span></div>
+          <div class="ci-label">Working Hours</div>
+          <div class="ci-val">Monday to Saturday — 9 AM to 7 PM<br><span style="font-size:0.88rem;opacity:0.85;">Free site visits across Bangalore on request</span></div>
         </div>
       </div>
     </div>
     <div class="contact-wa-row reveal reveal-delay-2">
-      <a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%20need%20your%20services!" target="_blank" class="wa-btn">
+      <a href="https://wa.me/919964156781?text=Hello%20Edison%20AMP%2C%20I%27d%20like%20a%20free%20site%20consultation!" target="_blank" class="wa-btn">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp
+        Chat on WhatsApp
       </a>
     </div>
   </div>
@@ -1404,8 +1318,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       if(bgBar) bgBar.style.height = '112px';
       if(window.innerWidth > 640){
         nav.style.top = '10px';
-        nav.style.left = '20px';
-        nav.style.right = '20px';
+        nav.style.left = '3%';
+        nav.style.right = '3%';
         nav.style.height = '92px';
         nav.style.boxShadow = '0 10px 40px rgba(0,0,0,.4)';
       }
@@ -1413,8 +1327,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       if(bgBar) bgBar.style.height = '152px';
       if(window.innerWidth > 640){
         nav.style.top = '20px';
-        nav.style.left = '40px';
-        nav.style.right = '40px';
+        nav.style.left = '5%';
+        nav.style.right = '5%';
         nav.style.height = '112px';
         nav.style.boxShadow = '0 10px 30px rgba(0,0,0,.25)';
       }
