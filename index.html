@@ -79,8 +79,8 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .nav-logo:hover .nav-brand{color:#FB923C;}
 .nav-brand span{display:none;}
 .nav-logo:hover .nav-brand span{color:#0C3866;}
-.nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:#0C3866;text-decoration:none;font-size:0.98rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
+.nav-links{display:flex;gap:16px;list-style:none;}
+.nav-links a{color:#0C3866;text-decoration:none;font-size:0.82rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#FB923C,#FDBA74);border-radius:2px;transition:width 0.3s ease;}
 .nav-links a:hover{color:#FB923C;transform:scale(1.08);}
 .nav-links a:hover::after{width:100%;}
@@ -310,14 +310,14 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 /* ===== SECTION COMMON ===== */
 .section{padding:90px 24px;}
 .section-inner{max-width:1100px;margin:0 auto;}
-.sec-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.sec-eyebrow{font-size:.95rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#059669;margin-bottom:12px;}
 .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
 .sec-title em{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;color:var(--gold);background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:4px;font-size:inherit;}
-.sec-sub{color:var(--muted);font-size:1rem;line-height:1.75;max-width:560px;}
+.sec-sub{color:#0ea5e9;font-size:1.05rem;font-weight:500;line-height:1.75;max-width:560px;}
 .gold-line{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;margin-bottom:20px;}
 
 /* ===== SERVICES ===== */
-.services-bg{background:#F5F3FF;}
+.services-bg{background:#fdfaf6;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
 .svc-card{background:#fff;border-radius:32px 8px 32px 8px;padding:36px 28px;border:1.5px solid #f0ecdf;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;cursor:default;box-shadow:0 4px 20px rgba(11,29,58,.04);}
 .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:5;}
@@ -337,95 +337,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .svc-card:hover .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
 
 /* ===== WHY US ===== */
-.why-section-bg{background:#EDE9FE;}
-
-/* ===== PURPLE THEME SCOPED RULES ===== */
-.services-bg .sec-eyebrow, 
-.why-section-bg .sec-eyebrow { 
-  color: #7C3AED; 
-}
-.services-bg .gold-line, 
-.why-section-bg .gold-line { 
-  background: linear-gradient(90deg, #7C3AED, #A78BFA); 
-}
-.services-bg .sec-title,
-.why-section-bg .sec-title {
-  color: #4C1D95;
-}
-.services-bg .sec-title em, 
-.why-section-bg .sec-title em { 
-  color: #7C3AED; 
-  background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); 
-  -webkit-background-clip: text; 
-  -webkit-text-fill-color: transparent; 
-}
-
-/* Services section cards */
-.services-bg .svc-card {
-  border: 1.5px solid #E9E3F8;
-}
-.services-bg .svc-card::before {
-  background: linear-gradient(90deg, #7C3AED, #A78BFA);
-}
-.services-bg .svc-card:hover {
-  border-color: #7C3AED;
-  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.15);
-}
-.services-bg .svc-icon-wrap {
-  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
-}
-.services-bg .svc-card:hover .svc-icon-wrap {
-  background: linear-gradient(135deg, #7C3AED, #A78BFA);
-}
-.services-bg .svc-title {
-  color: #7C3AED;
-}
-.services-bg .svc-card:hover .svc-title {
-  color: #5B21B6;
-}
-.services-bg .svc-tag {
-  background: rgba(124, 58, 237, 0.08);
-  color: #7C3AED;
-}
-.services-bg .svc-card:hover .svc-tag {
-  background: rgba(124, 58, 237, 0.15);
-  color: #5B21B6;
-}
-
-/* Edison Promise section items & visualizer */
-.why-section-bg .why-item {
-  border: 1.5px solid #E9E3F8;
-}
-.why-section-bg .why-item::before {
-  background: linear-gradient(180deg, #7C3AED, #A78BFA);
-}
-.why-section-bg .why-item:hover {
-  border-color: #7C3AED;
-  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.1);
-  background: #FAF8FF;
-}
-.why-section-bg .why-body strong {
-  color: #7C3AED;
-}
-.why-section-bg .why-num {
-  color: #7C3AED;
-}
-.why-section-bg .why-visual {
-  background: linear-gradient(160deg, #FDF9FF 0%, #F5F3FF 100%);
-  border: 1.5px solid #DDD6FE;
-}
-.why-section-bg .why-visual p {
-  color: #7C3AED !important;
-}
-.why-section-bg .wv-bar-wrap {
-  background: rgba(124, 58, 237, 0.1);
-}
-.why-section-bg .wv-bar {
-  background: linear-gradient(90deg, #7C3AED, #A78BFA);
-}
-.why-section-bg .wv-pct {
-  color: #7C3AED;
-}
+.why-section-bg{background:#fdfaf6;}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
 .why-list{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
 .why-item{
@@ -655,16 +567,38 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 @media(max-width:768px){
   .works-grid { grid-template-columns: 1fr; }
 }
-
 /* ===== TESTIMONIALS ===== */
 .testi-bg{background:#ffffff;}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-.testi-card{background:#fff;border-radius:20px;padding:30px 26px;border:1.5px solid #e8ecf4;position:relative;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;box-shadow:0 2px 16px rgba(11,29,58,.05);}
+/* Carousel */
+.testi-carousel-wrap { overflow: hidden; margin-top: 48px; position: relative; }
+.testi-carousel-wrap::before,
+.testi-carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.testi-carousel-wrap::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
+.testi-carousel-wrap::after  { right: 0; background: linear-gradient(to left,  #ffffff, transparent); }
+.testi-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: testiScroll 40s linear infinite;
+}
+.testi-track:hover { animation-play-state: paused; }
+@keyframes testiScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testi-card{background:#fff;border-radius:20px;padding:30px 26px;border:1.5px solid #e8ecf4;position:relative;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;box-shadow:0 2px 16px rgba(11,29,58,.05); width: 360px; flex-shrink: 0;}
 .testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(11,29,58,.12);border-color:var(--gold);}
 .testi-quote{font-size:2.8rem;color:var(--gold3);line-height:.8;margin-bottom:14px;font-family:'Playfair Display',serif;}
 .testi-text{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:20px;}
 .testi-author{display:flex;align-items:center;gap:12px;}
-.testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#000;flex-shrink:0;box-shadow:0 4px 12px rgba(200,148,31,.3);}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#1a3a6b);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(11,29,58,.2);}
 .testi-name{font-weight:700;color:var(--navy);font-size:.87rem;}
 .testi-role{font-size:.72rem;color:var(--muted);}
 .stars{color:var(--gold);font-size:.78rem;margin-bottom:10px;letter-spacing:2px;}
@@ -931,15 +865,15 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 }
 .form-submit-btn {
   width: 100%;
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: #000;
+  background: var(--navy);
+  color: #fff;
   border: none;
   border-radius: 50px;
   padding: 16px 30px;
   font-weight: 800;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(200, 148, 31, 0.25);
+  box-shadow: 0 6px 20px rgba(11, 29, 58, 0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -948,8 +882,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 }
 .form-submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(200, 148, 31, 0.4);
-  background: linear-gradient(135deg, var(--gold2), #ffa500);
+  box-shadow: 0 10px 25px rgba(11, 29, 58, 0.4);
+  background: #0F1E36;
 }
 .form-submit-btn:active {
   transform: translateY(0);
@@ -982,20 +916,20 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
               height: 350px;
               display: flex;
               flex-direction: column;
-              align-items: center;
+              align-items: flex-start;
               justify-content: center;
-              text-align: center;
+              text-align: left;
               box-sizing: border-box;
-              font-family: 'Fredoka', system-ui, sans-serif;
+              font-family: 'Montserrat', system-ui, sans-serif;
             }
             .text-row-container {
               display: flex;
               align-items: center;
-              justify-content: center;
+              justify-content: flex-start;
               text-transform: uppercase;
-              font-size: 120px;
+              font-size: 130px;
               letter-spacing: 0.08em;
-              font-weight: 600;
+              font-weight: 800;
               color: #0C3866;
               line-height: 1;
               white-space: nowrap;
@@ -1014,14 +948,15 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             .tagline-container-block {
               margin-top: 12px;
               font-family: "Caveat", cursive;
-              font-size: 58px;
+              font-size: 64px;
               letter-spacing: 0.02em;
-              color: #FF6B00;
+              color: #0ea5e9;
               text-transform: none;
               font-weight: 700;
               line-height: 1.2;
               white-space: nowrap;
               max-width: 100%;
+              text-align: left;
             }
           </style>
           
@@ -1083,7 +1018,10 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       </svg>
   </a>
   <ul class="nav-links">
-    <li><a href="#home">Track Record</a></li>
+    <li><a href="#what-we-do">What We Do</a></li>
+    <li><a href="#edison-promise">The Edison Promise</a></li>
+    <li><a href="#our-works">Our Works</a></li>
+    <li><a href="#our-footprints">Our Footprints</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#get-in-touch">Get in Touch</a></li>
   </ul>
@@ -1105,92 +1043,468 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="toggleMenu()">✕</button>
-  <a href="#home" onclick="toggleMenu()">Track Record</a>
+  <a href="#what-we-do" onclick="toggleMenu()">What We Do</a>
+  <a href="#edison-promise" onclick="toggleMenu()">The Edison Promise</a>
+  <a href="#our-works" onclick="toggleMenu()">Our Works</a>
+  <a href="#our-footprints" onclick="toggleMenu()">Our Footprints</a>
   <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
   <a href="#get-in-touch" onclick="toggleMenu()">Get in Touch</a>
   <a href="tel:+919686847008" style="color:var(--gold2);">📞 +91 96868 47008</a>
   <a href="https://wa.me/919686847008?text=Hello%20Edison%20Amp%20Technologies%2C%20I%20need%20your%20services!" target="_blank" style="color:#25D366; margin-top: 15px;">💬 WhatsApp</a>
 </div>
 
-<!-- HERO -->
-<!-- STATS MAIN CONTENT -->
-<main class="stats-main" id="home">
-  <div style="text-align: center; margin-bottom: 48px; max-width: 600px;">
-    <h1 style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.02em;">Our Track Record</h1>
-    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin: 0; font-weight: 500;">
-      Delivering premium industrial, commercial lighting, and high-performance power engineering solutions with certified quality and reliability.
-    </p>
-  </div>
-  
-  <div class="stats-container">
-    <!-- Stat 1: Years of Experience -->
-    <div class="stat-card stat-item">
-      <div class="stat-number-wrapper">
-        <span class="stat-num" data-target="15">0<span style="color:var(--gold2); font-weight:700; margin-left:2px;">+</span></span>
-      </div>
-      <p class="stat-label">Years of Experience</p>
+<!-- WHAT WE DO -->
+<section class="section services-bg" id="what-we-do" style="padding-top:160px;">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="sec-eyebrow">What We Do</p>
+      <div class="gold-line" style="margin:0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">Premium</span>
+        <span class="i-word">Electrical</span>
+        <em class="i-word-em"><span class="i-word">Solutions</span></em>
+      </h2>
+      <p class="sec-sub" style="margin:0 auto;">From energy-efficient LED lighting to heavy-duty HT/LT infrastructure — we deliver certified, end-to-end electrical excellence across Bangalore.</p>
     </div>
+    <div class="services-grid">
+      <!-- LED Lighting -->
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="28" r="14" stroke="#0C3866" stroke-width="3"/><path d="M26 42h12M29 46h6" stroke="#0C3866" stroke-width="3" stroke-linecap="round"/><path d="M32 14V10M44 20l3-3M48 32h4M44 44l3 3M32 50v4M20 44l-3 3M16 32h-4M20 20l-3-3" stroke="#C8941F" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="svc-title">LED Lighting Retrofit</h3>
+        <p class="svc-desc">Complete LED lighting upgrades for warehouses, factories, commercial spaces, and industrial facilities — reducing energy bills by up to 60%.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Industrial LED</span>
+          <span class="svc-tag">High Bay</span>
+          <span class="svc-tag">Street Lights</span>
+          <span class="svc-tag">Energy Saving</span>
+        </div>
+      </div>
+      <!-- HVLS Fans -->
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="5" fill="#0C3866"/><path d="M32 27C32 20 36 12 32 8C28 12 30 20 32 27Z" fill="#C8941F"/><path d="M37 32C44 32 52 28 56 32C52 36 44 34 37 32Z" fill="#C8941F"/><path d="M32 37C32 44 28 52 32 56C36 52 34 44 32 37Z" fill="#C8941F"/><path d="M27 32C20 32 12 36 8 32C12 28 20 30 27 32Z" fill="#C8941F"/></svg>
+        </div>
+        <h3 class="svc-title">HVLS Industrial Fans</h3>
+        <p class="svc-desc">High Volume Low Speed fans for large industrial spaces — improving air circulation, worker comfort, and operational efficiency year-round.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">HVLS</span>
+          <span class="svc-tag">Ventilation</span>
+          <span class="svc-tag">Industrial</span>
+          <span class="svc-tag">Commercial</span>
+        </div>
+      </div>
+      <!-- HT/LT Electrical -->
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="10" width="32" height="44" rx="4" stroke="#0C3866" stroke-width="3"/><path d="M24 20h16M24 28h16M24 36h10" stroke="#C8941F" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="44" r="3" fill="#0C3866"/></svg>
+        </div>
+        <h3 class="svc-title">HT &amp; LT Installations</h3>
+        <p class="svc-desc">Complete HT/LT electrical infrastructure including transformer commissioning, BESCOM approvals, switchgear, and control panel installation.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">HT Panels</span>
+          <span class="svc-tag">Transformer</span>
+          <span class="svc-tag">BESCOM</span>
+          <span class="svc-tag">LT Switchgear</span>
+        </div>
+      </div>
+      <!-- Energy Audit -->
+      <div class="svc-card reveal reveal-delay-4">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8L14 36h18l-4 20 22-28H32L36 8z" fill="none" stroke="#0C3866" stroke-width="3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="svc-title">Energy Auditing &amp; APFC</h3>
+        <p class="svc-desc">Professional energy audits and Automatic Power Factor Correction systems to reduce power penalties and maximise your electrical efficiency.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">APFC</span>
+          <span class="svc-tag">Power Factor</span>
+          <span class="svc-tag">Audit</span>
+          <span class="svc-tag">Efficiency</span>
+        </div>
+      </div>
+      <!-- AMC -->
+      <div class="svc-card reveal reveal-delay-5">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 12a20 20 0 100 40 20 20 0 000-40z" stroke="#0C3866" stroke-width="3"/><path d="M32 22v12l8 4" stroke="#C8941F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="svc-title">Electrical AMC Support</h3>
+        <p class="svc-desc">Annual Maintenance Contracts with priority response — scheduled inspections, 24/7 emergency callouts, and preventive maintenance programmes.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">AMC</span>
+          <span class="svc-tag">Maintenance</span>
+          <span class="svc-tag">24/7 Support</span>
+          <span class="svc-tag">Preventive</span>
+        </div>
+      </div>
+      <!-- Custom Panels -->
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon-wrap">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="12" width="44" height="40" rx="4" stroke="#0C3866" stroke-width="3"/><circle cx="22" cy="26" r="4" stroke="#C8941F" stroke-width="2"/><circle cx="34" cy="26" r="4" stroke="#C8941F" stroke-width="2"/><rect x="16" y="36" width="32" height="8" rx="2" fill="#C8941F" opacity="0.3" stroke="#0C3866" stroke-width="1.5"/></svg>
+        </div>
+        <h3 class="svc-title">Custom Control Panels</h3>
+        <p class="svc-desc">Design and fabrication of bespoke electrical control panels, motor control centres (MCC), and distribution boards for industrial applications.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">MCC Panels</span>
+          <span class="svc-tag">DB Boards</span>
+          <span class="svc-tag">Custom Build</span>
+          <span class="svc-tag">Industrial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Stat 2: Happy Customers -->
-    <div class="stat-card stat-item">
-      <div class="stat-number-wrapper">
-        <span class="stat-num" data-target="50">0<span style="color:var(--gold2); font-weight:700; margin-left:2px;">+</span></span>
+<!-- THE EDISON PROMISE -->
+<section class="section why-section-bg" id="edison-promise">
+  <div class="section-inner">
+    <div style="display: block;">
+      <div class="reveal" style="text-align: center; margin-bottom: 50px;">
+        <p class="sec-eyebrow">The Edison Promise</p>
+        <div class="gold-line" style="margin: 0 auto 20px;"></div>
+        <h2 class="sec-title interactive-title">
+          <span class="i-word">Why</span>
+          <span class="i-word">Choose</span>
+          <em class="i-word-em"><span class="i-word">Edison</span></em>
+        </h2>
+        <p class="sec-sub" style="margin: 0 auto;">Every project is backed by certified engineering, genuine brands, and a team that stands behind every connection we make.</p>
       </div>
-      <p class="stat-label">Happy Customers</p>
+
+      <div class="why-visual reveal reveal-delay-2" style="max-width: 800px; margin: 0 auto; padding: 48px;">
+        <p style="font-size:1.2rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px;text-align:center;">Performance Benchmarks</p>
+        
+        <div class="wv-row" style="padding: 18px 0;">
+          <span class="wv-label" style="font-size: 1.1rem;">Energy Savings</span>
+          <div class="wv-bar-wrap" style="height: 12px; margin: 0 24px;"><div class="wv-bar" data-width="60"></div></div>
+          <span class="wv-pct" data-target="60" style="font-size: 1.1rem;">0%</span>
+        </div>
+        <div class="wv-row" style="padding: 18px 0;">
+          <span class="wv-label" style="font-size: 1.1rem;">Client Retention</span>
+          <div class="wv-bar-wrap" style="height: 12px; margin: 0 24px;"><div class="wv-bar" data-width="99"></div></div>
+          <span class="wv-pct" data-target="99" style="font-size: 1.1rem;">0%</span>
+        </div>
+        <div class="wv-row" style="padding: 18px 0;">
+          <span class="wv-label" style="font-size: 1.1rem;">On-Time Delivery</span>
+          <div class="wv-bar-wrap" style="height: 12px; margin: 0 24px;"><div class="wv-bar" data-width="99"></div></div>
+          <span class="wv-pct" data-target="99" style="font-size: 1.1rem;">0%</span>
+        </div>
+        <div class="wv-row" style="padding: 18px 0; border-bottom: none;">
+          <span class="wv-label" style="font-size: 1.1rem;">BESCOM Approval Rate</span>
+          <div class="wv-bar-wrap" style="height: 12px; margin: 0 24px;"><div class="wv-bar" data-width="100"></div></div>
+          <span class="wv-pct" data-target="100" style="font-size: 1.1rem;">0%</span>
+        </div>
+        
+        <!-- Running Numbers -->
+        <div class="why-stats-row" style="justify-content: center; margin-top: 48px; border-top: 1px solid rgba(200, 148, 31, 0.1); padding-top: 36px; gap: 40px;">
+          <div class="why-stat-item" style="text-align: center;">
+            <div style="font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
+              <span class="stat-num" data-target="15" data-duration="3000" style="color:var(--navy);">0</span>
+            </div>
+            <div class="why-stat-lbl" style="font-size: 1rem; margin-top: 8px;">Years Active</div>
+          </div>
+          <div class="why-stat-divider" style="height: 60px;"></div>
+          <div class="why-stat-item" style="text-align: center;">
+            <div style="font-family:'Playfair Display',serif; font-size:3.5rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
+              <span class="stat-num" data-target="50" data-duration="3000" style="color:var(--navy);">0</span>
+            </div>
+            <div class="why-stat-lbl" style="font-size: 1rem; margin-top: 8px;">Clients Served</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
-</main>
+</section>
+
+<!-- OUR WORKS -->
+<section class="section works-section-bg" id="our-works">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="sec-eyebrow">Our Works</p>
+      <div class="gold-line" style="margin:0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">Projects</span>
+        <span class="i-word">We're</span>
+        <em class="i-word-em"><span class="i-word">Proud</span> <span class="i-word">Of</span></em>
+      </h2>
+      <p class="sec-sub" style="margin:0 auto;">Real installations across Bangalore's leading industrial, commercial, and manufacturing facilities.</p>
+    </div>
+    <div class="works-grid">
+      <div class="work-card reveal reveal-delay-1">
+        <div class="work-img-wrap">
+          <img src="work_led.png" alt="LED Lighting Installation" loading="lazy"/>
+        </div>
+        <div class="work-content">
+          <span class="work-tag">LED Retrofit</span>
+          <h3 class="work-title">Warehouse LED Lighting Upgrade</h3>
+          <p class="work-desc">Complete LED lighting retrofit across a 40,000 sq ft Peenya logistics warehouse — 58% energy reduction, zero downtime during installation.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-2">
+        <div class="work-img-wrap">
+          <img src="work_fan.png" alt="HVLS Fan Installation" loading="lazy"/>
+        </div>
+        <div class="work-content">
+          <span class="work-tag">HVLS Fans</span>
+          <h3 class="work-title">Industrial HVLS Ventilation</h3>
+          <p class="work-desc">Installation of high-volume industrial fans across a Bommasandra manufacturing plant — dramatically improving airflow and worker comfort.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-3">
+        <div class="work-img-wrap">
+          <img src="work_transformer.png" alt="Transformer Installation" loading="lazy"/>
+        </div>
+        <div class="work-content">
+          <span class="work-tag">HT/LT Project</span>
+          <h3 class="work-title">Transformer Commissioning</h3>
+          <p class="work-desc">Full HT transformer commissioning including BESCOM drawing approvals, inspectorate clearances, and LT panel integration for a major facility.</p>
+        </div>
+      </div>
+      <div class="work-card reveal reveal-delay-4">
+        <div class="work-img-wrap">
+          <img src="work_apfc.png" alt="APFC Panel" loading="lazy"/>
+        </div>
+        <div class="work-content">
+          <span class="work-tag">Energy Audit</span>
+          <h3 class="work-title">APFC Panel &amp; Power Audit</h3>
+          <p class="work-desc">Custom-built Automatic Power Factor Correction panel installation, eliminating reactive power penalties and improving overall grid efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR FOOTPRINTS -->
+<section class="vendors-section" id="our-footprints">
+  <div class="vendors-inner">
+    <div class="reveal" style="text-align:center; margin-bottom: 56px;">
+      <p class="sec-eyebrow">Our Footprints</p>
+      <div class="gold-line" style="margin:0 auto 20px;"></div>
+      <h2 class="sec-title interactive-title">
+        <span class="i-word">Trusted</span>
+        <span class="i-word">Brands</span>
+        <em class="i-word-em"><span class="i-word">&amp; Partners</span></em>
+      </h2>
+      <p class="sec-sub" style="margin:0 auto;">We are authorised suppliers and installation partners for India's most trusted electrical and lighting brands.</p>
+    </div>
+    <div class="vendors-cat">
+      <p class="vendors-cat-label">Lighting</p>
+      <h3 class="vendors-cat-title">LED &amp; Lighting Brands</h3>
+      <div class="vendors-row">
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">💡</div><span class="vendor-name">Philips</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">💡</div><span class="vendor-name">Havells</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">💡</div><span class="vendor-name">Crompton</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">💡</div><span class="vendor-name">Osram</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">💡</div><span class="vendor-name">Syska</span></div>
+      </div>
+    </div>
+    <div class="vendors-cat">
+      <p class="vendors-cat-label">Electrical &amp; Switchgear</p>
+      <h3 class="vendors-cat-title">HT/LT &amp; Panel Brands</h3>
+      <div class="vendors-row">
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">⚡</div><span class="vendor-name">ABB</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">⚡</div><span class="vendor-name">Schneider</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">⚡</div><span class="vendor-name">Siemens</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">⚡</div><span class="vendor-name">L&amp;T</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">⚡</div><span class="vendor-name">Legrand</span></div>
+      </div>
+    </div>
+    <div class="vendors-cat">
+      <p class="vendors-cat-label">Industrial Fans</p>
+      <h3 class="vendors-cat-title">Ventilation Partners</h3>
+      <div class="vendors-row">
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">🌀</div><span class="vendor-name">Airius</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">🌀</div><span class="vendor-name">Big Ass Fans</span></div>
+        <div class="vendor-card reveal"><div class="vendor-logo" style="font-size:1.4rem;display:flex;align-items:center;justify-content:center;width:52px;height:52px;">🌀</div><span class="vendor-name">Khaitan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- TESTIMONIALS -->
 <section class="section testi-bg" id="testimonials">
   <div class="section-inner">
     <div class="reveal" style="text-align: center;">
-      <p class="sec-eyebrow" style="color: var(--gold);">Testimonials</p>
+      <p class="sec-eyebrow">Testimonials</p>
       <div class="gold-line" style="margin: 0 auto 20px;"></div>
-      <h2 class="sec-title interactive-title">
-        <span class="i-word">What</span>
-        <span class="i-word">Our</span>
-        <em class="i-word-em"><span class="i-word">Clients</span> <span class="i-word">Say</span></em>
-      </h2>
-      <p class="sec-sub" style="margin: 0 auto; color: var(--muted);">Direct feedback from facility engineers, factory heads, and operations teams who rely on Edison AMP.</p>
+      
+      <div style="display: flex; align-items: flex-end; justify-content: center; gap: 60px; flex-wrap: wrap; margin-bottom: 28px;">
+        
+        <!-- 15+ Years -->
+        <div style="text-align: center;">
+          <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; line-height:1;">
+            <span class="stat-num" data-target="15" data-duration="3000" style="color:#059669;">0</span>
+          </div>
+          <div style="font-size:0.8rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:#059669; margin-top:6px;">Years</div>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="sec-title interactive-title" style="margin: 0;">
+          <span class="i-word">What</span>
+          <span class="i-word">Our</span>
+          <em class="i-word-em"><span class="i-word">Clients</span> <span class="i-word">Say</span></em>
+        </h2>
+        
+        <!-- 50+ Happy Customers -->
+        <div style="text-align: center;">
+          <div style="font-family:'Playfair Display',serif; font-size:3rem; font-weight:900; line-height:1;">
+            <span class="stat-num" data-target="50" data-duration="3000" style="color:#7c3aed;">0</span>
+          </div>
+          <div style="font-size:0.8rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:#7c3aed; margin-top:6px;">Happy Customers</div>
+        </div>
+
+      </div>
+      
+      <p class="sec-sub" style="margin: 20px auto 0;">Direct feedback from facility engineers, factory heads, and operations teams who rely on Edison AMP.</p>
     </div>
-    <div class="testi-grid">
-      <!-- Testi 1 -->
-      <div class="testi-card reveal reveal-delay-1">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">“</div>
-        <p class="testi-text">The lighting quality improvement is incredible. Edison AMP upgraded our entire Peenya logistics warehouse lighting line-by-line without causing a single minute of downtime for our dispatch teams.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">R</div>
-          <div>
-            <div class="testi-name">Rajesh Gowda</div>
-            <div class="testi-role">Operations Manager, Warehouse Hub</div>
+
+    <!-- Infinite Sliding Carousel -->
+    <div class="testi-carousel-wrap reveal">
+      <div class="testi-track">
+        <!-- Original 8 cards -->
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The lighting quality improvement is incredible. Edison AMP upgraded our entire Peenya logistics warehouse lighting line-by-line without causing a single minute of downtime.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div><div class="testi-name">Rajesh Gowda</div><div class="testi-role">Operations Manager, Warehouse Hub</div></div>
           </div>
         </div>
-      </div>
-      <!-- Testi 2 -->
-      <div class="testi-card reveal reveal-delay-2">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">“</div>
-        <p class="testi-text">Getting HT approvals from BESCOM can be a nightmare. Edison AMP handled the drawing approvals, inspectorate clearances, and transformer commissioning flawlessly. A highly professional outfit.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">S</div>
-          <div>
-            <div class="testi-name">Santhosh Kumar</div>
-            <div class="testi-role">Technical Director, Apex Infrastructure</div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Getting HT approvals from BESCOM can be a nightmare. Edison AMP handled the drawing approvals, inspectorate clearances, and transformer commissioning flawlessly.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div><div class="testi-name">Santhosh Kumar</div><div class="testi-role">Technical Director, Apex Infrastructure</div></div>
           </div>
         </div>
-      </div>
-      <!-- Testi 3 -->
-      <div class="testi-card reveal reveal-delay-3">
-        <div class="stars">★★★★★</div>
-        <div class="testi-quote">“</div>
-        <p class="testi-text">Their priority AMC service is outstanding. We had a sudden LT switchgear trip at 10 PM. Their engineering team arrived within 90 minutes and had our production line back up and running.</p>
-        <div class="testi-author">
-          <div class="testi-avatar">M</div>
-          <div>
-            <div class="testi-name">Manoj Hegde</div>
-            <div class="testi-role">Maintenance Chief, Bommasandra Plastics</div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Their priority AMC service is outstanding. We had a sudden LT switchgear trip at 10 PM. Their team arrived within 90 minutes and had our production line back up and running.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div><div class="testi-name">Manoj Hegde</div><div class="testi-role">Maintenance Chief, Bommasandra Plastics</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">We installed HVLS fans across our entire manufacturing floor. The difference in worker comfort was immediate and measurable. Energy savings were a great bonus on top.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div><div class="testi-name">Priya Nair</div><div class="testi-role">Plant Head, Kengeri Manufacturing</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Edison AMP's energy audit saved us over ₹4 lakhs per year in electricity bills. Their APFC panel eliminated all our power factor penalties completely within the first month.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">V</div>
+            <div><div class="testi-name">Venkatesh Reddy</div><div class="testi-role">CFO, Reddy Textiles Ltd</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Extremely professional team. From site survey to final commissioning of our new LT panel, every step was documented and executed on schedule. Highly recommended.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><div class="testi-name">Arvind Sharma</div><div class="testi-role">GM – Engineering, Whitefield Tech Park</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">We've been on their AMC contract for 3 years now. Zero unplanned outages. Their preventive maintenance schedule is thorough and the engineers actually explain what they find.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div><div class="testi-name">Deepak Joshi</div><div class="testi-role">Facility Manager, Peenya Industrial Estate</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The LED retrofit was completed in phases across our cold storage facility without disrupting operations. Bills dropped by 55% in the very first month. Exactly what they promised.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div><div class="testi-name">Kiran Bhat</div><div class="testi-role">Director, FreshHold Logistics</div></div>
+          </div>
+        </div>
+        <!-- Duplicate set for seamless infinite loop -->
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The lighting quality improvement is incredible. Edison AMP upgraded our entire Peenya logistics warehouse lighting line-by-line without causing a single minute of downtime.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div><div class="testi-name">Rajesh Gowda</div><div class="testi-role">Operations Manager, Warehouse Hub</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Getting HT approvals from BESCOM can be a nightmare. Edison AMP handled the drawing approvals, inspectorate clearances, and transformer commissioning flawlessly.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div><div class="testi-name">Santhosh Kumar</div><div class="testi-role">Technical Director, Apex Infrastructure</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Their priority AMC service is outstanding. We had a sudden LT switchgear trip at 10 PM. Their team arrived within 90 minutes and had our production line back up and running.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div><div class="testi-name">Manoj Hegde</div><div class="testi-role">Maintenance Chief, Bommasandra Plastics</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">We installed HVLS fans across our entire manufacturing floor. The difference in worker comfort was immediate and measurable. Energy savings were a great bonus on top.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div><div class="testi-name">Priya Nair</div><div class="testi-role">Plant Head, Kengeri Manufacturing</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Edison AMP's energy audit saved us over ₹4 lakhs per year in electricity bills. Their APFC panel eliminated all our power factor penalties completely within the first month.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">V</div>
+            <div><div class="testi-name">Venkatesh Reddy</div><div class="testi-role">CFO, Reddy Textiles Ltd</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Extremely professional team. From site survey to final commissioning of our new LT panel, every step was documented and executed on schedule. Highly recommended.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><div class="testi-name">Arvind Sharma</div><div class="testi-role">GM – Engineering, Whitefield Tech Park</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">We've been on their AMC contract for 3 years now. Zero unplanned outages. Their preventive maintenance schedule is thorough and the engineers actually explain what they find.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">D</div>
+            <div><div class="testi-name">Deepak Joshi</div><div class="testi-role">Facility Manager, Peenya Industrial Estate</div></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <div class="testi-quote">"</div>
+          <p class="testi-text">The LED retrofit was completed in phases across our cold storage facility without disrupting operations. Bills dropped by 55% in the very first month. Exactly what they promised.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div><div class="testi-name">Kiran Bhat</div><div class="testi-role">Director, FreshHold Logistics</div></div>
           </div>
         </div>
       </div>
@@ -1202,18 +1516,18 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <section class="section contact-section-bg" id="get-in-touch">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;">
-      <p class="sec-eyebrow" style="color:var(--gold);">Get in Touch</p>
+      <p class="sec-eyebrow">Get in Touch</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title" style="color:var(--navy);">
         <span class="i-word">Let's</span>
         <span class="i-word">Work</span>
         <em class="i-word-em"><span class="i-word">Together</span></em>
       </h2>
-      <p class="sec-sub" style="color:var(--muted);margin:0 auto;">Whether you need an energy audit, a new LED installation, or a full HT &amp; LT project — our team is ready to visit your site and deliver a free consultation. Available Mon – Sat, 9 AM to 7 PM.</p>
+      <p class="sec-sub" style="margin:0 auto;">We're happy to visit your site and deliver a free consultation.</p>
     </div>
     
-    <div class="contact-container">
-      <!-- Left Column: Contact Form -->
+    <div class="contact-container" style="display: block; max-width: 800px; margin: 48px auto 0;">
+      <!-- Centered Contact Form -->
       <div class="contact-form-card reveal reveal-delay-1">
         <form id="contactForm" onsubmit="event.preventDefault(); handleFormSubmit();">
           <div class="form-group">
@@ -1250,42 +1564,6 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           </button>
         </form>
       </div>
-
-      <!-- Right Column: Contact Details Cards -->
-      <div class="contact-info-column reveal reveal-delay-2">
-        <div class="contact-card">
-          <div class="ci-icon">👤</div>
-          <div>
-            <div class="ci-label">Contact Person</div>
-            <div class="ci-val">
-              Edison Amp Technologies<br>
-              <a href="tel:+919686847008" style="font-size:0.9em;opacity:0.85;white-space:nowrap;">📞 +91 96868 47008</a><br>
-              <a href="tel:+916366688610" style="font-size:0.9em;opacity:0.85;white-space:nowrap;">📞 +91 6366 688 610</a>
-            </div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="ci-icon">✉️</div>
-          <div>
-            <div class="ci-label">Email Us</div>
-            <div class="ci-val"><a href="mailto:sales@edisonamp.in">sales@edisonamp.in</a></div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="ci-icon">📍</div>
-          <div>
-            <div class="ci-label">Edison AMP Office</div>
-            <div class="ci-val" style="font-size:0.88rem;line-height:1.5;">#3, 80ft road, Srinivasanagar, Bsk 1st stage, Bangalore -560050</div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="ci-icon">🕐</div>
-          <div>
-            <div class="ci-label">Working Hours</div>
-            <div class="ci-val">Monday to Saturday — 9 AM to 7 PM<br><span style="font-size:0.88rem;opacity:0.85;">Free site visits across Bangalore on request</span></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1309,16 +1587,16 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
               justify-content: center;
               text-align: left;
               box-sizing: border-box;
-              font-family: 'Fredoka', system-ui, sans-serif;
+              font-family: 'Montserrat', system-ui, sans-serif;
             }
             .text-row-container-footer {
               display: flex;
               align-items: center;
               justify-content: flex-start;
               text-transform: uppercase;
-              font-size: 120px;
+              font-size: 130px;
               letter-spacing: 0.08em;
-              font-weight: 600;
+              font-weight: 800;
               color: #0C3866;
               line-height: 1;
               white-space: nowrap;
@@ -1337,9 +1615,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             .tagline-container-block-footer {
               margin-top: 12px;
               font-family: "Caveat", cursive;
-              font-size: 58px;
+              font-size: 64px;
               letter-spacing: 0.02em;
-              color: #FF6B00;
+              color: #0ea5e9;
               text-transform: none;
               font-weight: 700;
               line-height: 1.2;
@@ -1575,7 +1853,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         el.innerHTML = v + `<span style="color:var(--gold2); font-weight:700; margin-left:2px;">+</span>`;
       };
       setVal(0);
-      const duration = 1000; // 1.0 second count up duration on hover
+      const customDuration = el.getAttribute('data-duration');
+      const duration = customDuration ? parseInt(customDuration) : 1000;
       const stepTime = Math.max(Math.floor(duration / target), 30);
       const timer = setInterval(() => {
         current += 1;
@@ -1699,7 +1978,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     });
   })();
 
-  // Cursor Follower (O Bulb Icon)
+  // Cursor Follower (O Bulb Icon) - Disabled temporarily due to performance
+  /*
   (function() {
     if (window.innerWidth <= 1024) return;
     
@@ -1756,6 +2036,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     }
     update();
   })();
+  */
 </script>
 </body>
 </html>
