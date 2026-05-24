@@ -2472,5 +2472,50 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
     animate();
   })();
 </script>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <a id="backToTop" class="back-to-top" href="#" aria-label="Back to top">
+    <svg class="progress-circle" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+      <circle class="progress-circle-bg" cx="23" cy="23" r="21" fill="none" stroke-width="2.5"/>
+      <circle class="progress-circle-bar" cx="23" cy="23" r="21" fill="none" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <svg class="arrow-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+  </a>
+
+  <script>
+    (function () {
+      const btn = document.getElementById('backToTop');
+      const bar = btn.querySelector('.progress-circle-bar');
+      const circumference = 2 * Math.PI * 21; // r=21 → ~131.95
+      bar.style.strokeDasharray  = circumference;
+      bar.style.strokeDashoffset = circumference;
+
+      function updateProgress() {
+        const scrollTop    = window.scrollY || document.documentElement.scrollTop;
+        const docHeight    = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress     = docHeight > 0 ? scrollTop / docHeight : 0;
+        const offset       = circumference * (1 - progress);
+        bar.style.strokeDashoffset = offset;
+
+        if (scrollTop > 300) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Initialise on load
+      updateProgress();
+    })();
+  </script>
 </body>
 </html>
