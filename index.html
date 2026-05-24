@@ -317,7 +317,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .gold-line{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;margin-bottom:20px;}
 
 /* ===== SERVICES ===== */
-.services-bg{background:#fdfaf6;}
+.services-bg{background:#fcf9f2;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
 .svc-card{background:#fff;border-radius:32px 8px 32px 8px;padding:36px 28px;border:1.5px solid #f0ecdf;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;cursor:default;box-shadow:0 4px 20px rgba(11,29,58,.04);}
 .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:5;}
@@ -337,7 +337,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .svc-card:hover .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
 
 /* ===== WHY US ===== */
-.why-section-bg{background:#fdfaf6;}
+.why-section-bg{background:#ffffff;}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
 .why-list{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
 .why-item{
@@ -553,7 +553,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 }
 
 /* ===== OUR WORKS ===== */
-.works-section-bg { background: #fdfaf6; }
+.works-section-bg { background: #fbf6ed; }
 .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 48px; }
 .work-card { background: #fff; border-radius: 20px; border: 1.5px solid #e8ecf4; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(11,29,58,0.03); }
 .work-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11,29,58,0.1); border-color: var(--gold); }
@@ -568,7 +568,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   .works-grid { grid-template-columns: 1fr; }
 }
 /* ===== TESTIMONIALS ===== */
-.testi-bg{background:#ffffff;}
+.testi-bg{background:linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);}
 /* Carousel */
 .testi-carousel-wrap { overflow: hidden; margin-top: 48px; position: relative; }
 .testi-carousel-wrap::before,
@@ -581,7 +581,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   pointer-events: none;
 }
 .testi-carousel-wrap::before { left: 0; background: linear-gradient(to right, #ffffff, transparent); }
-.testi-carousel-wrap::after  { right: 0; background: linear-gradient(to left,  #ffffff, transparent); }
+.testi-carousel-wrap::after  { right: 0; background: linear-gradient(to left,  #faf7f0, transparent); }
 .testi-track {
   display: flex;
   gap: 24px;
@@ -757,13 +757,25 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 .vendors-row .vendor-card:nth-child(7) { transition-delay: 0.35s; }
 .vendors-row .vendor-card:nth-child(8) { transition-delay: 0.4s; }
 .vendors-row .vendor-card:nth-child(9) { transition-delay: 0.45s; }
-/* ===== BACK TO TOP BUTTON ===== */
+/* ===== SCROLL PROGRESS BAR (TOP OF PAGE) ===== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  width: 0%;
+  z-index: 10001;
+  transition: width 0.05s linear;
+}
+
+/* ===== BACK TO TOP BUTTON WITH PROGRESS ===== */
 .back-to-top {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   background: var(--gold);
   color: #000;
   border-radius: 50%;
@@ -776,7 +788,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: 9998;
 }
 .back-to-top:hover {
@@ -789,11 +801,33 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   visibility: visible;
   transform: translateY(0);
 }
-.back-to-top svg {
+.back-to-top .arrow-icon {
   width: 18px;
   height: 18px;
   fill: currentColor;
+  z-index: 2;
   transition: transform 0.3s ease;
+}
+.back-to-top:hover .arrow-icon {
+  transform: translateY(-2px);
+}
+.progress-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+.progress-circle-bg {
+  stroke: rgba(255, 255, 255, 0.35);
+}
+.progress-circle-bar {
+  stroke: var(--navy);
+  stroke-dasharray: 113.1;
+  stroke-dashoffset: 113.1;
+  transition: stroke-dashoffset 0.05s linear;
 }
 
 /* ===== CONTACT FORM & TWO-COLUMN LAYOUT ===== */
@@ -864,16 +898,17 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   min-height: 120px;
 }
 .form-submit-btn {
-  width: 100%;
-  background: var(--navy);
-  color: #fff;
+  width: auto;
+  min-width: 180px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #000;
   border: none;
   border-radius: 50px;
-  padding: 16px 30px;
+  padding: 12px 28px;
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(11, 29, 58, 0.25);
+  box-shadow: 0 6px 20px rgba(200, 148, 31, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -882,8 +917,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 }
 .form-submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(11, 29, 58, 0.4);
-  background: #0F1E36;
+  box-shadow: 0 10px 25px rgba(200, 148, 31, 0.5);
+  background: linear-gradient(135deg, var(--gold2), var(--gold));
 }
 .form-submit-btn:active {
   transform: translateY(0);
@@ -895,9 +930,16 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <!-- FLOATING CONTACTS -->
 
 
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-progress-bar" id="scrollProgress"></div>
+
 <!-- BACK TO TOP BUTTON -->
 <a id="backToTop" class="back-to-top" title="Go to Top">
-  <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  <svg class="progress-circle" width="46" height="46" viewBox="0 0 46 46">
+    <circle class="progress-circle-bg" cx="23" cy="23" r="18" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="3"/>
+    <circle class="progress-circle-bar" cx="23" cy="23" r="18" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
 </a>
 
 <!-- BACKGROUND HEADER BAR -->
@@ -1879,9 +1921,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     
     counters.forEach(c => {
       observer.observe(c);
-      const parent = c.closest('.stat-item');
-      if(parent) {
-        parent.addEventListener('mouseenter', () => {
+      const triggerEl = c.closest('.why-stat-item, .stat-item') || c.parentElement?.parentElement || c;
+      if(triggerEl) {
+        triggerEl.addEventListener('mouseenter', () => {
           runCounter(c);
         });
       }
@@ -1948,17 +1990,43 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     });
   })();
 
-  // Back to Top functionality
+  // Scroll Progress and Back to Top functionality
   (function(){
     const btt = document.getElementById('backToTop');
+    const scrollProgress = document.getElementById('scrollProgress');
     if(!btt) return;
+    
+    const progressPath = btt.querySelector('.progress-circle-bar');
+    const pathLength = 113.1; // 2 * Math.PI * 18
+    
+    if (progressPath) {
+      progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+      progressPath.style.strokeDashoffset = pathLength;
+    }
+    
     window.addEventListener('scroll', () => {
-      if(window.scrollY > 300) {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+      
+      // Update top progress bar
+      if (scrollProgress) {
+        scrollProgress.style.width = `${scrollPercent * 100}%`;
+      }
+      
+      // Update circular progress outline
+      if (progressPath) {
+        progressPath.style.strokeDashoffset = pathLength - (scrollPercent * pathLength);
+      }
+      
+      // Toggle button visibility
+      if(scrollTop > 300) {
         btt.classList.add('show');
       } else {
         btt.classList.remove('show');
       }
     });
+    
     btt.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
