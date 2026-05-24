@@ -314,7 +314,67 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
 .sec-title em{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;color:var(--gold);background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:4px;font-size:inherit;}
 .sec-sub{color:#0ea5e9;font-size:1.05rem;font-weight:500;line-height:1.75;max-width:560px;}
-.gold-line{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;margin-bottom:20px;}
+.gold-line {
+  position: relative;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent 0%, #0ea5e9 20%, #38bdf8 50%, #0ea5e9 80%, transparent 100%);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  transform: scaleX(0.1);
+  opacity: 0.1;
+  transition: transform 1.5s cubic-bezier(0.34, 1.8, 0.64, 1), opacity 1.2s ease;
+  transform-origin: center;
+}
+.reveal.up .gold-line {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.gold-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #38bdf8;
+  border: 2.5px solid var(--white);
+  box-shadow: 0 0 14px rgba(14, 165, 233, 0.95);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0.6);
+  border-radius: 2px;
+  transition: transform 1.0s cubic-bezier(0.34, 2.0, 0.64, 1);
+  box-sizing: border-box;
+}
+.reveal.up .gold-line::after {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.15);
+  animation: blueGlowPulse 2s infinite ease-in-out alternate;
+}
+.reveal:hover .gold-line,
+.gold-line.hover-active {
+  animation: underlineBounce 1.4s cubic-bezier(0.34, 1.8, 0.64, 1) forwards;
+}
+.reveal:hover .gold-line::after,
+.gold-line.hover-active::after {
+  animation: diamondBounce 0.9s cubic-bezier(0.34, 2.0, 0.64, 1) forwards, blueGlowPulse 2s infinite ease-in-out alternate 0.9s;
+}
+@keyframes underlineBounce {
+  0% { transform: scaleX(0.1); opacity: 0.1; }
+  100% { transform: scaleX(1); opacity: 1; }
+}
+@keyframes diamondBounce {
+  0% { transform: translate(-50%, -50%) rotate(45deg) scale(0.6); }
+  100% { transform: translate(-50%, -50%) rotate(45deg) scale(1.15); }
+}
+@keyframes blueGlowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.7);
+    background: #0ea5e9;
+  }
+  100% {
+    box-shadow: 0 0 18px rgba(56, 189, 248, 1);
+    background: #38bdf8;
+  }
+}
 
 /* ===== SERVICES ===== */
 .services-bg{background:#fcf9f2;}
@@ -1845,6 +1905,11 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           runCounter(c);
         });
       }
+      // Also register hover rerun directly on the stat number itself for absolute robustness
+      c.addEventListener('mouseenter', (e) => {
+        e.stopPropagation();
+        runCounter(c);
+      });
     });
   })();
 
@@ -1960,6 +2025,28 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       bar.addEventListener('click', () => {
         bars.forEach(b => b.classList.remove('active'));
         bar.classList.add('active');
+      });
+    });
+  })();
+
+  // Underline (.gold-line) hover re-trigger animation
+  (function(){
+    document.querySelectorAll('.reveal').forEach(reveal => {
+      const line = reveal.querySelector('.gold-line');
+      if (!line) return;
+      
+      // Bind hover re-trigger on the reveal container, the titles, eyebrows, and the line itself
+      const titles = reveal.querySelectorAll('.sec-title, .sec-eyebrow, .gold-line');
+      titles.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          line.classList.remove('hover-active');
+          void line.offsetWidth; // Force layout reflow
+          line.classList.add('hover-active');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          line.classList.remove('hover-active');
+        });
       });
     });
   })();
