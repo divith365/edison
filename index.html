@@ -477,22 +477,161 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 /* ===== SERVICES ===== */
 .services-bg{background:var(--bg-texture), rgba(252,249,242,0.94);}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
-.svc-card{background:#fff;border-radius:32px 8px 32px 8px;padding:36px 28px;border:1.5px solid #f0ecdf;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;cursor:default;box-shadow:0 4px 20px rgba(11,29,58,.04);}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:5;}
-.svc-card::after{content:'';position:absolute;top:0;left:-150%;width:50%;height:100%;background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0) 100%);transform:skewX(-25deg);pointer-events:none;z-index:4;}
-.svc-card:hover{transform:translateY(-10px);box-shadow:0 24px 50px rgba(200,148,31,.18);border-color:var(--gold);}
-.svc-card:hover::before{transform:scaleX(1);}
-.svc-card:hover::after{left:150%;transition:all .85s cubic-bezier(0.4,0,0.2,1);}
-.svc-icon-wrap{width:64px;height:64px;border-radius:16px 6px 16px 6px;background:linear-gradient(135deg,#fff8e6,#ffedb0);display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:transform .3s ease,background .3s ease;overflow:hidden;padding:8px;}
-.svc-icon-wrap img{width:100%;height:100%;object-fit:contain;transition:transform .3s ease;}
-.svc-card:hover .svc-icon-wrap{transform:scale(1.1) rotate(-4deg);background:linear-gradient(135deg,var(--gold),var(--gold2));}
-.svc-card:hover .svc-icon-wrap img{transform:scale(1.1);}
-.svc-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:10px;transition:color .2s ease;}
-.svc-card:hover .svc-title{color:var(--gold);}
+
+/* ===== SERVICE CARDS (What We Do) ===== */
+.svc-card{
+  background:#fff;
+  border-radius:24px;
+  border:1.5px solid #f0ecdf;
+  overflow:hidden;
+  transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;
+  cursor:pointer;
+  box-shadow:0 4px 20px rgba(11,29,58,.04);
+  position:relative;
+}
+.svc-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s ease;z-index:5;
+}
+.svc-card:hover,.svc-card.open{transform:translateY(-6px);box-shadow:0 24px 50px rgba(200,148,31,.18);border-color:var(--gold);}
+.svc-card:hover::before,.svc-card.open::before{transform:scaleX(1);}
+.svc-card-top{padding:32px 28px 28px;}
+.svc-icon-wrap{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#fff8e6,#ffedb0);display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:transform .3s ease,background .3s ease;font-size:2rem;}
+.svc-card:hover .svc-icon-wrap,.svc-card.open .svc-icon-wrap{transform:scale(1.1) rotate(-4deg);background:linear-gradient(135deg,var(--gold),var(--gold2));}
+.svc-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:8px;transition:color .2s ease;}
+.svc-card:hover .svc-title,.svc-card.open .svc-title{color:var(--gold);}
 .svc-desc{font-size:.9rem;color:var(--muted);line-height:1.75;}
-.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
 .svc-tag{background:#f0f3fa;color:var(--navy);font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.03em;transition:background .2s ease,color .2s ease;}
-.svc-card:hover .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
+.svc-card:hover .svc-tag,.svc-card.open .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
+.svc-expand-btn{
+  display:flex;align-items:center;gap:8px;
+  margin-top:20px;
+  font-size:.82rem;font-weight:800;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;
+  background:none;border:none;cursor:pointer;padding:0;
+  font-family:inherit;
+  transition:gap .3s ease;
+}
+.svc-expand-btn svg{transition:transform .4s ease;flex-shrink:0;}
+.svc-card.open .svc-expand-btn svg{transform:rotate(180deg);}
+.svc-expand-btn:hover{gap:12px;}
+
+/* ===== SERVICE DRAWER ===== */
+.svc-drawer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .6s cubic-bezier(0.4,0,0.2,1);
+  border-top:0px solid rgba(200,148,31,.15);
+}
+.svc-card.open .svc-drawer{
+  max-height:800px;
+  border-top-width:1px;
+}
+.svc-drawer-inner{padding:28px;background:#fffdf9;}
+.svc-subsection{margin-bottom:28px;}
+.svc-subsection:last-child{margin-bottom:0;}
+.svc-sub-title{
+  font-family:'Playfair Display',serif;
+  font-size:1rem;font-weight:700;color:var(--navy);
+  margin-bottom:6px;
+}
+.svc-sub-desc{font-size:.82rem;color:var(--muted);margin-bottom:14px;line-height:1.6;}
+
+/* ===== PHOTO SLIDER ===== */
+.svc-slider-wrap{position:relative;overflow:hidden;border-radius:14px;}
+.svc-slider-track{
+  display:flex;
+  gap:12px;
+  transition:transform .5s cubic-bezier(0.4,0,0.2,1);
+}
+.svc-slide{
+  flex-shrink:0;
+  width:180px;
+  height:130px;
+  border-radius:12px;
+  overflow:hidden;
+  cursor:zoom-in;
+  position:relative;
+}
+.svc-slide img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .4s ease;
+}
+.svc-slide:hover img{transform:scale(1.08);}
+.svc-slide-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,.6));
+  color:#fff;font-size:.68rem;font-weight:700;
+  padding:6px 10px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.svc-slider-nav{
+  display:flex;gap:8px;margin-top:10px;align-items:center;justify-content:flex-end;
+}
+.svc-nav-btn{
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(200,148,31,.15);
+  border:1.5px solid rgba(200,148,31,.3);
+  color:var(--gold);font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s,transform .2s;
+  font-weight:700;
+}
+.svc-nav-btn:hover{background:var(--gold);color:#000;transform:scale(1.1);}
+.svc-dots{display:flex;gap:5px;flex:1;}
+.svc-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:rgba(200,148,31,.25);border:none;cursor:pointer;
+  transition:background .25s,transform .25s,width .25s;
+}
+.svc-dot.active{background:var(--gold);width:18px;border-radius:3px;}
+
+/* ===== LIGHTBOX ===== */
+#svcLightbox{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.92);
+  z-index:99999;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .35s ease,visibility .35s ease;
+}
+#svcLightbox.open{opacity:1;visibility:visible;}
+#svcLightbox img{
+  max-width:90vw;max-height:85vh;
+  border-radius:16px;
+  box-shadow:0 30px 80px rgba(0,0,0,.8);
+  transform:scale(.85);
+  transition:transform .35s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+#svcLightbox.open img{transform:scale(1);}
+.lb-close{
+  position:absolute;top:20px;right:24px;
+  background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);
+  border-radius:50%;width:44px;height:44px;
+  color:#fff;font-size:1.4rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;
+  font-weight:300;
+  line-height:1;
+}
+.lb-close:hover{background:rgba(255,255,255,.3);transform:rotate(90deg) scale(1.1);}
+.lb-caption{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
+  border:1px solid rgba(200,148,31,.3);
+  border-radius:50px;padding:7px 20px;
+  color:rgba(255,255,255,.9);font-size:.8rem;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+}
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr;}
+  .svc-slide{width:150px;height:110px;}
+}
 
 /* ===== WHY US ===== */
 .why-section-bg{background:var(--bg-texture), rgba(255,255,255,0.94);}
@@ -1277,7 +1416,411 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   <a href="https://wa.me/919686847008?text=Hello%20Edison%20Amp%20Technologies%2C%20I%20need%20your%20services!" target="_blank" style="color:#25D366; margin-top: 15px;">💬 WhatsApp</a>
 </div>
 
+<!-- HERO -->
+<section id="home" style="min-height:100vh;background:var(--bg-texture),linear-gradient(150deg,rgba(254,252,247,0.97) 0%,rgba(253,248,239,0.97) 50%,rgba(254,251,243,0.97) 100%);padding:190px 24px 80px;position:relative;overflow:hidden;">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-inner" id="heroInner">
+
+    <!-- ══ LEFT PANEL ══ -->
+    <div style="position:relative;min-height:480px;">
+
+      <!-- DEFAULT: Company overview -->
+      <div id="hero-default" class="hpanel" style="opacity:1;transform:translateX(0);transition:opacity .45s ease,transform .45s ease;">
+        <div class="hero-badge">⚡ Bangalore's Trusted Electrical Partner</div>
+        <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.7rem,3.8vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.12;margin-bottom:18px;letter-spacing:-0.02em;">
+          Powering Spaces with<br>
+          <em style="font-family:'Playfair Display',serif;font-weight:900;font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;">Smart Electrical</em><br>
+          Solutions
+        </h1>
+        <p class="hero-desc" style="font-family:'Caveat',cursive;font-size:1.18rem;font-weight:600;color:var(--navy);line-height:1.55;margin-bottom:26px;max-width:460px;">From energy-saving LED lights to massive HVLS fans and heavy-duty HT/LT infrastructure — done right, to bright.</p>
+        <p style="font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Click a service to explore →</p>
+        <ul class="hero-services" style="list-style:none;padding:0;margin:0 0 32px;display:flex;flex-direction:column;gap:10px;">
+          <li class="hero-svc-item" onclick="showHeroService('led')" id="hsvc-led">
+            <div class="hero-svc-icon"><span style="font-size:1.2rem;">💡</span></div>
+            <span class="hero-svc-name">LED Lights &amp; Poles</span>
+            <span class="hero-svc-arrow">›</span>
+          </li>
+          <li class="hero-svc-item" onclick="showHeroService('hvls')" id="hsvc-hvls">
+            <div class="hero-svc-icon"><span style="font-size:1.2rem;">🌀</span></div>
+            <span class="hero-svc-name">HVLS Fans</span>
+            <span class="hero-svc-arrow">›</span>
+          </li>
+          <li class="hero-svc-item" onclick="showHeroService('ltht')" id="hsvc-ltht">
+            <div class="hero-svc-icon"><span style="font-size:1.2rem;">⚡</span></div>
+            <span class="hero-svc-name">LT &amp; HT Electrical Work</span>
+            <span class="hero-svc-arrow">›</span>
+          </li>
+        </ul>
+        <div class="hero-btns">
+          <a href="#get-in-touch" class="btn-primary">Get a Quote</a>
+          <a href="#our-works" class="btn-ghost">See Our Work</a>
+        </div>
+        <div class="hero-stats" style="margin-top:36px;">
+          <div class="stat-item"><div class="stat-num">15+</div><div class="stat-lbl">Years of Trust</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">Projects Done</div></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">BESCOM Approved</div></div>
+        </div>
+      </div>
+
+      <!-- SERVICE PANEL: LED -->
+      <div id="hero-led" class="hpanel hpanel-svc" style="opacity:0;transform:translateX(40px);">
+        <button class="hero-back-btn" onclick="resetHero()">← Back to Edison</button>
+        <div class="hero-svc-pill" style="background:rgba(251,146,60,.12);color:var(--gold);border:1px solid rgba(251,146,60,.3);">💡 LED Lights &amp; Poles</div>
+        <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:800;color:var(--navy);line-height:1.15;margin:14px 0 12px;">Energy-Efficient <em style="font-family:'Playfair Display',serif;font-weight:900;font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">LED</em> Solutions</h1>
+        <p style="font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:22px;max-width:440px;">BESCOM-approved LED luminaires for streets, high-mast towers, industrial bays, and decorative landscapes. Up to <strong style="color:var(--navy);">60% energy savings</strong> over conventional sodium lamps.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+          <span class="hero-chip active" onclick="switchSlide('led',0,this)">🛣️ Street Lighting</span>
+          <span class="hero-chip" onclick="switchSlide('led',1,this)">🏗️ High-Mast</span>
+          <span class="hero-chip" onclick="switchSlide('led',2,this)">🏭 Industrial Bays</span>
+          <span class="hero-chip" onclick="switchSlide('led',3,this)">🌿 Decorative</span>
+        </div>
+        <p id="hero-led-desc" style="font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:24px;min-height:54px;transition:opacity .3s;">BESCOM-approved LED street luminaires for highways, residential roads, and municipal projects with 60% energy savings.</p>
+        <div class="hero-btns">
+          <a href="#get-in-touch" class="btn-primary">Get LED Quote</a>
+          <a href="#what-we-do" class="btn-ghost">View Details</a>
+        </div>
+      </div>
+
+      <!-- SERVICE PANEL: HVLS -->
+      <div id="hero-hvls" class="hpanel hpanel-svc" style="opacity:0;transform:translateX(40px);">
+        <button class="hero-back-btn" onclick="resetHero()">← Back to Edison</button>
+        <div class="hero-svc-pill" style="background:rgba(56,189,248,.1);color:#0ea5e9;border:1px solid rgba(56,189,248,.3);">🌀 HVLS Fans</div>
+        <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:800;color:var(--navy);line-height:1.15;margin:14px 0 12px;">Massive Airflow, <em style="font-family:'Playfair Display',serif;font-weight:900;font-style:italic;background:linear-gradient(135deg,#0ea5e9,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Minimal Energy</em></h1>
+        <p style="font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:22px;max-width:440px;">High-Volume Low-Speed ceiling fans up to 24 ft diameter — engineered for factories, warehouses, airports, and sports halls. Reduce AC load by <strong style="color:var(--navy);">up to 30%</strong>.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+          <span class="hero-chip active" onclick="switchSlide('hvls',0,this)">🏭 Factory</span>
+          <span class="hero-chip" onclick="switchSlide('hvls',1,this)">📦 Warehouse</span>
+          <span class="hero-chip" onclick="switchSlide('hvls',2,this)">✈️ Airport</span>
+          <span class="hero-chip" onclick="switchSlide('hvls',3,this)">🏟️ Sports Hall</span>
+        </div>
+        <p id="hero-hvls-desc" style="font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:24px;min-height:54px;transition:opacity .3s;">Large-diameter HVLS fans up to 24 ft keeping factory floors cool year-round and reducing AC load by up to 30%.</p>
+        <div class="hero-btns">
+          <a href="#get-in-touch" class="btn-primary">Get HVLS Quote</a>
+          <a href="#what-we-do" class="btn-ghost">View Details</a>
+        </div>
+      </div>
+
+      <!-- SERVICE PANEL: LT/HT -->
+      <div id="hero-ltht" class="hpanel hpanel-svc" style="opacity:0;transform:translateX(40px);">
+        <button class="hero-back-btn" onclick="resetHero()">← Back to Edison</button>
+        <div class="hero-svc-pill" style="background:rgba(74,222,128,.1);color:#16a34a;border:1px solid rgba(74,222,128,.3);">⚡ LT &amp; HT Work</div>
+        <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.6rem,3.4vw,2.5rem);font-weight:800;color:var(--navy);line-height:1.15;margin:14px 0 12px;">End-to-End <em style="font-family:'Playfair Display',serif;font-weight:900;font-style:italic;background:linear-gradient(135deg,#16a34a,#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Electrical</em> Infrastructure</h1>
+        <p style="font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:22px;max-width:440px;">Complete Low-Tension and High-Tension electrical work — HT substation erection, panel fabrication, armoured LT cabling, AMC contracts, and full <strong style="color:var(--navy);">BESCOM liaisoning</strong>.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+          <span class="hero-chip active" onclick="switchSlide('ltht',0,this)">🔌 HT Substation</span>
+          <span class="hero-chip" onclick="switchSlide('ltht',1,this)">📋 LT Panels</span>
+          <span class="hero-chip" onclick="switchSlide('ltht',2,this)">🔧 LT Cabling</span>
+          <span class="hero-chip" onclick="switchSlide('ltht',3,this)">📄 AMC &amp; BESCOM</span>
+        </div>
+        <p id="hero-ltht-desc" style="font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:24px;min-height:54px;transition:opacity .3s;">Design, supply and commissioning of HT ring main units, VCBs, metering cubicles and LT distribution boards.</p>
+        <div class="hero-btns">
+          <a href="#get-in-touch" class="btn-primary">Get Electrical Quote</a>
+          <a href="#what-we-do" class="btn-ghost">View Details</a>
+        </div>
+      </div>
+
+    </div><!-- /left -->
+
+    <!-- ══ RIGHT PANEL ══ -->
+    <div class="hero-visual" style="position:relative;">
+
+      <!-- Default visual -->
+      <div id="hv-default" class="hpanel" style="opacity:1;transform:scale(1);transition:opacity .45s ease,transform .45s ease;">
+        <div style="background:linear-gradient(145deg,#0b1120,#0f2040);border-radius:28px;overflow:hidden;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 40px rgba(200,148,31,.12);min-height:440px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:40px 32px;">
+          <div style="font-size:4.5rem;filter:drop-shadow(0 8px 24px rgba(200,148,31,.4));">🏗️</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;text-align:center;line-height:1.4;">Bangalore's Premier<br>Electrical Contractor</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%;max-width:340px;">
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(200,148,31,.2);border-radius:14px;padding:16px 10px;text-align:center;">
+              <div style="font-size:1.6rem;">💡</div>
+              <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.7);margin-top:6px;letter-spacing:.05em;">LED</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(56,189,248,.2);border-radius:14px;padding:16px 10px;text-align:center;">
+              <div style="font-size:1.6rem;">🌀</div>
+              <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.7);margin-top:6px;letter-spacing:.05em;">HVLS</div>
+            </div>
+            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(74,222,128,.2);border-radius:14px;padding:16px 10px;text-align:center;">
+              <div style="font-size:1.6rem;">⚡</div>
+              <div style="font-size:.7rem;font-weight:700;color:rgba(255,255,255,.7);margin-top:6px;letter-spacing:.05em;">LT/HT</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <span style="background:rgba(200,148,31,.15);border:1px solid rgba(200,148,31,.3);color:var(--gold2);font-size:.7rem;font-weight:700;padding:5px 14px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;">BESCOM Certified</span>
+            <span style="background:rgba(200,148,31,.15);border:1px solid rgba(200,148,31,.3);color:var(--gold2);font-size:.7rem;font-weight:700;padding:5px 14px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;">15+ Years</span>
+            <span style="background:rgba(200,148,31,.15);border:1px solid rgba(200,148,31,.3);color:var(--gold2);font-size:.7rem;font-weight:700;padding:5px 14px;border-radius:50px;letter-spacing:.06em;text-transform:uppercase;">500+ Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LED Visual -->
+      <div id="hv-led" class="hpanel" style="opacity:0;transform:scale(.94);transition:opacity .45s ease,transform .45s ease;position:absolute;inset:0;">
+        <div style="border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);height:100%;min-height:440px;position:relative;">
+          <div class="hv-slides" id="hvs-led">
+            <div class="hv-slide active" style="background:linear-gradient(145deg,#0f172a,#1e1a00);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #FB923C);">💡</span><p class="hv-slide-title">Street Lighting</p><p class="hv-slide-sub">BESCOM-approved LED luminaires for roads &amp; highways</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#1e293b,#2a1800);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #FFB000);">🏗️</span><p class="hv-slide-title">High-Mast Towers</p><p class="hv-slide-sub">Flood lighting for toll plazas, stadiums &amp; warehouses</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#0f172a,#1a0f00);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #FB923C);">🏭</span><p class="hv-slide-title">Industrial Bays</p><p class="hv-slide-sub">IP66 rated, high-lumen LED for factory floors</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#1a1000,#0f172a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #ffd075);">🌿</span><p class="hv-slide-title">Decorative Poles</p><p class="hv-slide-sub">Aesthetic landscape &amp; garden lighting solutions</p></div></div>
+          </div>
+          <div class="hv-dots" id="hvd-led"></div>
+        </div>
+      </div>
+
+      <!-- HVLS Visual -->
+      <div id="hv-hvls" class="hpanel" style="opacity:0;transform:scale(.94);transition:opacity .45s ease,transform .45s ease;position:absolute;inset:0;">
+        <div style="border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);height:100%;min-height:440px;position:relative;">
+          <div class="hv-slides" id="hvs-hvls">
+            <div class="hv-slide active" style="background:linear-gradient(145deg,#0f172a,#001a2a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #38bdf8);">🏭</span><p class="hv-slide-title">Factory Floors</p><p class="hv-slide-sub">24-ft HVLS fans — massive airflow, silent operation</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#001a2a,#0f172a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #0ea5e9);">📦</span><p class="hv-slide-title">Warehouses</p><p class="hv-slide-sub">Full-coverage ventilation for logistics &amp; storage hubs</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#0f172a,#00102a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #7dd3fc);">✈️</span><p class="hv-slide-title">Airports &amp; Malls</p><p class="hv-slide-sub">Whisper-quiet HVLS for commercial &amp; public spaces</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#00102a,#0f172a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #38bdf8);">🏟️</span><p class="hv-slide-title">Sports Halls</p><p class="hv-slide-sub">Cooling large arenas &amp; auditoriums efficiently</p></div></div>
+          </div>
+          <div class="hv-dots" id="hvd-hvls"></div>
+        </div>
+      </div>
+
+      <!-- LTHT Visual -->
+      <div id="hv-ltht" class="hpanel" style="opacity:0;transform:scale(.94);transition:opacity .45s ease,transform .45s ease;position:absolute;inset:0;">
+        <div style="border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.4);height:100%;min-height:440px;position:relative;">
+          <div class="hv-slides" id="hvs-ltht">
+            <div class="hv-slide active" style="background:linear-gradient(145deg,#0f172a,#002010);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #4ade80);">🔌</span><p class="hv-slide-title">HT Substations</p><p class="hv-slide-sub">Ring main units, VCBs &amp; metering cubicle installation</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#001a0a,#0f172a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #22c55e);">📋</span><p class="hv-slide-title">LT Panel Boards</p><p class="hv-slide-sub">Custom LT distribution boards for industrial plants</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#0f172a,#001508);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #86efac);">🔧</span><p class="hv-slide-title">Armoured Cabling</p><p class="hv-slide-sub">Underground LT cabling &amp; earthing systems</p></div></div>
+            <div class="hv-slide" style="background:linear-gradient(145deg,#001508,#0f172a);"><div class="hv-slide-inner"><span style="font-size:5rem;filter:drop-shadow(0 0 24px #4ade80);">📄</span><p class="hv-slide-title">BESCOM Liaisoning</p><p class="hv-slide-sub">End-to-end approvals, AMC &amp; audit services</p></div></div>
+          </div>
+          <div class="hv-dots" id="hvd-ltht"></div>
+        </div>
+      </div>
+
+    </div><!-- /right -->
+
+  </div><!-- /hero-inner -->
+</section>
+
+<style>
+/* ── Hero panel transitions ── */
+.hpanel { position:absolute; width:100%; top:0; left:0; }
+#hero-default { position:relative; }
+.hpanel-svc { position:absolute; top:0; left:0; width:100%; pointer-events:none; }
+.hpanel-svc.visible { pointer-events:auto; }
+
+/* Back button */
+.hero-back-btn {
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(200,148,31,.12);border:1.5px solid rgba(200,148,31,.3);
+  color:var(--gold);border-radius:50px;padding:7px 18px;
+  font-size:.8rem;font-weight:800;letter-spacing:.05em;
+  cursor:pointer;font-family:inherit;
+  transition:background .2s,transform .2s;
+  margin-bottom:18px;
+}
+.hero-back-btn:hover{background:rgba(200,148,31,.22);transform:translateX(-3px);}
+
+/* Service pill badge */
+.hero-svc-pill {
+  display:inline-flex;align-items:center;gap:8px;
+  border-radius:50px;padding:6px 16px;
+  font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+/* Subsection chips */
+.hero-chip {
+  background:rgba(200,148,31,.08);
+  border:1.5px solid rgba(200,148,31,.2);
+  color:var(--navy);
+  font-size:.75rem;font-weight:700;
+  padding:6px 14px;border-radius:50px;
+  cursor:pointer;
+  transition:all .2s ease;
+  letter-spacing:.03em;
+}
+.hero-chip:hover,.hero-chip.active {
+  background:var(--gold);
+  color:#000;
+  border-color:var(--gold);
+  box-shadow:0 4px 12px rgba(200,148,31,.3);
+}
+
+/* Hero visual slides */
+.hv-slides { position:relative; width:100%; height:100%; min-height:440px; }
+.hv-slide {
+  position:absolute; inset:0;
+  opacity:0;
+  transition:opacity .5s ease;
+  display:flex;align-items:center;justify-content:center;
+}
+.hv-slide.active { opacity:1; }
+.hv-slide-inner {
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:16px;padding:40px;text-align:center;
+}
+.hv-slide-title {
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;font-weight:700;color:#fff;
+  text-shadow:0 4px 16px rgba(0,0,0,.5);
+}
+.hv-slide-sub {
+  font-size:.88rem;color:rgba(255,255,255,.7);
+  line-height:1.6;max-width:280px;
+}
+.hv-dots {
+  position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+  display:flex;gap:7px;z-index:5;
+}
+.hv-dot {
+  width:7px;height:7px;border-radius:50%;
+  background:rgba(255,255,255,.3);
+  border:1.5px solid rgba(255,255,255,.5);
+  cursor:pointer;
+  transition:background .25s,transform .25s,width .25s;
+}
+.hv-dot.active {
+  background:#fff;width:22px;border-radius:4px;
+}
+
+@media(max-width:900px) {
+  .hpanel-svc { position:relative; }
+  #hero-default { position:relative !important; }
+}
+</style>
+
+<script>
+/* ── Hero service switcher ── */
+(function(){
+  var services = ['led','hvls','ltht'];
+  var timers = {};
+
+  var svcDescs = {
+    led: [
+      'BESCOM-approved LED street luminaires for highways, residential roads, and municipal projects with 60% energy savings.',
+      'Robust aluminium high-mast flood lights with IP66 ratings for toll plazas, stadiums, and warehouses.',
+      'High-lumen LED industrial bay lights for factory floors, workshops, and large covered spaces.',
+      'Designer LED garden poles and landscape lighting for residential complexes and commercial properties.'
+    ],
+    hvls: [
+      'Large-diameter HVLS fans up to 24 ft keeping factory floors cool year-round, reducing AC load by 30%.',
+      'Full-coverage ventilation HVLS systems for logistics hubs, distribution centres, and storage warehouses.',
+      'Whisper-quiet, aesthetically designed HVLS fans for airports, malls, metro stations, and public spaces.',
+      'Large-span cooling solutions for sports arenas, auditoriums, and multi-purpose event halls.'
+    ],
+    ltht: [
+      'Design, supply and commissioning of HT ring main units, VCBs, metering cubicles, and switchgear.',
+      'Custom-fabricated LT distribution boards, MCCBs, and motor control centres for industrial plants.',
+      'Armoured underground LT cabling, cable trays, conduit works, and complete earthing systems.',
+      'End-to-end BESCOM liaisoning, service connections, AMC contracts, and periodic audit services.'
+    ]
+  };
+
+  function initDots(id) {
+    var dotsEl = document.getElementById('hvd-' + id);
+    if(!dotsEl || dotsEl.children.length > 0) return;
+    for(var i=0;i<4;i++){
+      var d = document.createElement('button');
+      d.className = 'hv-dot' + (i===0?' active':'');
+      d.setAttribute('aria-label','Slide '+(i+1));
+      d.dataset.idx = i;
+      d.dataset.svc = id;
+      d.addEventListener('click', function(e){
+        e.stopPropagation();
+        gotoSlide(this.dataset.svc, parseInt(this.dataset.idx));
+      });
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function gotoSlide(svc, idx) {
+    var track = document.getElementById('hvs-' + svc);
+    var dotsEl = document.getElementById('hvd-' + svc);
+    if(!track) return;
+    var slides = track.querySelectorAll('.hv-slide');
+    var dots = dotsEl ? dotsEl.querySelectorAll('.hv-dot') : [];
+    slides.forEach(function(s,i){ s.classList.toggle('active', i===idx); });
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+    // update left desc
+    var descEl = document.getElementById('hero-' + svc + '-desc');
+    if(descEl) { descEl.style.opacity='0'; setTimeout(function(){ descEl.textContent=svcDescs[svc][idx]; descEl.style.opacity='1'; },200); }
+    // update chips
+    var panel = document.getElementById('hero-' + svc);
+    if(panel){ var chips = panel.querySelectorAll('.hero-chip'); chips.forEach(function(c,i){ c.classList.toggle('active',i===idx); }); }
+  }
+
+  function startAutoSlide(svc) {
+    if(timers[svc]) clearInterval(timers[svc]);
+    var cur = 0;
+    timers[svc] = setInterval(function(){
+      cur = (cur+1) % 4;
+      gotoSlide(svc, cur);
+    }, 3200);
+  }
+
+  function stopAutoSlide(svc) {
+    if(timers[svc]) { clearInterval(timers[svc]); timers[svc]=null; }
+  }
+
+  window.switchSlide = function(svc, idx, chipEl) { gotoSlide(svc, idx); };
+
+  window.showHeroService = function(svc) {
+    // Fade out default panels
+    var def = document.getElementById('hero-default');
+    var hvDef = document.getElementById('hv-default');
+    def.style.opacity='0'; def.style.transform='translateX(-30px)'; def.style.pointerEvents='none';
+    hvDef.style.opacity='0'; hvDef.style.transform='scale(0.94)';
+
+    // Hide all service panels first
+    services.forEach(function(s){
+      var p=document.getElementById('hero-'+s); var v=document.getElementById('hv-'+s);
+      p.style.opacity='0'; p.style.transform='translateX(40px)'; p.style.pointerEvents='none'; p.classList.remove('visible');
+      v.style.opacity='0'; v.style.transform='scale(0.94)';
+      stopAutoSlide(s);
+    });
+
+    // Mark active hero-svc-item
+    services.forEach(function(s){ var el=document.getElementById('hsvc-'+s); if(el) el.classList.toggle('active',s===svc); });
+
+    setTimeout(function(){
+      initDots(svc);
+      gotoSlide(svc, 0);
+      var sp=document.getElementById('hero-'+svc); var sv=document.getElementById('hv-'+svc);
+      sp.style.opacity='1'; sp.style.transform='translateX(0)'; sp.style.pointerEvents='auto'; sp.classList.add('visible');
+      sv.style.opacity='1'; sv.style.transform='scale(1)';
+      startAutoSlide(svc);
+    }, 320);
+  };
+
+  window.resetHero = function() {
+    services.forEach(function(s){
+      var p=document.getElementById('hero-'+s); var v=document.getElementById('hv-'+s);
+      p.style.opacity='0'; p.style.transform='translateX(40px)'; p.style.pointerEvents='none'; p.classList.remove('visible');
+      v.style.opacity='0'; v.style.transform='scale(0.94)';
+      stopAutoSlide(s);
+    });
+    services.forEach(function(s){ var el=document.getElementById('hsvc-'+s); if(el) el.classList.remove('active'); });
+    var def=document.getElementById('hero-default'); var hvDef=document.getElementById('hv-default');
+    setTimeout(function(){
+      def.style.opacity='1'; def.style.transform='translateX(0)'; def.style.pointerEvents='auto';
+      hvDef.style.opacity='1'; hvDef.style.transform='scale(1)';
+    }, 180);
+  };
+
+  // Make right panel height match left panel
+  function syncHeight() {
+    var inner = document.getElementById('heroInner');
+    if(!inner) return;
+    var left = inner.children[0];
+    var right = inner.children[1];
+    if(left && right) right.style.minHeight = left.offsetHeight + 'px';
+  }
+  window.addEventListener('resize', syncHeight);
+  setTimeout(syncHeight, 600);
+})();
+</script>
+
 <!-- WHAT WE DO -->
+
 <section class="section services-bg" id="what-we-do" style="padding-top:160px;">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;">
@@ -1294,42 +1837,197 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
       <p class="sec-sub" style="margin:0 auto;">From energy-efficient LED lighting to heavy-duty HT/LT infrastructure — we deliver certified, end-to-end electrical excellence across Bangalore.</p>
     </div>
     <div class="services-grid">
-      <div class="postcard-placeholder reveal">
-        <div class="postcard-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
+
+      <!-- ── LED LIGHTS & POLES ── -->
+      <div class="svc-card reveal" id="svc-led" onclick="toggleSvc('led')">
+        <div class="svc-card-top">
+          <div class="svc-icon-wrap">💡</div>
+          <h3 class="svc-title">LED Lights &amp; Poles</h3>
+          <p class="svc-desc">Energy-efficient LED luminaires for streets, high-mast, industrial bays, and decorative landscapes — paired with precision-engineered poles.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Street Lighting</span>
+            <span class="svc-tag">High-Mast</span>
+            <span class="svc-tag">Industrial</span>
+            <span class="svc-tag">Decorative</span>
+          </div>
+          <button class="svc-expand-btn" aria-label="Explore LED">
+            Explore
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
         </div>
-        <h3 class="postcard-title">Service Showcase</h3>
-        <p class="postcard-subtitle">Realistic images will come here</p>
-      </div>
-      <div class="postcard-placeholder reveal reveal-delay-1">
-        <div class="postcard-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
+        <div class="svc-drawer" id="drawer-led">
+          <div class="svc-drawer-inner">
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">🛣️ Street &amp; Road Lighting</p>
+              <p class="svc-sub-desc">BESCOM-approved LED street luminaires for highways, residential roads, and municipal projects. Up to 60% energy savings over conventional sodium lamps.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-led-0">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/FB923C?text=Street+Light+1" alt="Street Light"/><span class="svc-slide-label">Street Luminaire</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/FB923C?text=Street+Light+2" alt="Road Lighting"/><span class="svc-slide-label">Road Lighting</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/FB923C?text=Street+Light+3" alt="Municipal Project"/><span class="svc-slide-label">Municipal Project</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/FB923C?text=Street+Light+4" alt="Highway LED"/><span class="svc-slide-label">Highway LED</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-led-0"></div>
+                <button class="svc-nav-btn" onclick="slideNav('led-0',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('led-0',1,event)">›</button>
+              </div>
+            </div>
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">🏗️ High-Mast &amp; Industrial</p>
+              <p class="svc-sub-desc">Flood-lighting systems for warehouses, factories, toll plazas, and stadiums. Robust aluminium housings with IP66 ratings.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-led-1">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/FFB000?text=High+Mast+1" alt="High Mast"/><span class="svc-slide-label">High-Mast Tower</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/FFB000?text=High+Mast+2" alt="Industrial Bay"/><span class="svc-slide-label">Industrial Bay</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/FFB000?text=High+Mast+3" alt="Flood Light"/><span class="svc-slide-label">Flood Light</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/FFB000?text=High+Mast+4" alt="Stadium Light"/><span class="svc-slide-label">Stadium Light</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-led-1"></div>
+                <button class="svc-nav-btn" onclick="slideNav('led-1',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('led-1',1,event)">›</button>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <h3 class="postcard-title">Equipment Highlights</h3>
-        <p class="postcard-subtitle">Realistic images will come here</p>
       </div>
-      <div class="postcard-placeholder reveal reveal-delay-2">
-        <div class="postcard-icon-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
+
+      <!-- ── HVLS FANS ── -->
+      <div class="svc-card reveal reveal-delay-1" id="svc-hvls" onclick="toggleSvc('hvls')">
+        <div class="svc-card-top">
+          <div class="svc-icon-wrap">🌀</div>
+          <h3 class="svc-title">HVLS Fans</h3>
+          <p class="svc-desc">High-Volume Low-Speed ceiling fans engineered for large open spaces — factories, warehouses, airports, and sports halls — delivering massive airflow with minimal energy.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">Factory</span>
+            <span class="svc-tag">Warehouse</span>
+            <span class="svc-tag">Airport</span>
+            <span class="svc-tag">Sports Hall</span>
+          </div>
+          <button class="svc-expand-btn" aria-label="Explore HVLS">
+            Explore
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
         </div>
-        <h3 class="postcard-title">Installation Audits</h3>
-        <p class="postcard-subtitle">Realistic images will come here</p>
+        <div class="svc-drawer" id="drawer-hvls">
+          <div class="svc-drawer-inner">
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">🏭 Industrial &amp; Factory</p>
+              <p class="svc-sub-desc">Large-diameter HVLS fans (up to 24 ft) that keep factory floors cool year-round and reduce AC load by up to 30%.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-hvls-0">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/38bdf8?text=HVLS+Factory+1" alt="Factory Fan"/><span class="svc-slide-label">Factory Fan</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/38bdf8?text=HVLS+Factory+2" alt="Warehouse Fan"/><span class="svc-slide-label">Warehouse Fan</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/38bdf8?text=HVLS+Factory+3" alt="Industrial Ceiling"/><span class="svc-slide-label">Industrial Ceiling</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/38bdf8?text=HVLS+Factory+4" alt="Large Diameter"/><span class="svc-slide-label">Large Diameter</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-hvls-0"></div>
+                <button class="svc-nav-btn" onclick="slideNav('hvls-0',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('hvls-0',1,event)">›</button>
+              </div>
+            </div>
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">✈️ Commercial &amp; Public Spaces</p>
+              <p class="svc-sub-desc">Aesthetically designed HVLS fans for airports, malls, sports arenas, and metro stations — whisper quiet and highly efficient.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-hvls-1">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/a78bfa?text=HVLS+Comm+1" alt="Airport Fan"/><span class="svc-slide-label">Airport Fan</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/a78bfa?text=HVLS+Comm+2" alt="Mall Installation"/><span class="svc-slide-label">Mall Installation</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/a78bfa?text=HVLS+Comm+3" alt="Sports Hall"/><span class="svc-slide-label">Sports Hall</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/a78bfa?text=HVLS+Comm+4" alt="Metro Station"/><span class="svc-slide-label">Metro Station</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-hvls-1"></div>
+                <button class="svc-nav-btn" onclick="slideNav('hvls-1',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('hvls-1',1,event)">›</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <!-- ── LT & HT WORK ── -->
+      <div class="svc-card reveal reveal-delay-2" id="svc-ltht" onclick="toggleSvc('ltht')">
+        <div class="svc-card-top">
+          <div class="svc-icon-wrap">⚡</div>
+          <h3 class="svc-title">LT &amp; HT Electrical Work</h3>
+          <p class="svc-desc">Complete Low-Tension and High-Tension electrical infrastructure — from HT substation erection and panel work to LT cabling, AMC, and BESCOM liaisoning.</p>
+          <div class="svc-tags">
+            <span class="svc-tag">HT Substation</span>
+            <span class="svc-tag">LT Panels</span>
+            <span class="svc-tag">Cabling</span>
+            <span class="svc-tag">AMC</span>
+          </div>
+          <button class="svc-expand-btn" aria-label="Explore LT/HT">
+            Explore
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="svc-drawer" id="drawer-ltht">
+          <div class="svc-drawer-inner">
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">🔌 HT Substation &amp; Panels</p>
+              <p class="svc-sub-desc">Design, supply, and commissioning of HT ring main units, VCBs, metering cubicles, and LT distribution boards for commercial and industrial plants.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-ltht-0">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/4ade80?text=HT+Panel+1" alt="HT Panel"/><span class="svc-slide-label">HT Panel</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/4ade80?text=HT+Panel+2" alt="Substation"/><span class="svc-slide-label">Substation</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/4ade80?text=HT+Panel+3" alt="VCB"/><span class="svc-slide-label">VCB Breaker</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/0f172a/4ade80?text=HT+Panel+4" alt="LT Panel"/><span class="svc-slide-label">LT Panel</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-ltht-0"></div>
+                <button class="svc-nav-btn" onclick="slideNav('ltht-0',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('ltht-0',1,event)">›</button>
+              </div>
+            </div>
+
+            <div class="svc-subsection">
+              <p class="svc-sub-title">🔧 Cabling, AMC &amp; BESCOM</p>
+              <p class="svc-sub-desc">Armoured LT cabling, earthing systems, AMC contracts, and end-to-end BESCOM approval liaisoning for new service connections.</p>
+              <div class="svc-slider-wrap">
+                <div class="svc-slider-track" id="slider-ltht-1">
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/f472b6?text=Cabling+1" alt="Cabling"/><span class="svc-slide-label">Armoured Cabling</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/f472b6?text=Cabling+2" alt="Earthing"/><span class="svc-slide-label">Earthing System</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/f472b6?text=Cabling+3" alt="AMC"/><span class="svc-slide-label">AMC Audit</span></div>
+                  <div class="svc-slide" onclick="openLightbox(this,event)"><img src="https://placehold.co/360x260/1e293b/f472b6?text=Cabling+4" alt="BESCOM"/><span class="svc-slide-label">BESCOM Approval</span></div>
+                </div>
+              </div>
+              <div class="svc-slider-nav">
+                <div class="svc-dots" id="dots-ltht-1"></div>
+                <button class="svc-nav-btn" onclick="slideNav('ltht-1',-1,event)">‹</button>
+                <button class="svc-nav-btn" onclick="slideNav('ltht-1',1,event)">›</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div id="svcLightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <img id="lbImg" src="" alt=""/>
+  <span class="lb-caption" id="lbCaption"></span>
+</div>
 
 <!-- THE EDISON PROMISE -->
 <section class="section why-section-bg" id="edison-promise">
