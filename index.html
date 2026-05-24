@@ -314,13 +314,100 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
 .sec-title em{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;color:var(--gold);background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:4px;font-size:inherit;}
 .sec-sub{color:#0ea5e9;font-size:1.05rem;font-weight:500;line-height:1.75;max-width:560px;}
+/* ===== CURVY SVG UNDERLINE ===== */
+.interactive-title {
+  position: relative;
+  display: inline-block !important;
+  margin-bottom: 28px !important; /* Space for the underline underneath */
+}
+.curvy-underline {
+  position: absolute;
+  left: 0;
+  bottom: -22px; /* Adjust vertical placement */
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  pointer-events: none; /* Prevents cursor interference */
+}
+.curvy-path {
+  stroke: #0ea5e9; /* Tagline blue color */
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 0.1s linear;
+}
+.interactive-title:hover .curvy-path {
+  filter: drop-shadow(0 2px 8px rgba(14, 165, 233, 0.8));
+  stroke-width: 5.5;
+  stroke: #38bdf8; /* Brighter blue on hover */
+  transition: stroke-width 0.3s ease, filter 0.3s ease, stroke 0.3s ease;
+}
+
+/* ===== POSTCARD PLACEHOLDERS ===== */
+.postcard-placeholder {
+  background: rgba(255, 255, 255, 0.45);
+  border: 2px dashed rgba(200, 148, 31, 0.3);
+  border-radius: 20px;
+  min-height: 280px; /* Postcard height ratio */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(11, 29, 58, 0.02);
+}
+.postcard-placeholder:hover {
+  transform: translateY(-5px);
+  border-color: #0ea5e9;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 16px 36px rgba(14, 165, 233, 0.08), 0 0 12px rgba(14, 165, 233, 0.04) inset;
+}
+.postcard-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(56, 189, 248, 0.05));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #0ea5e9;
+  transition: all 0.3s ease;
+}
+.postcard-placeholder:hover .postcard-icon-wrap {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+}
+.postcard-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.postcard-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ===== GOLD LINE DIVIDER ===== */
 .gold-line {
   position: relative;
   width: 120px;
   height: 5px;
   background: linear-gradient(90deg, transparent 0%, #0ea5e9 20%, #38bdf8 50%, #0ea5e9 80%, transparent 100%);
   border-radius: 6px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   transform: scaleX(0.1);
   opacity: 0.1;
   transition: transform 1.5s cubic-bezier(0.34, 1.8, 0.64, 1), opacity 1.2s ease;
@@ -1205,11 +1292,46 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <span class="i-word">Premium</span>
         <span class="i-word">Electrical</span>
         <em class="i-word-em"><span class="i-word">Solutions</span></em>
+        <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+          <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+        </svg>
       </h2>
       <p class="sec-sub" style="margin:0 auto;">From energy-efficient LED lighting to heavy-duty HT/LT infrastructure — we deliver certified, end-to-end electrical excellence across Bangalore.</p>
     </div>
     <div class="services-grid">
-      <!-- Cards will be added later -->
+      <div class="postcard-placeholder reveal">
+        <div class="postcard-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3 class="postcard-title">Service Showcase</h3>
+        <p class="postcard-subtitle">Realistic images will come here</p>
+      </div>
+      <div class="postcard-placeholder reveal reveal-delay-1">
+        <div class="postcard-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3 class="postcard-title">Equipment Highlights</h3>
+        <p class="postcard-subtitle">Realistic images will come here</p>
+      </div>
+      <div class="postcard-placeholder reveal reveal-delay-2">
+        <div class="postcard-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3 class="postcard-title">Installation Audits</h3>
+        <p class="postcard-subtitle">Realistic images will come here</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1225,6 +1347,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           <span class="i-word">Why</span>
           <span class="i-word">Choose</span>
           <em class="i-word-em"><span class="i-word">Edison</span></em>
+          <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+            <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+          </svg>
         </h2>
         <p class="sec-sub" style="margin: 0 auto;">Every project is backed by certified engineering, genuine brands, and a team that stands behind every connection we make.</p>
       </div>
@@ -1285,11 +1410,35 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <span class="i-word">Projects</span>
         <span class="i-word">We're</span>
         <em class="i-word-em"><span class="i-word">Proud</span> <span class="i-word">Of</span></em>
+        <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+          <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+        </svg>
       </h2>
       <p class="sec-sub" style="margin:0 auto;">Real installations across Bangalore's leading industrial, commercial, and manufacturing facilities.</p>
     </div>
     <div class="works-grid">
-      <!-- Cards will be added later -->
+      <div class="postcard-placeholder reveal">
+        <div class="postcard-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3 class="postcard-title">Peenya Warehouse LED Retrofit</h3>
+        <p class="postcard-subtitle">Realistic images will come here</p>
+      </div>
+      <div class="postcard-placeholder reveal reveal-delay-1">
+        <div class="postcard-icon-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3 class="postcard-title">Bommasandra Industrial Ventilation</h3>
+        <p class="postcard-subtitle">Realistic images will come here</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1304,6 +1453,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <span class="i-word">Trusted</span>
         <span class="i-word">Brands</span>
         <em class="i-word-em"><span class="i-word">&amp; Partners</span></em>
+        <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+          <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+        </svg>
       </h2>
       <p class="sec-sub" style="margin:0 auto;">We are authorised suppliers and installation partners for India's most trusted electrical and lighting brands.</p>
     </div>
@@ -1347,7 +1499,6 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <div class="reveal" style="text-align: center;">
       <p class="sec-eyebrow">Testimonials</p>
       <div class="gold-line" style="margin: 0 auto 20px;"></div>
-      
       <div style="display: flex; align-items: flex-end; justify-content: center; gap: 60px; flex-wrap: wrap; margin-bottom: 28px;">
         
         <!-- 15+ Years -->
@@ -1363,6 +1514,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           <span class="i-word">What</span>
           <span class="i-word">Our</span>
           <em class="i-word-em"><span class="i-word">Clients</span> <span class="i-word">Say</span></em>
+          <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+            <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+          </svg>
         </h2>
         
         <!-- 50+ Happy Customers -->
@@ -1542,6 +1696,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         <span class="i-word">Let's</span>
         <span class="i-word">Work</span>
         <em class="i-word-em"><span class="i-word">Together</span></em>
+        <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
+          <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
+        </svg>
       </h2>
       <p class="sec-sub" style="margin:0 auto;">We're happy to visit your site and deliver a free consultation.</p>
     </div>
@@ -2029,21 +2186,64 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     });
   })();
 
-  // Underline (.gold-line) hover re-trigger animation
+  // Dynamic Scroll Underline (.curvy-underline) animation for all headings
+  (function(){
+    const headings = document.querySelectorAll('.interactive-title');
+    const pathData = [];
+    
+    headings.forEach(heading => {
+      const path = heading.querySelector('.curvy-path');
+      if (!path) return;
+      
+      const pathLength = path.getTotalLength();
+      path.style.strokeDasharray = pathLength;
+      path.style.strokeDashoffset = pathLength;
+      
+      pathData.push({
+        heading: heading,
+        path: path,
+        length: pathLength
+      });
+    });
+    
+    function animateUnderlines() {
+      const windowHeight = window.innerHeight;
+      const startReveal = windowHeight * 0.85; // Starts drawing when 85% down the screen
+      const endReveal = windowHeight * 0.35;   // Fully drawn when 35% down the screen
+      
+      pathData.forEach(item => {
+        const rect = item.heading.getBoundingClientRect();
+        
+        // Map the element's position to a 0 to 1 percentage range
+        let progress = (startReveal - rect.top) / (startReveal - endReveal);
+        
+        // Clamp the value strictly between 0 and 1
+        progress = Math.max(0, Math.min(1, progress));
+        
+        // Calculate the offset (1 means completely hidden, 0 means completely drawn)
+        const offset = item.length - (progress * item.length);
+        item.path.style.strokeDashoffset = offset;
+      });
+    }
+    
+    window.addEventListener('scroll', animateUnderlines);
+    window.addEventListener('load', animateUnderlines);
+    window.addEventListener('resize', animateUnderlines);
+  })();
+
+  // Gold-line divider hover re-trigger animation
   (function(){
     document.querySelectorAll('.reveal').forEach(reveal => {
       const line = reveal.querySelector('.gold-line');
       if (!line) return;
       
-      // Bind hover re-trigger on the reveal container, the titles, eyebrows, and the line itself
-      const titles = reveal.querySelectorAll('.sec-title, .sec-eyebrow, .gold-line');
-      titles.forEach(el => {
+      const triggerEls = [reveal.querySelector('.sec-eyebrow'), line].filter(Boolean);
+      triggerEls.forEach(el => {
         el.addEventListener('mouseenter', () => {
           line.classList.remove('hover-active');
           void line.offsetWidth; // Force layout reflow
           line.classList.add('hover-active');
         });
-        
         el.addEventListener('mouseleave', () => {
           line.classList.remove('hover-active');
         });
