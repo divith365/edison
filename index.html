@@ -480,6 +480,59 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
 .vendor-card:hover .vendor-logo{filter:brightness(0) invert(1);transform:scale(1.1);}
 .vendor-name{font-size:.7rem;font-weight:700;color:rgba(11,29,58,.75);letter-spacing:.05em;text-transform:uppercase;transition:color .3s ease;}
 .vendor-card:hover .vendor-name{color:var(--gold2);}
+/* ===== HERO VERTICAL OPTIONS ===== */
+.hero-vertical-options {
+  position: absolute;
+  left: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100;
+  align-items: flex-start;
+}
+.hero-option-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  border: none;
+  border-radius: 0 12px 12px 0;
+  padding: 24px 10px;
+  color: var(--navy);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  width: 44px;
+  min-height: 170px;
+}
+.hero-option-bar:hover {
+  background: var(--gold2);
+  transform: translateX(8px);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.35);
+  color: #000;
+}
+.hero-option-bar.active {
+  background: var(--gold2);
+  width: 54px;
+  box-shadow: 6px 6px 22px rgba(251, 146, 60, 0.35);
+  color: #000;
+  transform: translateX(4px);
+}
+.bar-label {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 /* ===== OUR WORKS ===== */
 .works-section-bg { background: #fdfaf6; }
 .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 48px; }
@@ -864,17 +917,18 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
   <div class="hero-inner">
     <!-- Left -->
     <div class="hero-left">
-      <h1 class="interactive-title">
-        <!-- headline text coming soon -->
-      </h1>
-      <p class="hero-desc">
-        <!-- description coming soon -->
-      </p>
-      <ul class="hero-services">
-        <!-- service items coming soon -->
-      </ul>
-
-    </div>
+      <!-- Product Option Bars -->
+      <div class="hero-vertical-options">
+        <button class="hero-option-bar active" data-target="led">
+          <span class="bar-label">LED LIGHTS</span>
+        </button>
+        <button class="hero-option-bar" data-target="fans">
+          <span class="bar-label">HVLS FANS</span>
+        </button>
+        <button class="hero-option-bar" data-target="electrical">
+          <span class="bar-label">HT &amp; LT WORK</span>
+        </button>
+      </div>
 
 
   </div>
@@ -1613,6 +1667,17 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
+      });
+    });
+  })();
+
+  // Hero Option Bars Toggle
+  (function(){
+    const bars = document.querySelectorAll('.hero-option-bar');
+    bars.forEach(bar => {
+      bar.addEventListener('click', () => {
+        bars.forEach(b => b.classList.remove('active'));
+        bar.classList.add('active');
       });
     });
   })();
