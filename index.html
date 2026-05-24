@@ -29,11 +29,21 @@
   --sec-contact: #0b1120;
   --card-dark:   #1e293b;
   --card-dark2:  #334155;
+  --bg-texture: url("data:image/svg+xml,%3Csvg width='1000' height='200' viewBox='0 0 1000 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0 80 C 250 30, 250 130, 500 80 C 750 30, 750 130, 1000 80' fill='none' stroke='%230ea5e9' stroke-width='1.8' stroke-opacity='0.045' stroke-linecap='round'/%3E%3Cpath d='M 0 120 C 250 170, 250 70, 500 120 C 750 170, 750 70, 1000 120' fill='none' stroke='%230C3866' stroke-width='1.8' stroke-opacity='0.03' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
+html{scroll-behavior:smooth;background-color:var(--white);}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg-texture), transparent;color:var(--text);overflow-x:hidden;display:flex;flex-direction:column;min-height:100vh;}
 img{max-width:100%;display:block;}
+
+/* ===== BACKGROUND WAVE FLOW ANIMATION ===== */
+@keyframes sectionAirFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 200px; }
+}
+body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg, .testi-bg, .contact-section-bg, footer {
+  animation: sectionAirFlow 100s linear infinite;
+}
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar{width:6px;}
@@ -74,7 +84,8 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center;height:100%;text-decoration:none;}
 .nav-logo-svg{height:92px;width:auto;aspect-ratio:1500/350;max-width:100%;transition:transform .3s ease;}
 .nav-logo:hover .nav-logo-svg{transform:scale(1.02);}
-.footer-logo-svg{height:44px;width:auto;aspect-ratio:1500/350;display:block;margin-bottom:12px;max-width:100%;}
+.footer-logo-svg{height:44px;width:auto;aspect-ratio:1500/350;display:block;margin-bottom:12px;max-width:100%;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;cursor:pointer;}
+.footer-logo-svg:hover{transform:scale(1.04) translateY(-2px);filter:drop-shadow(0 6px 16px rgba(12,56,102,0.12));}
 .nav-brand{display:none;}
 .nav-logo:hover .nav-brand{color:#FB923C;}
 .nav-brand span{display:none;}
@@ -98,7 +109,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;}
 
 /* ===== HERO ===== */
-.hero{min-height:100vh;background:linear-gradient(150deg,#fefcf7 0%,#fdf8ef 50%,#fefbf3 100%);display:flex;align-items:center;padding:190px 24px 60px;position:relative;overflow:hidden;perspective:1500px;}
+.hero{min-height:100vh;background:var(--bg-texture), linear-gradient(150deg,rgba(254,252,247,0.94) 0%,rgba(253,248,239,0.94) 50%,rgba(254,251,243,0.94) 100%);display:flex;align-items:center;padding:190px 24px 60px;position:relative;overflow:hidden;perspective:1500px;}
 .hero-bg-grid{display:none;}
 .hero-glow{position:absolute;top:-80px;right:-60px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,148,31,.15) 0%,transparent 65%);}
 .hero-glow2{position:absolute;bottom:-220px;left:-80px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,148,31,.08) 0%,transparent 65%);}
@@ -464,7 +475,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 }
 
 /* ===== SERVICES ===== */
-.services-bg{background:#fcf9f2;}
+.services-bg{background:var(--bg-texture), rgba(252,249,242,0.94);}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
 .svc-card{background:#fff;border-radius:32px 8px 32px 8px;padding:36px 28px;border:1.5px solid #f0ecdf;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;cursor:default;box-shadow:0 4px 20px rgba(11,29,58,.04);}
 .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:5;}
@@ -484,7 +495,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .svc-card:hover .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
 
 /* ===== WHY US ===== */
-.why-section-bg{background:#ffffff;}
+.why-section-bg{background:var(--bg-texture), rgba(255,255,255,0.94);}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
 .why-list{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
 .why-item{
@@ -545,16 +556,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(200, 148, 31, 0.08);
 }
-.why-visual::after {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgba(200, 148, 31, 0.05);
-}
+
 .wv-row {
   display: flex;
   align-items: center;
@@ -672,7 +674,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 }
 
 /* ===== VENDORS ===== */
-.vendors-section{background:#ffffff;padding:80px 24px;}
+.vendors-section{background:var(--bg-texture), rgba(255,255,255,0.94);padding:80px 24px;}
 .vendors-inner{max-width:1160px;margin:0 auto;}
 .vendors-cat{margin-bottom:56px;}
 .vendors-cat:last-child{margin-bottom:0;}
@@ -740,7 +742,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 }
 
 /* ===== OUR WORKS ===== */
-.works-section-bg { background: #fbf6ed; }
+.works-section-bg { background: var(--bg-texture), rgba(251, 246, 237, 0.94); }
 .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 48px; }
 .work-card { background: #fff; border-radius: 20px; border: 1.5px solid #e8ecf4; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(11,29,58,0.03); }
 .work-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(11,29,58,0.1); border-color: var(--gold); }
@@ -755,7 +757,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   .works-grid { grid-template-columns: 1fr; }
 }
 /* ===== TESTIMONIALS ===== */
-.testi-bg{background:linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);}
+.testi-bg{background:var(--bg-texture), linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(250, 247, 240, 0.94) 100%);}
 /* Carousel */
 .testi-carousel-wrap { overflow: hidden; margin-top: 48px; position: relative; }
 .testi-carousel-wrap::before,
@@ -791,7 +793,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .stars{color:var(--gold);font-size:.78rem;margin-bottom:10px;letter-spacing:2px;}
 
 /* ===== CONTACT ===== */
-.contact-section-bg{background:linear-gradient(160deg,#fefcf7 0%,#fdf8ef 100%);}
+.contact-section-bg{background:var(--bg-texture), rgba(250, 247, 240, 0.94);}
 .contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px;}
 @media(max-width:768px){.contact-cards{grid-template-columns:1fr;}}
 .contact-card{display:flex;gap:18px;align-items:flex-start;padding:26px;border-radius:20px;background:#fff;border:1.5px solid #e8ecf4;transition:background .3s,border-color .3s,transform .3s,box-shadow .3s;box-shadow:0 4px 16px rgba(11,29,58,.04);}
@@ -824,7 +826,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 }
 
 /* ===== FOOTER ===== */
-footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--muted);padding:24px 24px 16px;border-top:1px solid rgba(200, 148, 31, 0.25);}
+footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247, 0.94) 0%, rgba(253, 248, 239, 0.94) 100%);color:var(--muted);padding:24px 24px 16px;border-top:1px solid rgba(200, 148, 31, 0.25);}
 .footer-inner{max-width:1300px;margin:0 auto;}
 .footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(11,29,58,.08);align-items:flex-start;}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
@@ -1120,14 +1122,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
 <!-- SCROLL PROGRESS BAR -->
 <div class="scroll-progress-bar" id="scrollProgress"></div>
 
-<!-- BACK TO TOP BUTTON -->
-<a id="backToTop" class="back-to-top" title="Go to Top">
-  <svg class="progress-circle" width="46" height="46" viewBox="0 0 46 46">
-    <circle class="progress-circle-bg" cx="23" cy="23" r="18" fill="none" stroke="rgba(255, 255, 255, 0.35)" stroke-width="3"/>
-    <circle class="progress-circle-bar" cx="23" cy="23" r="18" fill="none" stroke="var(--navy)" stroke-width="3" stroke-linecap="round"/>
-  </svg>
-  <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
-</a>
+<!-- Scroll to Top button removed per request -->
 
 <!-- BACKGROUND HEADER BAR -->
 <div class="nav-bg-bar"></div>
@@ -1733,10 +1728,11 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             <label class="form-label" for="formMessage">Your Message <span style="font-size:0.8rem; opacity:0.65; font-weight:400;">(Optional)</span></label>
             <textarea class="form-textarea" id="formMessage" placeholder="How can we help you?"></textarea>
           </div>
-          <button class="form-submit-btn" type="submit" id="formSubmitBtn">
-            <span>Send Request</span>
-            <span style="font-size: 1.1rem; margin-top:-1px; margin-left: 6px;">✉️</span>
-          </button>
+          <div style="text-align: center; margin-top: 24px;">
+            <button class="form-submit-btn" type="submit" id="formSubmitBtn">
+              <span>Send Request</span>
+            </button>
+          </div>
         </form>
       </div>
     </div>
@@ -1790,7 +1786,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             .tagline-container-block-footer {
               margin-top: 12px;
               font-family: "Caveat", cursive;
-              font-size: 64px;
+              font-size: 83px;
               letter-spacing: 0.02em;
               color: #0ea5e9;
               text-transform: none;
@@ -1860,11 +1856,11 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       </svg>
       </div>
       <div>
-        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;line-height:1.5;color:var(--navy);font-weight:700;text-align:left;display:flex;gap:6px;align-items:flex-start;margin:0;">
+        <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;line-height:1.55;text-align:left;display:flex;gap:6px;align-items:flex-start;margin:0;">
           <span style="font-size:0.95rem;margin-top:1px;flex-shrink:0;">📍</span>
           <span>
-            Edison Amp Technologies<br>
-            <span style="font-weight:500;color:var(--muted);">#3, 80ft road, Srinivasanagar,<br>Bsk 1st stage, Bangalore -560050</span>
+            <strong style="font-weight:700;color:#5b21b6;display:inline-block;margin-bottom:3px;">Edison Amp Technologies</strong><br>
+            <span style="font-weight:600;color:#475569;">#3, 80ft road, Srinivasanagar,<br>Bsk 1st stage, Bangalore -560050</span>
           </span>
         </p>
       </div>
@@ -2037,7 +2033,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
         btn.style.background = '';
         btn.style.color = '';
         btn.style.boxShadow = '';
-        btn.innerHTML = '<span>Send Request</span> <span style="font-size: 1.1rem; margin-top:-1px; margin-left: 6px;">✉️</span>';
+        btn.innerHTML = '<span>Send Request</span>';
       }, 5000);
     }, 1500);
   }
@@ -2195,19 +2191,9 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     });
   })();
 
-  // Scroll Progress and Back to Top functionality
+  // Scroll Progress functionality (Top progress bar)
   (function(){
-    const btt = document.getElementById('backToTop');
     const scrollProgress = document.getElementById('scrollProgress');
-    if(!btt) return;
-    
-    const progressPath = btt.querySelector('.progress-circle-bar');
-    const pathLength = 113.1; // 2 * Math.PI * 18
-    
-    if (progressPath) {
-      progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
-      progressPath.style.strokeDashoffset = pathLength;
-    }
     
     window.addEventListener('scroll', () => {
       const scrollTop = window.scrollY;
@@ -2218,25 +2204,6 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       if (scrollProgress) {
         scrollProgress.style.width = `${scrollPercent * 100}%`;
       }
-      
-      // Update circular progress outline
-      if (progressPath) {
-        progressPath.style.strokeDashoffset = pathLength - (scrollPercent * pathLength);
-      }
-      
-      // Toggle button visibility
-      if(scrollTop > 300) {
-        btt.classList.add('show');
-      } else {
-        btt.classList.remove('show');
-      }
-    });
-    
-    btt.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
     });
   })();
 
@@ -2375,6 +2342,135 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     update();
   })();
   */
+
+  // Dynamic Background Waves Flow Animation
+  (function() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'bg-wave-canvas';
+    document.body.insertBefore(canvas, document.body.firstChild);
+
+    // Apply canvas styling
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.zIndex = '-2';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.backgroundColor = 'var(--white)';
+
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    // Track scroll
+    let scrollY = window.scrollY;
+    let targetScrollY = window.scrollY;
+    window.addEventListener('scroll', () => {
+      targetScrollY = window.scrollY;
+    }, { passive: true });
+
+    // Define 3 wave layers with distinct speeds, colors, and amplitude configurations
+    const waveLayers = [
+      {
+        yRatio: 0.35,          // baseline vertical position (35% from top)
+        frequency: 0.0012,     // lower frequency for wide, sweeping curves
+        amplitude: 65,         // wave height
+        speed: 0.008,          // base flow speed
+        color: 'rgba(14, 165, 233, 0.065)', // subtle sky blue
+        phase: 0,
+        scrollFactor: 0.15     // how much scroll physically pushes this wave horizontally
+      },
+      {
+        yRatio: 0.55,          // baseline vertical position (55% from top)
+        frequency: 0.0018,     // medium frequency
+        amplitude: 50,
+        speed: -0.006,         // moves in opposite direction for counter-flow effect
+        color: 'rgba(12, 56, 102, 0.045)',  // subtle navy/indigo
+        phase: Math.PI / 3,
+        scrollFactor: -0.1     // moves opposite way on scroll
+      },
+      {
+        yRatio: 0.75,          // baseline vertical position (75% from top)
+        frequency: 0.0022,     // higher frequency for detail
+        amplitude: 35,
+        speed: 0.011,
+        color: 'rgba(251, 146, 60, 0.05)', // subtle gold
+        phase: Math.PI * 2 / 3,
+        scrollFactor: 0.2
+      }
+    ];
+
+    let time = 0;
+    
+    // Performance optimization: only animate when the tab is active
+    let isTabActive = true;
+    document.addEventListener('visibilitychange', () => {
+      isTabActive = !document.hidden;
+    });
+
+    function animate() {
+      if (!isTabActive) {
+        requestAnimationFrame(animate);
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Smooth scroll interpolation to prevent micro-stutter
+      scrollY += (targetScrollY - scrollY) * 0.1;
+
+      time += 0.4; // time step for wave morphing
+
+      waveLayers.forEach((wave) => {
+        ctx.beginPath();
+        
+        const baseY = height * wave.yRatio;
+        // Horizontal scroll push
+        const horizontalShift = scrollY * wave.scrollFactor;
+
+        // Draw the wave path using horizontal coordinates
+        for (let x = 0; x <= width; x += 3) { // step by 3 for performance
+          // Combination of multiple sine/cosine functions for organic "random wave" morphing
+          const angle1 = (x + horizontalShift) * wave.frequency + wave.phase + time * wave.speed * 0.1;
+          const angle2 = (x - horizontalShift) * (wave.frequency * 1.7) - wave.phase * 0.5 + time * (wave.speed * 0.07);
+          const angle3 = x * (wave.frequency * 0.4) + time * (wave.speed * 0.04);
+          
+          // Organic, dynamic vertical morphing
+          const y = baseY + 
+            Math.sin(angle1) * wave.amplitude + 
+            Math.cos(angle2) * (wave.amplitude * 0.35) +
+            Math.sin(angle3) * (wave.amplitude * 0.2) +
+            Math.sin(scrollY * 0.002 + wave.yRatio) * 15; // soft vertical drift based on scroll
+
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+
+        ctx.strokeStyle = wave.color;
+        ctx.lineWidth = 2.2;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        // Slowly progress the base phase for natural left-to-right drift over time
+        wave.phase += wave.speed * 0.08;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    // Start animation loop
+    animate();
+  })();
 </script>
 </body>
 </html>
