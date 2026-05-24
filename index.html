@@ -48,20 +48,20 @@ img{max-width:100%;display:block;}
 @keyframes border-spin{to{--border-angle:360deg;}}
 
 /* ===== NAV ===== */
-.nav-bg-bar{position:fixed;top:0;left:0;right:0;height:152px;background:#0F1E36;z-index:999;border-bottom:1px solid rgba(255,255,255,.05);transition:all .3s ease;}
-nav{position:fixed;top:20px;left:5%;right:5%;z-index:1000;padding:0 40px;background:#0F1E36;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:none;border-radius:18px;display:flex;align-items:center;justify-content:space-between;height:112px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .3s ease;isolation:isolate;}
+.nav-bg-bar{position:fixed;top:0;left:0;right:0;height:152px;background:#F1F5F9;z-index:999;border-bottom:1px solid rgba(15,30,54,0.08);transition:all .3s ease;}
+nav{position:fixed;top:20px;left:5%;right:5%;z-index:1000;padding:0 40px;background:#FFFFFF;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:none;border-radius:18px;display:flex;align-items:center;justify-content:space-between;height:112px;box-shadow:0 10px 30px rgba(15,30,54,0.08);transition:all .3s ease;isolation:isolate;}
 nav::before{content:'';position:absolute;inset:-2px;border-radius:20px;background:conic-gradient(from var(--border-angle),transparent 0%,transparent 65%,#FDBA74 75%,#FB923C 80%,#fff8 83%,#FB923C 86%,#FDBA74 91%,transparent 100%);animation:border-spin 3s linear infinite;z-index:-1;}
-nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radius:16px;z-index:-1;}
+nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radius:16px;z-index:-1;}
 .nav-logo{display:flex;flex-direction:column;align-items:flex-start;gap:2px;justify-content:center;height:100%;text-decoration:none;}
 .nav-logo-svg{height:92px;width:auto;aspect-ratio:1500/350;max-width:100%;transition:transform .3s ease;}
 .nav-logo:hover .nav-logo-svg{transform:scale(1.02);}
-.footer-logo-svg{height:128px;width:auto;aspect-ratio:1500/350;display:block;margin-bottom:8px;max-width:100%;}
+.footer-logo-svg{height:64px;width:64px;aspect-ratio:1/1;display:block;margin-bottom:16px;}
 .nav-brand{display:none;}
 .nav-logo:hover .nav-brand{color:#FB923C;}
 .nav-brand span{display:none;}
-.nav-logo:hover .nav-brand span{color:#FFFFFF;}
+.nav-logo:hover .nav-brand span{color:#0C3866;}
 .nav-links{display:flex;gap:28px;list-style:none;}
-.nav-links a{color:var(--gold3);text-decoration:none;font-size:0.98rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
+.nav-links a{color:#0C3866;text-decoration:none;font-size:0.98rem;font-weight:700;letter-spacing:.02em;display:inline-block;position:relative;padding-bottom:4px;transition:transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#FB923C,#FDBA74);border-radius:2px;transition:width 0.3s ease;}
 .nav-links a:hover{color:#FB923C;transform:scale(1.08);}
 .nav-links a:hover::after{width:100%;}
@@ -71,7 +71,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
 .nav-wa{background:#25D366;color:#ffffff;padding:0 20px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;transition:background .2s,transform .2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;}
 .nav-wa:hover{background:#1ebe57;transform:translateY(-1px);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
-.hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:.3s;}
+.hamburger span{width:24px;height:2.5px;background:#0C3866;border-radius:2px;transition:.3s;}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--navy);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:20px;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{color:var(--gold3);font-size:1.4rem;font-weight:700;text-decoration:none;font-family:'Playfair Display',serif;}
@@ -298,7 +298,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
 .gold-line{width:52px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;margin-bottom:20px;}
 
 /* ===== SERVICES ===== */
-.services-bg{background:#fff;}
+.services-bg{background:#F5F3FF;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
 .svc-card{background:#fff;border-radius:32px 8px 32px 8px;padding:36px 28px;border:1.5px solid #f0ecdf;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(0.165,0.84,0.44,1),box-shadow .4s ease,border-color .4s ease;cursor:default;box-shadow:0 4px 20px rgba(11,29,58,.04);}
 .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .35s ease;z-index:5;}
@@ -318,7 +318,95 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
 .svc-card:hover .svc-tag{background:rgba(200,148,31,.1);color:var(--gold2);}
 
 /* ===== WHY US ===== */
-.why-section-bg{background:#f8f6f2;}
+.why-section-bg{background:#EDE9FE;}
+
+/* ===== PURPLE THEME SCOPED RULES ===== */
+.services-bg .sec-eyebrow, 
+.why-section-bg .sec-eyebrow { 
+  color: #7C3AED; 
+}
+.services-bg .gold-line, 
+.why-section-bg .gold-line { 
+  background: linear-gradient(90deg, #7C3AED, #A78BFA); 
+}
+.services-bg .sec-title,
+.why-section-bg .sec-title {
+  color: #4C1D95;
+}
+.services-bg .sec-title em, 
+.why-section-bg .sec-title em { 
+  color: #7C3AED; 
+  background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+/* Services section cards */
+.services-bg .svc-card {
+  border: 1.5px solid #E9E3F8;
+}
+.services-bg .svc-card::before {
+  background: linear-gradient(90deg, #7C3AED, #A78BFA);
+}
+.services-bg .svc-card:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.15);
+}
+.services-bg .svc-icon-wrap {
+  background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
+}
+.services-bg .svc-card:hover .svc-icon-wrap {
+  background: linear-gradient(135deg, #7C3AED, #A78BFA);
+}
+.services-bg .svc-title {
+  color: #7C3AED;
+}
+.services-bg .svc-card:hover .svc-title {
+  color: #5B21B6;
+}
+.services-bg .svc-tag {
+  background: rgba(124, 58, 237, 0.08);
+  color: #7C3AED;
+}
+.services-bg .svc-card:hover .svc-tag {
+  background: rgba(124, 58, 237, 0.15);
+  color: #5B21B6;
+}
+
+/* Edison Promise section items & visualizer */
+.why-section-bg .why-item {
+  border: 1.5px solid #E9E3F8;
+}
+.why-section-bg .why-item::before {
+  background: linear-gradient(180deg, #7C3AED, #A78BFA);
+}
+.why-section-bg .why-item:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.1);
+  background: #FAF8FF;
+}
+.why-section-bg .why-body strong {
+  color: #7C3AED;
+}
+.why-section-bg .why-num {
+  color: #7C3AED;
+}
+.why-section-bg .why-visual {
+  background: linear-gradient(160deg, #FDF9FF 0%, #F5F3FF 100%);
+  border: 1.5px solid #DDD6FE;
+}
+.why-section-bg .why-visual p {
+  color: #7C3AED !important;
+}
+.why-section-bg .wv-bar-wrap {
+  background: rgba(124, 58, 237, 0.1);
+}
+.why-section-bg .wv-bar {
+  background: linear-gradient(90deg, #7C3AED, #A78BFA);
+}
+.why-section-bg .wv-pct {
+  color: #7C3AED;
+}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
 .why-list{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
 .why-item{
@@ -497,11 +585,11 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--gold);
+  background: #0C3866;
   border: none;
   border-radius: 0 12px 12px 0;
   padding: 24px 10px;
-  color: var(--navy);
+  color: #FFFFFF;
   cursor: pointer;
   font-family: inherit;
   font-weight: 800;
@@ -513,16 +601,16 @@ nav::after{content:'';position:absolute;inset:2px;background:#0F1E36;border-radi
   min-height: 170px;
 }
 .hero-option-bar:hover {
-  background: var(--gold2);
+  background: #092a4d;
   transform: translateX(8px);
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.35);
-  color: #000;
+  color: var(--gold);
 }
 .hero-option-bar.active {
-  background: var(--gold2);
+  background: #092a4d;
   width: 54px;
-  box-shadow: 6px 6px 22px rgba(251, 146, 60, 0.35);
-  color: #000;
+  box-shadow: 6px 6px 22px rgba(12, 56, 102, 0.35);
+  color: var(--gold);
   transform: translateX(4px);
 }
 .bar-label {
@@ -764,7 +852,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Fredoka:wght@600;700&family=Inter:wght@600;700&family=Montserrat:wght@600;700;800&family=Outfit:wght@600;700;800&family=Quicksand:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap');
             .vector-base-container {
-              background-color: #0F1E36;
+              background-color: transparent;
               width: 1500px;
               height: 350px;
               display: flex;
@@ -783,7 +871,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
               font-size: 120px;
               letter-spacing: 0.08em;
               font-weight: 600;
-              color: #FFFFFF;
+              color: #0C3866;
               line-height: 1;
               white-space: nowrap;
             }
@@ -796,16 +884,16 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             }
             .suffix-amp-row {
               margin-left: 0.35em;
-              color: #FFB000;
+              color: #0C3866;
             }
             .tagline-container-block {
-              margin-top: 18px;
-              font-family: "Inter", sans-serif;
-              font-size: 39px;
-              letter-spacing: 0.12em;
-              color: #ECEFF1;
-              text-transform: uppercase;
-              font-weight: 500;
+              margin-top: 12px;
+              font-family: "Caveat", cursive;
+              font-size: 58px;
+              letter-spacing: 0.02em;
+              color: #FF6B00;
+              text-transform: none;
+              font-weight: 700;
               line-height: 1.2;
               white-space: nowrap;
               max-width: 100%;
@@ -828,7 +916,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           </filter>
         </defs>
 
-        <rect width="1500" height="350" fill="#0F1E36" />
+        <rect width="1500" height="350" fill="transparent" />
 
         <foreignObject x="0" y="0" width="1500" height="350">
           <div xmlns="http://www.w3.org/1999/xhtml" class="vector-base-container">
@@ -837,18 +925,18 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
               <div class="custom-o-graphic">
                 <svg viewBox="0 0 100 100" width="100%" height="100%">
                   <!-- O Ring -->
-                  <circle cx="50" cy="50" r="40" fill="none" stroke="#FFFFFF" stroke-width="11" />
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="#0C3866" stroke-width="11" />
                   
                   <!-- Internal Bulb -->
                   <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
                     <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" 
                           fill="transparent" 
-                          stroke="#FFFFFF" 
+                          stroke="#0C3866" 
                           stroke-width="2" 
                           filter="url(#bulb-glow-fx)" />
                     
-                    <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#FFFFFF" />
-                    <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#FFFFFF" opacity="0.9" />
+                    <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#0C3866" />
+                    <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#0C3866" opacity="0.9" />
 
                     
                       <circle cx="50" cy="36" r="3.5" fill="#FF6B00" filter="url(#glow-fx)" />
@@ -863,11 +951,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
             </div>
 
             <div class="tagline-container-block">
-              <span style="color: #38BDF8;">LED LIGHTS</span>
-              <span style="color: #FB7185; margin: 0 10px;">|</span>
-              <span style="color: #4ADE80;">HVLS FANS</span>
-              <span style="color: #FB7185; margin: 0 10px;">|</span>
-              <span style="color: #FFB000;">HT &amp; LT ELECTRICAL WORKS</span>
+              Did Right, To Bright
             </div>
           </div>
         </foreignObject>
@@ -1313,59 +1397,8 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
     <div class="footer-top">
       <div>
         <div style="margin-bottom:16px;">
-            <svg class="footer-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 350" width="100%" height="100%">
+            <svg class="footer-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
         <defs>
-          <style>
-            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Fredoka:wght@600;700&family=Inter:wght@600;700&family=Montserrat:wght@600;700;800&family=Outfit:wght@600;700;800&family=Quicksand:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap');
-            .vector-base-container-footer {
-              background-color: #0F1E36;
-              width: 1500px;
-              height: 350px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              text-align: center;
-              box-sizing: border-box;
-              font-family: 'Fredoka', system-ui, sans-serif;
-            }
-            .text-row-container-footer {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              text-transform: uppercase;
-              font-size: 120px;
-              letter-spacing: 0.08em;
-              font-weight: 600;
-              color: #FFFFFF;
-              line-height: 1;
-              white-space: nowrap;
-            }
-            .custom-o-graphic-footer {
-              width: 1.05em;
-              height: 1.05em;
-              margin-left: -0.05em;
-              margin-right: -0.02em;
-              display: inline-block;
-            }
-            .suffix-amp-row-footer {
-              margin-left: 0.35em;
-              color: #FFB000;
-            }
-            .tagline-container-block-footer {
-              margin-top: 18px;
-              font-family: "Inter", sans-serif;
-              font-size: 39px;
-              letter-spacing: 0.12em;
-              color: #ECEFF1;
-              text-transform: uppercase;
-              font-weight: 500;
-              line-height: 1.2;
-              white-space: nowrap;
-              max-width: 100%;
-            }
-          </style>
-          
           <filter id="glow-fx-footer" x="-30%" y="-30%" width="160%" height="160%">
             <feGaussianBlur stdDeviation="3.5" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -1382,49 +1415,24 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
           </filter>
         </defs>
 
-        <rect width="1500" height="350" fill="#0F1E36" />
+        <!-- O Ring -->
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#0C3866" stroke-width="11" />
+        
+        <!-- Internal Bulb -->
+        <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
+          <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" 
+                fill="transparent" 
+                stroke="#0C3866" 
+                stroke-width="2" 
+                filter="url(#bulb-glow-fx-footer-footer)" />
+          
+          <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#0C3866" />
+          <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#0C3866" opacity="0.9" />
 
-        <foreignObject x="0" y="0" width="1500" height="350">
-          <div xmlns="http://www.w3.org/1999/xhtml" class="vector-base-container-footer">
-            <div class="text-row-container-footer">
-              <span>EDIS</span>
-              <div class="custom-o-graphic-footer">
-                <svg viewBox="0 0 100 100" width="100%" height="100%">
-                  <!-- O Ring -->
-                  <circle cx="50" cy="50" r="40" fill="none" stroke="#FFFFFF" stroke-width="11" />
-                  
-                  <!-- Internal Bulb -->
-                  <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
-                    <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" 
-                          fill="transparent" 
-                          stroke="#FFFFFF" 
-                          stroke-width="2" 
-                          filter="url(#bulb-glow-fx-footer-footer)" />
-                    
-                    <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#FFFFFF" />
-                    <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#FFFFFF" opacity="0.9" />
-
-                    
-                      <circle cx="50" cy="36" r="3.5" fill="#FF6B00" filter="url(#glow-fx-footer)" />
-                      <circle cx="50" cy="45" r="3.5" fill="#00E396" filter="url(#glow-fx-footer)" />
-                      <circle cx="50" cy="54" r="3.5" fill="#0052FF" filter="url(#glow-fx-footer)" />
-                    
-                  </g>
-                </svg>
-              </div>
-              <span>N</span>
-              <span class="suffix-amp-row-footer">AMP</span>
-            </div>
-
-            <div class="tagline-container-block-footer">
-              <span style="color: #38BDF8;">LED LIGHTS</span>
-              <span style="color: #FB7185; margin: 0 10px;">|</span>
-              <span style="color: #4ADE80;">HVLS FANS</span>
-              <span style="color: #FB7185; margin: 0 10px;">|</span>
-              <span style="color: #FFB000;">HT &amp; LT ELECTRICAL WORKS</span>
-            </div>
-          </div>
-        </foreignObject>
+          <circle cx="50" cy="36" r="3.5" fill="#FF6B00" filter="url(#glow-fx-footer)" />
+          <circle cx="50" cy="45" r="3.5" fill="#00E396" filter="url(#glow-fx-footer)" />
+          <circle cx="50" cy="54" r="3.5" fill="#0052FF" filter="url(#glow-fx-footer)" />
+        </g>
       </svg>
           </div>
         <p class="footer-desc">Premium industrial &amp; commercial lighting, ventilation systems, and HT/LT power engineering services. Certified quality and energy auditing solutions.</p>
