@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Edison AMP — Premium LED Lights, HVLS Fans & Electrical Works</title>
 <meta name="description" content="Edison AMP — Premium LED Lights, HVLS Fans & HT/LT Electrical Works. We specialize in energy efficiency, heavy ventilation, switchgear setups, and AMC audits."/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet"/>
 <style>
 /* ===== TOKENS ===== */
 :root {
@@ -458,6 +458,45 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .why-stat-item {
   text-align: center;
   flex: 1;
+  position: relative;
+  padding: 20px 28px;
+  border-radius: 20px;
+  background: rgba(251, 146, 60, 0.015);
+  border: 1px solid rgba(200, 148, 31, 0.08);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+.why-stat-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.28) 0%, rgba(251, 146, 60, 0.05) 50%, rgba(251, 146, 60, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: -1;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+  opacity: 0.3;
+  filter: blur(6px);
+  pointer-events: none;
+}
+.why-stat-item:hover {
+  transform: translateY(-5px);
+  background: rgba(251, 146, 60, 0.05);
+  border-color: rgba(251, 146, 60, 0.35);
+  box-shadow: 0 14px 32px rgba(251, 146, 60, 0.15), 0 0 16px rgba(251, 146, 60, 0.08) inset;
+}
+.why-stat-item:hover::before {
+  transform: translate(-50%, -50%) scale(1.3);
+  opacity: 1;
+  animation: glowPulse 1.8s infinite ease-in-out alternate;
+}
+@keyframes glowPulse {
+  0% { filter: blur(5px); opacity: 0.8; }
+  100% { filter: blur(15px); opacity: 1; }
 }
 .why-stat-num {
   font-family: 'Playfair Display', serif;
@@ -466,12 +505,13 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   color: #9a6a15;
 }
 .why-stat-lbl {
-  font-size: .75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: 6px;
   text-transform: uppercase;
-  letter-spacing: .06em;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-weight: 700;
 }
 .why-stat-divider {
   width: 1px;
@@ -1109,90 +1149,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       <p class="sec-sub" style="margin:0 auto;">From energy-efficient LED lighting to heavy-duty HT/LT infrastructure — we deliver certified, end-to-end electrical excellence across Bangalore.</p>
     </div>
     <div class="services-grid">
-      <!-- LED Lighting -->
-      <div class="svc-card reveal reveal-delay-1">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="28" r="14" stroke="#0C3866" stroke-width="3"/><path d="M26 42h12M29 46h6" stroke="#0C3866" stroke-width="3" stroke-linecap="round"/><path d="M32 14V10M44 20l3-3M48 32h4M44 44l3 3M32 50v4M20 44l-3 3M16 32h-4M20 20l-3-3" stroke="#C8941F" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <h3 class="svc-title">LED Lighting Retrofit</h3>
-        <p class="svc-desc">Complete LED lighting upgrades for warehouses, factories, commercial spaces, and industrial facilities — reducing energy bills by up to 60%.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Industrial LED</span>
-          <span class="svc-tag">High Bay</span>
-          <span class="svc-tag">Street Lights</span>
-          <span class="svc-tag">Energy Saving</span>
-        </div>
-      </div>
-      <!-- HVLS Fans -->
-      <div class="svc-card reveal reveal-delay-2">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="5" fill="#0C3866"/><path d="M32 27C32 20 36 12 32 8C28 12 30 20 32 27Z" fill="#C8941F"/><path d="M37 32C44 32 52 28 56 32C52 36 44 34 37 32Z" fill="#C8941F"/><path d="M32 37C32 44 28 52 32 56C36 52 34 44 32 37Z" fill="#C8941F"/><path d="M27 32C20 32 12 36 8 32C12 28 20 30 27 32Z" fill="#C8941F"/></svg>
-        </div>
-        <h3 class="svc-title">HVLS Industrial Fans</h3>
-        <p class="svc-desc">High Volume Low Speed fans for large industrial spaces — improving air circulation, worker comfort, and operational efficiency year-round.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">HVLS</span>
-          <span class="svc-tag">Ventilation</span>
-          <span class="svc-tag">Industrial</span>
-          <span class="svc-tag">Commercial</span>
-        </div>
-      </div>
-      <!-- HT/LT Electrical -->
-      <div class="svc-card reveal reveal-delay-3">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="16" y="10" width="32" height="44" rx="4" stroke="#0C3866" stroke-width="3"/><path d="M24 20h16M24 28h16M24 36h10" stroke="#C8941F" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="44" r="3" fill="#0C3866"/></svg>
-        </div>
-        <h3 class="svc-title">HT &amp; LT Installations</h3>
-        <p class="svc-desc">Complete HT/LT electrical infrastructure including transformer commissioning, BESCOM approvals, switchgear, and control panel installation.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">HT Panels</span>
-          <span class="svc-tag">Transformer</span>
-          <span class="svc-tag">BESCOM</span>
-          <span class="svc-tag">LT Switchgear</span>
-        </div>
-      </div>
-      <!-- Energy Audit -->
-      <div class="svc-card reveal reveal-delay-4">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 8L14 36h18l-4 20 22-28H32L36 8z" fill="none" stroke="#0C3866" stroke-width="3" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="svc-title">Energy Auditing &amp; APFC</h3>
-        <p class="svc-desc">Professional energy audits and Automatic Power Factor Correction systems to reduce power penalties and maximise your electrical efficiency.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">APFC</span>
-          <span class="svc-tag">Power Factor</span>
-          <span class="svc-tag">Audit</span>
-          <span class="svc-tag">Efficiency</span>
-        </div>
-      </div>
-      <!-- AMC -->
-      <div class="svc-card reveal reveal-delay-5">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M32 12a20 20 0 100 40 20 20 0 000-40z" stroke="#0C3866" stroke-width="3"/><path d="M32 22v12l8 4" stroke="#C8941F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 class="svc-title">Electrical AMC Support</h3>
-        <p class="svc-desc">Annual Maintenance Contracts with priority response — scheduled inspections, 24/7 emergency callouts, and preventive maintenance programmes.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">AMC</span>
-          <span class="svc-tag">Maintenance</span>
-          <span class="svc-tag">24/7 Support</span>
-          <span class="svc-tag">Preventive</span>
-        </div>
-      </div>
-      <!-- Custom Panels -->
-      <div class="svc-card reveal reveal-delay-1">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="12" width="44" height="40" rx="4" stroke="#0C3866" stroke-width="3"/><circle cx="22" cy="26" r="4" stroke="#C8941F" stroke-width="2"/><circle cx="34" cy="26" r="4" stroke="#C8941F" stroke-width="2"/><rect x="16" y="36" width="32" height="8" rx="2" fill="#C8941F" opacity="0.3" stroke="#0C3866" stroke-width="1.5"/></svg>
-        </div>
-        <h3 class="svc-title">Custom Control Panels</h3>
-        <p class="svc-desc">Design and fabrication of bespoke electrical control panels, motor control centres (MCC), and distribution boards for industrial applications.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">MCC Panels</span>
-          <span class="svc-tag">DB Boards</span>
-          <span class="svc-tag">Custom Build</span>
-          <span class="svc-tag">Industrial</span>
-        </div>
-      </div>
+      <!-- Cards will be added later -->
     </div>
   </div>
 </section>
@@ -1272,46 +1229,7 @@ footer{background:linear-gradient(180deg,#fefcf7 0%,#fdf8ef 100%);color:var(--mu
       <p class="sec-sub" style="margin:0 auto;">Real installations across Bangalore's leading industrial, commercial, and manufacturing facilities.</p>
     </div>
     <div class="works-grid">
-      <div class="work-card reveal reveal-delay-1">
-        <div class="work-img-wrap">
-          <img src="work_led.png" alt="LED Lighting Installation" loading="lazy"/>
-        </div>
-        <div class="work-content">
-          <span class="work-tag">LED Retrofit</span>
-          <h3 class="work-title">Warehouse LED Lighting Upgrade</h3>
-          <p class="work-desc">Complete LED lighting retrofit across a 40,000 sq ft Peenya logistics warehouse — 58% energy reduction, zero downtime during installation.</p>
-        </div>
-      </div>
-      <div class="work-card reveal reveal-delay-2">
-        <div class="work-img-wrap">
-          <img src="work_fan.png" alt="HVLS Fan Installation" loading="lazy"/>
-        </div>
-        <div class="work-content">
-          <span class="work-tag">HVLS Fans</span>
-          <h3 class="work-title">Industrial HVLS Ventilation</h3>
-          <p class="work-desc">Installation of high-volume industrial fans across a Bommasandra manufacturing plant — dramatically improving airflow and worker comfort.</p>
-        </div>
-      </div>
-      <div class="work-card reveal reveal-delay-3">
-        <div class="work-img-wrap">
-          <img src="work_transformer.png" alt="Transformer Installation" loading="lazy"/>
-        </div>
-        <div class="work-content">
-          <span class="work-tag">HT/LT Project</span>
-          <h3 class="work-title">Transformer Commissioning</h3>
-          <p class="work-desc">Full HT transformer commissioning including BESCOM drawing approvals, inspectorate clearances, and LT panel integration for a major facility.</p>
-        </div>
-      </div>
-      <div class="work-card reveal reveal-delay-4">
-        <div class="work-img-wrap">
-          <img src="work_apfc.png" alt="APFC Panel" loading="lazy"/>
-        </div>
-        <div class="work-content">
-          <span class="work-tag">Energy Audit</span>
-          <h3 class="work-title">APFC Panel &amp; Power Audit</h3>
-          <p class="work-desc">Custom-built Automatic Power Factor Correction panel installation, eliminating reactive power penalties and improving overall grid efficiency.</p>
-        </div>
-      </div>
+      <!-- Cards will be added later -->
     </div>
   </div>
 </section>
