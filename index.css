@@ -165,8 +165,8 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   background: var(--gold);
   color: #fff;
   border-radius: 50%;
@@ -182,8 +182,8 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
   background: var(--gold2);
 }
 .floating-home-btn svg {
-  width: 24px;
-  height: 24px;
+  width: 17px;
+  height: 17px;
 }
 .mobile-sub-menu {
   display: flex;
@@ -1655,7 +1655,10 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   width: max-content;
   animation: poleScroll 80s linear infinite; /* Slower, smoother pan for fullscreen */
 }
-.pole-marquee-track:hover {
+.pole-marquee-container:hover .pole-marquee-track {
+  animation-play-state: paused;
+}
+.pole-marquee-container:hover + .marquee-progress-dots .m-dot {
   animation-play-state: paused;
 }
 @keyframes poleScroll {
@@ -1714,4 +1717,68 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== MARQUEE PROGRESS DOTS ===== */
+.marquee-progress-dots {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #000;
+}
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 0.85rem;
+  margin-left: 20px;
+}
+.speed-control input[type=range] {
+  -webkit-appearance: none;
+  width: 100px;
+  background: transparent;
+}
+.speed-control input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+}
+.speed-control input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  margin-top: -4px;
+}
+.m-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: dotSync 80s linear infinite;
+}
+@keyframes dotSync {
+  0%, 14.28% {
+    background: var(--gold);
+    transform: scale(1.3);
+  }
+  14.29%, 100% {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+/* Sync delays based on 80s / 7 items = ~11.428s per item */
+.dot-1 { animation-delay: 0s; }
+.dot-2 { animation-delay: 11.428s; }
+.dot-3 { animation-delay: 22.857s; }
+.dot-4 { animation-delay: 34.285s; }
+.dot-5 { animation-delay: 45.714s; }
+.dot-6 { animation-delay: 57.142s; }
+.dot-7 { animation-delay: 68.571s; }
 

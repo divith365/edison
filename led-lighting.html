@@ -13,7 +13,7 @@
 <!-- MOVIE MODE FULL SCREEN GALLERY -->
 
 <!-- MAIN CONTENT PLACEHOLDER -->
-<section class="section services-bg" style="padding: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+<section class="section services-bg" style="padding: 0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center;">
   <div class="section-inner" style="width: 100%; max-width: 100%;">
     
     <!-- 3D POLES SHOWCASE (MARQUEE) -->
@@ -80,6 +80,23 @@
         </div>
       </div>
     </div>
+    
+    <!-- CSS Animated Progress Dots & Controls -->
+    <div class="marquee-progress-dots">
+      <div class="m-dot dot-1"></div>
+      <div class="m-dot dot-2"></div>
+      <div class="m-dot dot-3"></div>
+      <div class="m-dot dot-4"></div>
+      <div class="m-dot dot-5"></div>
+      <div class="m-dot dot-6"></div>
+      <div class="m-dot dot-7"></div>
+      
+      <!-- Speed Slider -->
+      <div class="speed-control">
+        <label for="speedSlider">Speed</label>
+        <input type="range" id="speedSlider" min="0.25" max="4" step="0.25" value="1">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -138,12 +155,36 @@
         btn.classList.remove('show');
       }
     }
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    btn.addEventListener('click', function (e) {
+
+    btn.addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    window.addEventListener('scroll', updateProgress);
     updateProgress();
+  })();
+
+  // Speed controls for CSS Marquee via Slider
+  (function() {
+    const slider = document.getElementById('speedSlider');
+    if(slider) {
+      slider.addEventListener('input', (e) => {
+        const currentSpeed = parseFloat(e.target.value);
+        
+        // Update track playback rate
+        const track = document.querySelector('.pole-marquee-track');
+        if (track) {
+          track.getAnimations().forEach(anim => anim.playbackRate = currentSpeed);
+        }
+        
+        // Update all dots playback rate so they stay perfectly in sync
+        const dots = document.querySelectorAll('.m-dot');
+        dots.forEach(dot => {
+          dot.getAnimations().forEach(anim => anim.playbackRate = currentSpeed);
+        });
+      });
+    }
   })();
 
   // Scroll Reveal Animations
