@@ -19,13 +19,12 @@
     <!-- 3D POLES SHOWCASE (MARQUEE) -->
     <div class="reveal pole-marquee-container" style="margin-top: 0; border-radius: 0;">
       <div class="pole-marquee-track">
-        <!-- Original Set -->
         <div class="pole-card">
-          <img src="images/dec_pole_1.png" alt="Minimalist L-Shape Pole" />
+          <img src="images/dec_pole_1.png" alt="Minimalist L-Shape Pole" style="object-position: 80% center;" />
           <div class="pole-title">Minimalist L-Shape</div>
         </div>
         <div class="pole-card">
-          <img src="images/dec_pole_2.png" alt="Sleek V-Shape Dual Arm Pole" />
+          <img src="images/dec_pole_2.png" alt="Sleek V-Shape Dual Arm Pole" style="object-position: 20% center;" />
           <div class="pole-title">Sleek V-Shape</div>
         </div>
         <div class="pole-card">
@@ -33,11 +32,11 @@
           <div class="pole-title">Curved Arc</div>
         </div>
         <div class="pole-card">
-          <img src="images/dec_pole_4.png" alt="Contemporary Slim Straight Pole" />
+          <img src="images/dec_pole_4.png" alt="Contemporary Slim Straight Pole" style="object-position: 20% center;" />
           <div class="pole-title">Contemporary Slim</div>
         </div>
         <div class="pole-card">
-          <img src="images/solar_pole.png" alt="Solar LED Street Light Pole" />
+          <img src="images/solar_pole.png" alt="Solar LED Street Light Pole" style="object-position: 60% center;" />
           <div class="pole-title">Integrated Solar Pole</div>
         </div>
         <div class="pole-card">
@@ -45,17 +44,17 @@
           <div class="pole-title">Conical Octagonal</div>
         </div>
         <div class="pole-card">
-          <img src="images/high_mast_pole.png" alt="High-Mast Floodlight Tower" />
+          <img src="images/high_mast_pole.png" alt="High-Mast Floodlight Tower" style="object-position: 30% center;" />
           <div class="pole-title">High-Mast Tower</div>
         </div>
         
         <!-- Duplicated Set for Seamless Loop -->
         <div class="pole-card">
-          <img src="images/dec_pole_1.png" alt="Minimalist L-Shape Pole" />
+          <img src="images/dec_pole_1.png" alt="Minimalist L-Shape Pole" style="object-position: 80% center;" />
           <div class="pole-title">Minimalist L-Shape</div>
         </div>
         <div class="pole-card">
-          <img src="images/dec_pole_2.png" alt="Sleek V-Shape Dual Arm Pole" />
+          <img src="images/dec_pole_2.png" alt="Sleek V-Shape Dual Arm Pole" style="object-position: 20% center;" />
           <div class="pole-title">Sleek V-Shape</div>
         </div>
         <div class="pole-card">
@@ -63,11 +62,11 @@
           <div class="pole-title">Curved Arc</div>
         </div>
         <div class="pole-card">
-          <img src="images/dec_pole_4.png" alt="Contemporary Slim Straight Pole" />
+          <img src="images/dec_pole_4.png" alt="Contemporary Slim Straight Pole" style="object-position: 20% center;" />
           <div class="pole-title">Contemporary Slim</div>
         </div>
         <div class="pole-card">
-          <img src="images/solar_pole.png" alt="Solar LED Street Light Pole" />
+          <img src="images/solar_pole.png" alt="Solar LED Street Light Pole" style="object-position: 60% center;" />
           <div class="pole-title">Integrated Solar Pole</div>
         </div>
         <div class="pole-card">
@@ -75,26 +74,26 @@
           <div class="pole-title">Conical Octagonal</div>
         </div>
         <div class="pole-card">
-          <img src="images/high_mast_pole.png" alt="High-Mast Floodlight Tower" />
+          <img src="images/high_mast_pole.png" alt="High-Mast Floodlight Tower" style="object-position: 30% center;" />
           <div class="pole-title">High-Mast Tower</div>
         </div>
       </div>
-    </div>
-    
-    <!-- CSS Animated Progress Dots & Controls -->
-    <div class="marquee-progress-dots">
-      <div class="m-dot dot-1"></div>
-      <div class="m-dot dot-2"></div>
-      <div class="m-dot dot-3"></div>
-      <div class="m-dot dot-4"></div>
-      <div class="m-dot dot-5"></div>
-      <div class="m-dot dot-6"></div>
-      <div class="m-dot dot-7"></div>
       
-      <!-- Speed Slider -->
-      <div class="speed-control">
-        <label for="speedSlider">Speed</label>
-        <input type="range" id="speedSlider" min="0.25" max="4" step="0.25" value="1">
+      <!-- CSS Animated Progress Dots & Controls -->
+      <div class="marquee-progress-dots">
+        <div class="m-dot" data-index="0"></div>
+        <div class="m-dot" data-index="1"></div>
+        <div class="m-dot" data-index="2"></div>
+        <div class="m-dot" data-index="3"></div>
+        <div class="m-dot" data-index="4"></div>
+        <div class="m-dot" data-index="5"></div>
+        <div class="m-dot" data-index="6"></div>
+        
+        <!-- Speed Slider -->
+        <div class="speed-control">
+          <label for="speedSlider">Speed</label>
+          <input type="range" id="speedSlider" min="0.25" max="4" step="0.25" value="1">
+        </div>
       </div>
     </div>
   </div>
@@ -165,24 +164,83 @@
     updateProgress();
   })();
 
-  // Speed controls for CSS Marquee via Slider
+  // Continuous JS Scroller with Clickable Dots
   (function() {
+    const track = document.querySelector('.pole-marquee-track');
+    const container = document.querySelector('.pole-marquee-container');
+    const dots = document.querySelectorAll('.m-dot');
     const slider = document.getElementById('speedSlider');
-    if(slider) {
-      slider.addEventListener('input', (e) => {
-        const currentSpeed = parseFloat(e.target.value);
+    
+    if (!track) return;
+
+    let isPaused = false;
+    let speedMultiplier = 1.0;
+    let animationId;
+
+    // We manually scroll left every frame
+    function scrollLoop() {
+      if (!isPaused) {
+        // Base speed roughly matching the 80s CSS animation
+        track.scrollLeft += 0.5 * speedMultiplier;
         
-        // Update track playback rate
-        const track = document.querySelector('.pole-marquee-track');
-        if (track) {
-          track.getAnimations().forEach(anim => anim.playbackRate = currentSpeed);
+        // Infinite Loop logic: if we scrolled past the original set, reset to 0 smoothly
+        if (track.scrollLeft >= track.scrollWidth / 2) {
+          track.scrollLeft -= track.scrollWidth / 2;
         }
         
-        // Update all dots playback rate so they stay perfectly in sync
-        const dots = document.querySelectorAll('.m-dot');
-        dots.forEach(dot => {
-          dot.getAnimations().forEach(anim => anim.playbackRate = currentSpeed);
-        });
+        updateActiveDot();
+      }
+      animationId = requestAnimationFrame(scrollLoop);
+    }
+
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+      const cardWidth = track.scrollWidth / 14; // 14 total cards (7 original + 7 duplicate)
+      let currentIndex = Math.floor(track.scrollLeft / cardWidth);
+      if (currentIndex >= 7) currentIndex -= 7;
+      
+      dots.forEach(d => d.classList.remove('active'));
+      if(dots[currentIndex]) dots[currentIndex].classList.add('active');
+    }
+
+    // Start loop
+    animationId = requestAnimationFrame(scrollLoop);
+
+    // Pause only on hovering the images (track), not the dots
+    track.addEventListener('mouseenter', () => isPaused = true);
+    track.addEventListener('mouseleave', () => isPaused = false);
+
+    // Dot click to skip
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        const cardWidth = track.scrollWidth / 14;
+        
+        // Calculate target scroll position for that index
+        let targetScroll = index * cardWidth;
+        
+        // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
+        if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
+          targetScroll = (index + 7) * cardWidth;
+        }
+
+        // Use native smooth scrolling
+        track.scrollTo({ left: targetScroll, behavior: 'smooth' });
+        
+        // Briefly pause auto-scrolling to let the smooth scroll finish
+        isPaused = true;
+        setTimeout(() => {
+          if(!track.matches(':hover')) {
+             isPaused = false;
+          }
+        }, 1000);
+      });
+    });
+
+    // Speed Slider
+    if(slider) {
+      slider.addEventListener('input', (e) => {
+        speedMultiplier = parseFloat(e.target.value);
       });
     }
   })();
