@@ -198,6 +198,14 @@
           <img src="images/bollard_stylish_2.png" alt="Stylish Bollard 2" />
           <div class="pole-title">Curved Wave Bollard</div>
         </div>
+        <div class="pole-card">
+          <img src="images/bollard_simple_cylinder.png" alt="Minimalist Round Bollard" />
+          <div class="pole-title">Minimalist Round Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_simple_slot.png" alt="Slotted Path Bollard" />
+          <div class="pole-title">Slotted Path Bollard</div>
+        </div>
         
         <!-- Duplicated Set for Seamless Loop -->
         <!-- GROUP 1: STREET & DECORATIVE POLES (DUPLICATE) -->
@@ -379,6 +387,14 @@
           <img src="images/bollard_stylish_2.png" alt="Stylish Bollard 2" />
           <div class="pole-title">Curved Wave Bollard</div>
         </div>
+        <div class="pole-card">
+          <img src="images/bollard_simple_cylinder.png" alt="Minimalist Round Bollard" />
+          <div class="pole-title">Minimalist Round Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_simple_slot.png" alt="Slotted Path Bollard" />
+          <div class="pole-title">Slotted Path Bollard</div>
+        </div>
       </div>
       
       <!-- CSS Animated Progress Dots & Controls -->
@@ -425,6 +441,8 @@
       <div class="m-dot" data-index="39"></div>
       <div class="m-dot" data-index="40"></div>
       <div class="m-dot" data-index="41"></div>
+      <div class="m-dot" data-index="42"></div>
+      <div class="m-dot" data-index="43"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -510,10 +528,10 @@
     
     if (!track) return;
 
-    // Dynamically inject index badges (1 to 42)
+    // Dynamically inject index badges (1 to 44)
     const cards = track.querySelectorAll('.pole-card');
     cards.forEach((card, idx) => {
-      const displayIdx = (idx % 42) + 1;
+      const displayIdx = (idx % 44) + 1;
       const badge = document.createElement('span');
       badge.className = 'pole-badge';
       badge.textContent = displayIdx;
@@ -542,9 +560,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 84; // 84 total cards (42 original + 42 duplicate)
+      const cardWidth = track.scrollWidth / 88; // 88 total cards (44 original + 44 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 42) currentIndex -= 42;
+      if (currentIndex >= 44) currentIndex -= 44;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -561,14 +579,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 84;
+        const cardWidth = track.scrollWidth / 88;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 42) * cardWidth;
+          targetScroll = (index + 44) * cardWidth;
         }
 
         // Use native smooth scrolling
