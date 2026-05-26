@@ -2019,6 +2019,27 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
     margin-top: 8px !important;
     gap: 8px !important;
   }
+  
+  /* Footer mobile optimization */
+  .footer-links li {
+    white-space: normal !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .footer-links li span {
+    display: none !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+  .footer-bottom span {
+    display: block !important;
+    line-height: 1.6 !important;
+  }
 }
 
 
