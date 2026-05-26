@@ -1978,4 +1978,45 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   }
 }
 
+/* ===== MOBILE ONLY ADJUSTMENTS FOR FULL SCREEN SCROLLER ===== */
+@media (max-width: 768px) {
+  html, body {
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .pole-marquee-container {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    overflow: hidden !important;
+  }
+  .pole-marquee-track {
+    flex-grow: 1 !important;
+    height: auto !important;
+  }
+  .marquee-progress-dots {
+    height: auto !important;
+    min-height: 80px !important;
+    padding: 12px 16px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px 6px !important;
+    box-sizing: border-box !important;
+  }
+  .m-dot {
+    width: 6px !important;
+    height: 6px !important;
+  }
+  .speed-control {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+    gap: 8px !important;
+  }
+}
+
+
 
