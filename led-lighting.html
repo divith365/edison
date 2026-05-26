@@ -108,6 +108,10 @@
           <img src="images/high_mast_junction.png" alt="Highway Junction High-Mast" />
           <div class="pole-title">Highway Junction High-Mast</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_vinisha_ventures.png" alt="Vinisha Ventures High-Mast" />
+          <div class="pole-title">Vinisha Ventures High-Mast</div>
+        </div>
 
         <!-- GROUP 4: CCTV POLES -->
         <div class="pole-card">
@@ -297,6 +301,10 @@
           <img src="images/high_mast_junction.png" alt="Highway Junction High-Mast" />
           <div class="pole-title">Highway Junction High-Mast</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_vinisha_ventures.png" alt="Vinisha Ventures High-Mast" />
+          <div class="pole-title">Vinisha Ventures High-Mast</div>
+        </div>
 
         <!-- GROUP 4: CCTV POLES (DUPLICATE) -->
         <div class="pole-card">
@@ -443,6 +451,7 @@
       <div class="m-dot" data-index="41"></div>
       <div class="m-dot" data-index="42"></div>
       <div class="m-dot" data-index="43"></div>
+      <div class="m-dot" data-index="44"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -528,10 +537,10 @@
     
     if (!track) return;
 
-    // Dynamically inject index badges (1 to 44)
+    // Dynamically inject index badges (1 to 45)
     const cards = track.querySelectorAll('.pole-card');
     cards.forEach((card, idx) => {
-      const displayIdx = (idx % 44) + 1;
+      const displayIdx = (idx % 45) + 1;
       const badge = document.createElement('span');
       badge.className = 'pole-badge';
       badge.textContent = displayIdx;
@@ -560,9 +569,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 88; // 88 total cards (44 original + 44 duplicate)
+      const cardWidth = track.scrollWidth / 90; // 90 total cards (45 original + 45 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 44) currentIndex -= 44;
+      if (currentIndex >= 45) currentIndex -= 45;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -579,14 +588,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 88;
+        const cardWidth = track.scrollWidth / 90;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 44) * cardWidth;
+          targetScroll = (index + 45) * cardWidth;
         }
 
         // Use native smooth scrolling
