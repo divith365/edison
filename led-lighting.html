@@ -92,6 +92,18 @@
           <img src="images/high_mast_temple.png" alt="Temple High-Mast Light" />
           <div class="pole-title">Temple High-Mast Light</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_school.png" alt="Village School High-Mast" />
+          <div class="pole-title">Village School High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_marriage_hall.png" alt="Marriage Hall High-Mast" />
+          <div class="pole-title">Marriage Hall High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_junction.png" alt="Highway Junction High-Mast" />
+          <div class="pole-title">Highway Junction High-Mast</div>
+        </div>
 
         <!-- GROUP 4: CCTV POLES -->
         <div class="pole-card">
@@ -245,6 +257,18 @@
           <img src="images/high_mast_temple.png" alt="Temple High-Mast Light" />
           <div class="pole-title">Temple High-Mast Light</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_school.png" alt="Village School High-Mast" />
+          <div class="pole-title">Village School High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_marriage_hall.png" alt="Marriage Hall High-Mast" />
+          <div class="pole-title">Marriage Hall High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_junction.png" alt="Highway Junction High-Mast" />
+          <div class="pole-title">Highway Junction High-Mast</div>
+        </div>
 
         <!-- GROUP 4: CCTV POLES (DUPLICATE) -->
         <div class="pole-card">
@@ -362,6 +386,9 @@
       <div class="m-dot" data-index="32"></div>
       <div class="m-dot" data-index="33"></div>
       <div class="m-dot" data-index="34"></div>
+      <div class="m-dot" data-index="35"></div>
+      <div class="m-dot" data-index="36"></div>
+      <div class="m-dot" data-index="37"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -447,10 +474,10 @@
     
     if (!track) return;
 
-    // Dynamically inject index badges (1 to 35)
+    // Dynamically inject index badges (1 to 38)
     const cards = track.querySelectorAll('.pole-card');
     cards.forEach((card, idx) => {
-      const displayIdx = (idx % 35) + 1;
+      const displayIdx = (idx % 38) + 1;
       const badge = document.createElement('span');
       badge.className = 'pole-badge';
       badge.textContent = displayIdx;
@@ -479,9 +506,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 70; // 70 total cards (35 original + 35 duplicate)
+      const cardWidth = track.scrollWidth / 76; // 76 total cards (38 original + 38 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 35) currentIndex -= 35;
+      if (currentIndex >= 38) currentIndex -= 38;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -498,14 +525,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 70;
+        const cardWidth = track.scrollWidth / 76;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 35) * cardWidth;
+          targetScroll = (index + 38) * cardWidth;
         }
 
         // Use native smooth scrolling
