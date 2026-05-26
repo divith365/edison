@@ -938,7 +938,7 @@ nav::after{content:'';position:absolute;inset:2px;background:#FFFFFF;border-radi
 .vendors-cat-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(200,148,31,.18),transparent);}
 .vendors-row{display:flex;flex-wrap:wrap;gap:14px;}
 .vendor-card{background:#fdf8ef;border:1.5px solid #e8ecf4;border-radius:18px;padding:20px 24px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:default;transition:transform .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease;min-width:110px;}
-.vendor-card:hover{transform:translateY(-6px) scale(1.03);background:var(--navy);border-color:var(--navy);box-shadow:0 12px 28px rgba(11,29,58,.18);}
+.vendor-card:hover{transform:translateY(-10px) scale(1.05);background:#251c12;border-color:var(--gold);box-shadow:0 16px 36px rgba(251, 146, 60, 0.22);}
 .vendor-logo{width:52px;height:52px;object-fit:contain;filter:none;opacity:1;transition:filter .3s ease,transform .3s ease;}
 .vendor-card:hover .vendor-logo{filter:brightness(0) invert(1);transform:scale(1.1);}
 .vendor-name{font-size:.7rem;font-weight:700;color:rgba(11,29,58,.75);letter-spacing:.05em;text-transform:uppercase;transition:color .3s ease;}
