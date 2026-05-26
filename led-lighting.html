@@ -52,19 +52,12 @@
     }
   });
 
-  // Show loader on page unload/navigation
-  window.addEventListener('beforeunload', () => {
-    const loader = document.getElementById('pageLoader');
-    if (loader) {
-      loader.classList.remove('fade-out');
-    }
-  });
-
   // Intercept standard local page links to trigger loader immediately
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a').forEach(link => {
       const href = link.getAttribute('href');
-      if (href && (href.endsWith('.html') || href.includes('.html#')) && !link.getAttribute('target') && !href.startsWith('#')) {
+      // Skip loader when navigating back to homepage (index.html)
+      if (href && href !== 'index.html' && !href.startsWith('index.html') && (href.endsWith('.html') || href.includes('.html#')) && !link.getAttribute('target') && !href.startsWith('#')) {
         link.addEventListener('click', (e) => {
           if (e.button === 1 || e.metaKey || e.ctrlKey || e.shiftKey) return;
           const loader = document.getElementById('pageLoader');
