@@ -43,13 +43,18 @@
   </div>
 </div>
 <script>
-  // Hide loader when page is fully loaded
-  window.addEventListener('load', () => {
+  // Hide loader when page is shown or restored from back-forward cache (BFCache)
+  window.addEventListener('pageshow', (event) => {
     const loader = document.getElementById('pageLoader');
     if (loader) {
-      setTimeout(() => {
+      // For homepage, ensure it is faded out immediately
+      if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || !window.location.pathname.includes('.html')) {
         loader.classList.add('fade-out');
-      }, 400);
+      } else {
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 400);
+      }
     }
   });
 

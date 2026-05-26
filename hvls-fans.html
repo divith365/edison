@@ -42,8 +42,8 @@
   </div>
 </div>
 <script>
-  // Hide loader when page is fully loaded
-  window.addEventListener('load', () => {
+  // Hide loader when page is shown or restored from back-forward cache (BFCache)
+  window.addEventListener('pageshow', (event) => {
     const loader = document.getElementById('pageLoader');
     if (loader) {
       setTimeout(() => {
