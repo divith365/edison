@@ -95,6 +95,18 @@
           <img src="images/garden_pole_2.png" alt="Modern Minimalist Garden Pole" />
           <div class="pole-title">Modern Garden Pole</div>
         </div>
+        <div class="pole-card">
+          <img src="images/solar_quad_indian_road.png" alt="Solar Quad-Light Pole" />
+          <div class="pole-title">Solar Quad-Light Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/stadium_corner_poles.png" alt="Stadium Corner Floodlights" />
+          <div class="pole-title">Stadium Corner Floodlights</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/flag_mast_pole.png" alt="Indian Flag Mast Pole" />
+          <div class="pole-title">Indian Flag Mast Pole</div>
+        </div>
         
         <!-- Duplicated Set for Seamless Loop -->
         <div class="pole-card">
@@ -173,6 +185,18 @@
           <img src="images/garden_pole_2.png" alt="Modern Minimalist Garden Pole" />
           <div class="pole-title">Modern Garden Pole</div>
         </div>
+        <div class="pole-card">
+          <img src="images/solar_quad_indian_road.png" alt="Solar Quad-Light Pole" />
+          <div class="pole-title">Solar Quad-Light Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/stadium_corner_poles.png" alt="Stadium Corner Floodlights" />
+          <div class="pole-title">Stadium Corner Floodlights</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/flag_mast_pole.png" alt="Indian Flag Mast Pole" />
+          <div class="pole-title">Indian Flag Mast Pole</div>
+        </div>
       </div>
       
       <!-- CSS Animated Progress Dots & Controls -->
@@ -196,6 +220,9 @@
       <div class="m-dot" data-index="16"></div>
       <div class="m-dot" data-index="17"></div>
       <div class="m-dot" data-index="18"></div>
+      <div class="m-dot" data-index="19"></div>
+      <div class="m-dot" data-index="20"></div>
+      <div class="m-dot" data-index="21"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -303,9 +330,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 14; // 14 total cards (7 original + 7 duplicate)
+      const cardWidth = track.scrollWidth / 44; // 44 total cards (22 original + 22 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 7) currentIndex -= 7;
+      if (currentIndex >= 22) currentIndex -= 22;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -322,14 +349,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 14;
+        const cardWidth = track.scrollWidth / 44;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 7) * cardWidth;
+          targetScroll = (index + 22) * cardWidth;
         }
 
         // Use native smooth scrolling
