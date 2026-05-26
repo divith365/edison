@@ -426,48 +426,94 @@
         </div>
       </div>
 
-      <div class="why-visual reveal reveal-delay-2" style="max-width: 500px; margin: 0 auto; padding: 24px;">
-        <p style="font-size:0.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;text-align:center;">Performance Benchmarks</p>
+      <!-- Two benchmark cards side by side -->
+      <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
 
-        <div class="wv-row" style="padding: 9px 0;">
-          <span class="wv-label" style="font-size: 0.82rem;">Energy Savings</span>
-          <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="60"></div></div>
-          <span class="wv-pct" data-target="60" style="font-size: 0.82rem;">0%</span>
-        </div>
-        <div class="wv-row" style="padding: 9px 0;">
-          <span class="wv-label" style="font-size: 0.82rem;">Client Retention</span>
-          <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="99"></div></div>
-          <span class="wv-pct" data-target="99" style="font-size: 0.82rem;">0%</span>
-        </div>
-        <div class="wv-row" style="padding: 9px 0;">
-          <span class="wv-label" style="font-size: 0.82rem;">On-Time Delivery</span>
-          <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="99"></div></div>
-          <span class="wv-pct" data-target="99" style="font-size: 0.82rem;">0%</span>
-        </div>
-        <div class="wv-row" style="padding: 9px 0; border-bottom: none;">
-          <span class="wv-label" style="font-size: 0.82rem;">BESCOM Approval Rate</span>
-          <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
-          <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
-        </div>
+        <!-- Card 1: Performance Benchmarks (existing) -->
+        <div class="why-visual reveal reveal-delay-2" style="flex:1; min-width:280px; max-width:460px; padding: 24px;">
+          <p style="font-size:0.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;text-align:center;">Performance Benchmarks</p>
 
-        <!-- Running Numbers -->
-        <div class="why-stats-row" style="justify-content: center; margin-top: 20px; border-top: 1px solid rgba(200, 148, 31, 0.1); padding-top: 16px; gap: 20px;">
-          <div class="why-stat-item" style="text-align: center; padding: 12px 20px;">
-            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
-              <span class="stat-num" data-target="10" data-duration="3000" style="color:var(--navy);">0</span>
-            </div>
-            <div class="why-stat-lbl" style="font-size: 0.72rem; margin-top: 6px;">Years Active</div>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">Energy Savings</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="60"></div></div>
+            <span class="wv-pct" data-target="60" style="font-size: 0.82rem;">0%</span>
           </div>
-          <div class="why-stat-divider" style="height: 40px;"></div>
-          <div class="why-stat-item" style="text-align: center; padding: 12px 20px;">
-            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
-              <span class="stat-num" data-target="50" data-duration="3000" style="color:var(--navy);">0</span>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">Client Retention</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="99"></div></div>
+            <span class="wv-pct" data-target="99" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">On-Time Delivery</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="99"></div></div>
+            <span class="wv-pct" data-target="99" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0; border-bottom: none;">
+            <span class="wv-label" style="font-size: 0.82rem;">BESCOM Approval Rate</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+
+          <!-- Running Numbers -->
+          <div class="why-stats-row" style="justify-content: center; margin-top: 20px; border-top: 1px solid rgba(200, 148, 31, 0.1); padding-top: 16px; gap: 20px;">
+            <div class="why-stat-item" style="text-align: center; padding: 12px 20px;">
+              <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
+                <span class="stat-num" data-target="10" data-duration="3000" style="color:var(--navy);">0</span>
+              </div>
+              <div class="why-stat-lbl" style="font-size: 0.72rem; margin-top: 6px;">Years Active</div>
             </div>
-            <div class="why-stat-lbl" style="font-size: 0.72rem; margin-top: 6px;">Clients Served</div>
+            <div class="why-stat-divider" style="height: 40px;"></div>
+            <div class="why-stat-item" style="text-align: center; padding: 12px 20px;">
+              <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; color:var(--navy); line-height:1; display:flex; align-items:baseline; justify-content:center;">
+                <span class="stat-num" data-target="50" data-duration="3000" style="color:var(--navy);">0</span>
+              </div>
+              <div class="why-stat-lbl" style="font-size: 0.72rem; margin-top: 6px;">Clients Served</div>
+            </div>
           </div>
         </div>
 
-      </div>
+        <!-- Card 2: Product Highlights (new) -->
+        <div class="why-visual reveal reveal-delay-3" style="flex:1; min-width:280px; max-width:460px; padding: 24px;">
+          <p style="font-size:0.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;text-align:center;">Product Highlights</p>
+
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">⚡ Energy Efficient</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">🛡️ Durable</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">🤝 Reliable</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0;">
+            <span class="wv-label" style="font-size: 0.82rem;">🔧 Expert Installation</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+          <div class="wv-row" style="padding: 9px 0; border-bottom: none;">
+            <span class="wv-label" style="font-size: 0.82rem;">⚙️ Low Maintenance</span>
+            <div class="wv-bar-wrap" style="height: 6px; margin: 0 12px;"><div class="wv-bar" data-width="100"></div></div>
+            <span class="wv-pct" data-target="100" style="font-size: 0.82rem;">0%</span>
+          </div>
+
+          <!-- Tagline at bottom -->
+          <div style="margin-top: 20px; border-top: 1px solid rgba(200, 148, 31, 0.1); padding-top: 16px; text-align: center;">
+            <p style="font-family:'Playfair Display',serif; font-size:0.88rem; color:var(--navy); font-weight:700; font-style:italic; line-height:1.5; margin:0 0 4px 0;">
+              Built to last. Engineered for efficiency,
+            </p>
+            <p style="font-family:'Plus Jakarta Sans',sans-serif; font-size:0.75rem; color:var(--gold); font-weight:700; letter-spacing:0.04em; text-transform:uppercase; margin:0;">
+              Expert Installation &amp; Minimal Upkeep
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /two benchmark cards -->
     </div>
   </div>
 </section>
@@ -1303,63 +1349,65 @@
     });
   })();
 
-  // Why Choose Us Performance Bars counter animation
+  // Why Choose Us Performance Bars counter animation — handles ALL .why-visual cards
   (function(){
-    const visual = document.querySelector('.why-visual');
-    if(!visual) return;
-    
-    const progressBars = visual.querySelectorAll('.wv-bar[data-width]');
-    const counters = visual.querySelectorAll('.wv-pct[data-target]');
-    let activeTimers = [];
-    
-    const runAnimation = () => {
-      activeTimers.forEach(t => clearInterval(t));
-      activeTimers = [];
-      
-      progressBars.forEach(bar => {
-        bar.style.transition = 'none';
-        bar.style.width = '0%';
-      });
-      
-      visual.offsetHeight; // Force reflow
-      
-      progressBars.forEach(bar => {
-        bar.style.transition = 'width 2.0s cubic-bezier(0.1, 0.8, 0.2, 1)';
-        const w = bar.getAttribute('data-width');
-        bar.style.width = w + '%';
-      });
-      
-      counters.forEach(el => {
-        const target = parseInt(el.getAttribute('data-target'));
-        let current = 0;
-        el.textContent = "0%";
-        const duration = 2000;
-        const stepTime = Math.max(Math.floor(duration / target), 15);
-        const timer = setInterval(() => {
-          current += 1;
-          el.textContent = current + "%";
-          if(current >= target) {
-            el.textContent = target + "%";
-            clearInterval(timer);
+    const visuals = document.querySelectorAll('.why-visual');
+    if(!visuals.length) return;
+
+    visuals.forEach(function(visual) {
+      const progressBars = visual.querySelectorAll('.wv-bar[data-width]');
+      const counters = visual.querySelectorAll('.wv-pct[data-target]');
+      let activeTimers = [];
+
+      const runAnimation = function() {
+        activeTimers.forEach(function(t){ clearInterval(t); });
+        activeTimers = [];
+
+        progressBars.forEach(function(bar) {
+          bar.style.transition = 'none';
+          bar.style.width = '0%';
+        });
+
+        visual.offsetHeight; // Force reflow
+
+        progressBars.forEach(function(bar) {
+          bar.style.transition = 'width 2.0s cubic-bezier(0.1, 0.8, 0.2, 1)';
+          var w = bar.getAttribute('data-width');
+          bar.style.width = w + '%';
+        });
+
+        counters.forEach(function(el) {
+          var target = parseInt(el.getAttribute('data-target'));
+          var current = 0;
+          el.textContent = '0%';
+          var duration = 2000;
+          var stepTime = Math.max(Math.floor(duration / target), 15);
+          var timer = setInterval(function() {
+            current += 1;
+            el.textContent = current + '%';
+            if(current >= target) {
+              el.textContent = target + '%';
+              clearInterval(timer);
+            }
+          }, stepTime);
+          activeTimers.push(timer);
+        });
+      };
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if(entry.isIntersecting){
+            runAnimation();
+            observer.unobserve(entry.target);
           }
-        }, stepTime);
-        activeTimers.push(timer);
+        });
+      }, { threshold: 0.25 });
+
+      observer.observe(visual);
+
+      visual.addEventListener('mouseenter', function() {
+        runAnimation();
       });
-    };
-    
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          runAnimation();
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.25 });
-    
-    observer.observe(visual);
-    
-    visual.addEventListener('mouseenter', () => {
-      runAnimation();
     });
   })();
 
