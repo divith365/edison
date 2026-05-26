@@ -111,6 +111,34 @@
           <img src="images/decorative_garden_bollard.png" alt="Rainproof Garden Bollard" />
           <div class="pole-title">Rainproof Garden Bollard</div>
         </div>
+        <div class="pole-card">
+          <img src="images/bollard_square_1.png" alt="Square Bollard 1" />
+          <div class="pole-title">Minimalist Square Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_square_2.png" alt="Square Bollard 2" />
+          <div class="pole-title">Architectural Square Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_stylish_1.png" alt="Stylish Bollard 1" />
+          <div class="pole-title">Ornate Shadow Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_stylish_2.png" alt="Stylish Bollard 2" />
+          <div class="pole-title">Curved Wave Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_1.png" alt="Tall Vintage Garden Pole" />
+          <div class="pole-title">Tall Vintage Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_2.png" alt="Tall Modern Garden Pole" />
+          <div class="pole-title">Tall Modern Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_3.png" alt="Tall European Garden Pole" />
+          <div class="pole-title">Tall European Garden Pole</div>
+        </div>
         
         <!-- Duplicated Set for Seamless Loop -->
         <div class="pole-card">
@@ -205,6 +233,34 @@
           <img src="images/decorative_garden_bollard.png" alt="Rainproof Garden Bollard" />
           <div class="pole-title">Rainproof Garden Bollard</div>
         </div>
+        <div class="pole-card">
+          <img src="images/bollard_square_1.png" alt="Square Bollard 1" />
+          <div class="pole-title">Minimalist Square Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_square_2.png" alt="Square Bollard 2" />
+          <div class="pole-title">Architectural Square Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_stylish_1.png" alt="Stylish Bollard 1" />
+          <div class="pole-title">Ornate Shadow Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/bollard_stylish_2.png" alt="Stylish Bollard 2" />
+          <div class="pole-title">Curved Wave Bollard</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_1.png" alt="Tall Vintage Garden Pole" />
+          <div class="pole-title">Tall Vintage Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_2.png" alt="Tall Modern Garden Pole" />
+          <div class="pole-title">Tall Modern Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_tall_3.png" alt="Tall European Garden Pole" />
+          <div class="pole-title">Tall European Garden Pole</div>
+        </div>
       </div>
       
       <!-- CSS Animated Progress Dots & Controls -->
@@ -232,6 +288,13 @@
       <div class="m-dot" data-index="20"></div>
       <div class="m-dot" data-index="21"></div>
       <div class="m-dot" data-index="22"></div>
+      <div class="m-dot" data-index="23"></div>
+      <div class="m-dot" data-index="24"></div>
+      <div class="m-dot" data-index="25"></div>
+      <div class="m-dot" data-index="26"></div>
+      <div class="m-dot" data-index="27"></div>
+      <div class="m-dot" data-index="28"></div>
+      <div class="m-dot" data-index="29"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -339,9 +402,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 46; // 46 total cards (23 original + 23 duplicate)
+      const cardWidth = track.scrollWidth / 60; // 60 total cards (30 original + 30 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 23) currentIndex -= 23;
+      if (currentIndex >= 30) currentIndex -= 30;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -358,14 +421,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 46;
+        const cardWidth = track.scrollWidth / 60;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 23) * cardWidth;
+          targetScroll = (index + 30) * cardWidth;
         }
 
         // Use native smooth scrolling
