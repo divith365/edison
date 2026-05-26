@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%">
+  <!-- Symbol: Stylized new Polycab 'P' swoosh in brand Red -->
+  <g transform="translate(10, 5)">
+    <!-- Red stem swoosh -->
+    <path d="M 12 5 C 7 5, 4 9, 4 14 L 4 36 C 4 41, 7 45, 12 45 C 16 45, 19 41, 19 36 L 19 14 C 19 9, 16 5, 12 5 Z" fill="#E31E24" />
+    <!-- Red loop swoosh -->
+    <path d="M 23 5 C 34 5, 42 12, 42 22 C 42 32, 34 39, 23 39 C 21 39, 19 38, 19 36 L 19 14 C 19 7, 21 5, 23 5 Z M 23 13 C 28 13, 33 17, 33 22 C 33 27, 28 31, 23 31 C 21 31, 19 30, 19 28 L 19 16 C 19 14, 21 13, 23 13 Z" fill="#E31E24" />
+    <!-- Small orange/yellow connector dot representing energy/connectivity -->
+    <circle cx="12" cy="18" r="4" fill="#FB923C" />
+  </g>
+  <!-- Text: POLYCAB -->
+  <text x="65" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="28" fill="#E31E24" letter-spacing="0.5">POLYCAB</text>
+</svg>
