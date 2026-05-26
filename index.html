@@ -11,6 +11,73 @@
 </head>
 <body>
 
+<!-- PAGE LOAD TRANSITION OVERLAY -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo-o">
+    <svg viewBox="0 0 100 100" width="100%" height="100%">
+      <defs>
+        <filter id="loader-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        <filter id="loader-bulb-glow" x="-35%" y="-35%" width="170%" height="170%">
+          <feGaussianBlur stdDeviation="7" result="b1" />
+          <feGaussianBlur stdDeviation="3" result="b2" />
+          <feMerge>
+            <feMergeNode in="b1" />
+            <feMergeNode in="b2" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <circle cx="50" cy="50" r="40" fill="none" stroke="#EDE4D5" stroke-width="11" />
+      <g transform="translate(0, -3) scale(0.95)" style="transform-origin: 50px 48px">
+        <path d="M34,44 C34,35.16 41.16,28 50,28 C58.84,28 66,35.16 66,44 C66,49.8 62.8,54.5 59.5,57.8 C58,59.3 57.2,61.6 57.2,63.8 L57.2,65.5 L42.8,65.5 L42.8,63.8 C42.8,61.6 42,59.3 40.5,57.8 C37.2,54.5 34,49.8 34,44 Z" fill="transparent" stroke="#EDE4D5" stroke-width="2.5" filter="url(#loader-bulb-glow)" />
+        <path d="M44.5,66.5 L55.5,66.5 C56.3,66.5 57,67 57,67.8 L57,69.5 C57,70.3 56.3,71 55.5,71 L44.5,71 C43.7,71 43,70.3 43,69.5 L43,67.8 C43,67 43.7,66.5 44.5,66.5 Z" fill="#EDE4D5" />
+        <path d="M47,72.5 L53,72.5 C53.5,72.5 54,72.9 54,73.4 L53.5,75 C53,76 47,76 46.5,75 L46,73.4 C46,72.9 46.5,72.5 47,72.5 Z" fill="#EDE4D5" opacity="0.9" />
+        <circle cx="50" cy="36" r="4" fill="#FF6B00" filter="url(#loader-glow)" />
+        <circle cx="50" cy="45" r="4" fill="#00E396" filter="url(#loader-glow)" />
+        <circle cx="50" cy="54" r="4" fill="#0052FF" filter="url(#loader-glow)" />
+      </g>
+    </svg>
+  </div>
+</div>
+<script>
+  // Hide loader when page is fully loaded
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+      }, 400);
+    }
+  });
+
+  // Show loader on page unload/navigation
+  window.addEventListener('beforeunload', () => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+      loader.classList.remove('fade-out');
+    }
+  });
+
+  // Intercept standard local page links to trigger loader immediately
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && (href.endsWith('.html') || href.includes('.html#')) && !link.getAttribute('target') && !href.startsWith('#')) {
+        link.addEventListener('click', (e) => {
+          if (e.button === 1 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+          const loader = document.getElementById('pageLoader');
+          if (loader) {
+            loader.classList.remove('fade-out');
+          }
+        });
+      }
+    });
+  });
+</script>
+
 <!-- FLOATING CONTACTS -->
 
 
