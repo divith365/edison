@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%">
+  <!-- Ground line -->
+  <line x1="6" y1="44" x2="42" y2="44" stroke="#0b1120" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Pole shaft -->
+  <path d="M22 44 L23 10 L25 10 L26 44 Z" fill="#0b1120" />
+  <!-- Pole base plate -->
+  <rect x="20" y="41" width="8" height="3" rx="1" fill="#FB923C" stroke="#0b1120" stroke-width="1.5" />
+  <!-- Curved Double Arms -->
+  <path d="M24 12 C18 12, 12 14, 10 17 M24 12 C30 12, 36 14, 38 17" fill="none" stroke="#0b1120" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Left Lamp Head -->
+  <rect x="7" y="17" width="6" height="3" rx="1.5" fill="#FB923C" stroke="#0b1120" stroke-width="1.5" />
+  <!-- Right Lamp Head -->
+  <rect x="35" y="17" width="6" height="3" rx="1.5" fill="#FB923C" stroke="#0b1120" stroke-width="1.5" />
+  <!-- Light Glow beams -->
+  <polygon points="7,20 2,36 12,36" fill="#FDE047" opacity="0.4" />
+  <polygon points="41,20 36,36 46,36" fill="#FDE047" opacity="0.4" />
+</svg>
