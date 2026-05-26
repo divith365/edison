@@ -1790,3 +1790,126 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   transform: scale(1.3);
 }
 
+/* ===== WHY POINTS CAROUSEL ===== */
+.why-carousel-wrap { overflow: hidden; margin-top: 30px; margin-bottom: 48px; position: relative; max-width: 1200px; margin-left: auto; margin-right: auto; }
+.why-carousel-wrap::before, .why-carousel-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.why-carousel-wrap::before { left: 0; background: linear-gradient(to right, rgba(255, 255, 255, 0.94), transparent); }
+.why-carousel-wrap::after  { right: 0; background: linear-gradient(to left, rgba(255, 255, 255, 0.94), transparent); }
+
+.why-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: whyScroll 25s linear infinite;
+}
+.why-track:hover { animation-play-state: paused; }
+@keyframes whyScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.why-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  width: 300px;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1.5px solid rgba(200,148,31,0.12);
+}
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(200,148,31,0.18); border-color: var(--gold); }
+.why-card-img-wrap { width: 100%; height: 180px; overflow: hidden; }
+.why-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+.why-card:hover .why-card-img { transform: scale(1.07); }
+.why-card-body { padding: 20px 22px 24px; }
+.why-card-title { font-size: 1.05rem; color: #d97706; margin-bottom: 8px; font-weight: 800; }
+.why-card-desc { font-size: 0.88rem; color: #1e3a8a; font-weight: 600; margin: 0; line-height: 1.6; }
+
+/* ===== INSTALLATION GALLERY CAROUSEL ===== */
+.install-carousel-wrap {
+  overflow: hidden;
+  margin-top: 48px;
+  position: relative;
+}
+.install-carousel-wrap::before,
+.install-carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+.install-carousel-wrap::before { left: 0; background: linear-gradient(to right, rgba(251,246,237,0.95), transparent); }
+.install-carousel-wrap::after  { right: 0; background: linear-gradient(to left, rgba(251,246,237,0.95), transparent); }
+
+.install-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: installScroll 35s linear infinite;
+}
+.install-track:hover { animation-play-state: paused; }
+@keyframes installScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.install-card {
+  position: relative;
+  width: 360px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.install-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 50px rgba(0,0,0,0.28); }
+
+.install-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.install-card:hover .install-img { transform: scale(1.08); }
+
+.install-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(5,15,35,0.92) 0%, rgba(5,15,35,0.5) 60%, transparent 100%);
+  padding: 20px 20px 18px;
+}
+.install-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.install-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+.install-loc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  font-weight: 500;
+}
+
