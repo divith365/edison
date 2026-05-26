@@ -139,6 +139,38 @@
           <img src="images/garden_pole_tall_3.png" alt="Tall European Garden Pole" />
           <div class="pole-title">Tall European Garden Pole</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_temple.png" alt="Temple High-Mast Light" />
+          <div class="pole-title">Temple High-Mast Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_playground.png" alt="Playground High-Mast Light" />
+          <div class="pole-title">Playground High-Mast Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_temple_2.png" alt="Traditional Temple High-Mast" />
+          <div class="pole-title">Traditional Temple High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_ground_2.png" alt="Industrial Ground High-Mast" />
+          <div class="pole-title">Industrial Ground High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_simple.png" alt="Simple Garden Post Light" />
+          <div class="pole-title">Simple Garden Post Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_top_design.png" alt="Decorative Top-Design Garden Pole" />
+          <div class="pole-title">Decorative Top-Design Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/cctv_pole_silver_1.png" alt="Silver CCTV Pole" />
+          <div class="pole-title">Silver CCTV Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/cctv_pole_silver_2.png" alt="Aluminium CCTV Pole" />
+          <div class="pole-title">Aluminium CCTV Pole</div>
+        </div>
         
         <!-- Duplicated Set for Seamless Loop -->
         <div class="pole-card">
@@ -261,6 +293,38 @@
           <img src="images/garden_pole_tall_3.png" alt="Tall European Garden Pole" />
           <div class="pole-title">Tall European Garden Pole</div>
         </div>
+        <div class="pole-card">
+          <img src="images/high_mast_temple.png" alt="Temple High-Mast Light" />
+          <div class="pole-title">Temple High-Mast Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_playground.png" alt="Playground High-Mast Light" />
+          <div class="pole-title">Playground High-Mast Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_temple_2.png" alt="Traditional Temple High-Mast" />
+          <div class="pole-title">Traditional Temple High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/high_mast_ground_2.png" alt="Industrial Ground High-Mast" />
+          <div class="pole-title">Industrial Ground High-Mast</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_simple.png" alt="Simple Garden Post Light" />
+          <div class="pole-title">Simple Garden Post Light</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/garden_pole_top_design.png" alt="Decorative Top-Design Garden Pole" />
+          <div class="pole-title">Decorative Top-Design Garden Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/cctv_pole_silver_1.png" alt="Silver CCTV Pole" />
+          <div class="pole-title">Silver CCTV Pole</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/cctv_pole_silver_2.png" alt="Aluminium CCTV Pole" />
+          <div class="pole-title">Aluminium CCTV Pole</div>
+        </div>
       </div>
       
       <!-- CSS Animated Progress Dots & Controls -->
@@ -295,6 +359,14 @@
       <div class="m-dot" data-index="27"></div>
       <div class="m-dot" data-index="28"></div>
       <div class="m-dot" data-index="29"></div>
+      <div class="m-dot" data-index="30"></div>
+      <div class="m-dot" data-index="31"></div>
+      <div class="m-dot" data-index="32"></div>
+      <div class="m-dot" data-index="33"></div>
+      <div class="m-dot" data-index="34"></div>
+      <div class="m-dot" data-index="35"></div>
+      <div class="m-dot" data-index="36"></div>
+      <div class="m-dot" data-index="37"></div>
         
         <!-- Speed Slider -->
         <div class="speed-control">
@@ -402,9 +474,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 60; // 60 total cards (30 original + 30 duplicate)
+      const cardWidth = track.scrollWidth / 76; // 76 total cards (38 original + 38 duplicate)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 30) currentIndex -= 30;
+      if (currentIndex >= 38) currentIndex -= 38;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -421,14 +493,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 60;
+        const cardWidth = track.scrollWidth / 76;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
         // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
         if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 30) * cardWidth;
+          targetScroll = (index + 38) * cardWidth;
         }
 
         // Use native smooth scrolling
