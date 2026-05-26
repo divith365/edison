@@ -519,7 +519,7 @@
         <!-- Speed Slider -->
         <div class="speed-control">
           <label for="speedSlider">Speed</label>
-          <input type="range" id="speedSlider" min="0.25" max="4" step="0.25" value="1">
+          <input type="range" id="speedSlider" min="0.25" max="8" step="0.25" value="1">
         </div>
       </div>
     </div>
@@ -618,7 +618,7 @@
     function scrollLoop() {
       if (!isPaused) {
         // Base speed roughly matching the 80s CSS animation
-        track.scrollLeft += 0.5 * speedMultiplier;
+        track.scrollLeft += 1.0 * speedMultiplier;
         
         // Infinite Loop logic: if we scrolled past the original set, reset to 0 smoothly
         if (track.scrollLeft >= track.scrollWidth / 2) {

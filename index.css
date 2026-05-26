@@ -1779,8 +1779,9 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   height: 100px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   padding: 0 30px;
   background: #000;
   box-sizing: border-box;
@@ -1832,7 +1833,7 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   gap: 10px;
   color: #fff;
   font-size: 0.85rem;
-  margin-left: 20px;
+  margin-left: 0;
 }
 .speed-control input[type=range] {
   -webkit-appearance: none;
