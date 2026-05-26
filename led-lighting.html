@@ -452,6 +452,16 @@
     
     if (!track) return;
 
+    // Dynamically inject index badges (1 to 38)
+    const cards = track.querySelectorAll('.pole-card');
+    cards.forEach((card, idx) => {
+      const displayIdx = (idx % 38) + 1;
+      const badge = document.createElement('span');
+      badge.className = 'pole-badge';
+      badge.textContent = displayIdx;
+      card.appendChild(badge);
+    });
+
     let isPaused = false;
     let speedMultiplier = 1.0;
     let animationId;

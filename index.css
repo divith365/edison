@@ -1736,6 +1736,35 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   transform: translateY(0);
 }
 
+/* Orange index badge for identification */
+.pole-badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: #ff6b00; /* Vibrant orange */
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  opacity: 0.85;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+.pole-card:hover .pole-badge {
+  opacity: 1;
+  transform: scale(1.2);
+  background-color: #e05e00;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.4);
+}
+
 /* ===== MARQUEE PROGRESS DOTS ===== */
 .marquee-progress-dots {
   height: 100px;
