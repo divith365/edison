@@ -1778,37 +1778,53 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
 }
 .scroller-features-left {
   display: flex;
-  gap: 15px;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 250px;
 }
 .scroller-features-right {
   display: flex;
-  gap: 15px;
-  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  width: 250px;
   margin-right: 85px; /* Clearance for floating home button */
 }
-.scroller-feat-item {
-  color: rgba(255, 255, 255, 0.75);
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.scroller-perf-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 6px 12px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
+  justify-content: space-between;
+  width: 100%;
 }
-.scroller-feat-item:hover {
+.scroller-perf-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: 110px;
+  text-align: left;
+}
+.scroller-perf-bar-wrap {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+.scroller-perf-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+}
+.scroller-perf-pct {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--gold);
-  border-color: var(--gold);
-  background: rgba(251, 146, 60, 0.1);
-  transform: translateY(-2px);
+  font-size: 0.72rem;
+  font-weight: 800;
+  width: 32px;
+  text-align: right;
 }
 .m-dots-container {
   display: flex;
@@ -2086,15 +2102,18 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   /* Scroller features mobile responsiveness */
   .scroller-features-left, .scroller-features-right {
     width: 100% !important;
-    justify-content: center !important;
-    margin-right: 0 !important;
-    flex-wrap: wrap !important;
-    gap: 8px 6px !important;
+    max-width: 280px !important;
+    margin: 0 auto !important;
+    gap: 8px !important;
     display: flex !important;
   }
-  .scroller-feat-item {
-    font-size: 0.7rem !important;
-    padding: 4px 10px !important;
+  .scroller-perf-label {
+    font-size: 0.68rem !important;
+    width: 90px !important;
+  }
+  .scroller-perf-pct {
+    font-size: 0.68rem !important;
+    width: 28px !important;
   }
 }
 
