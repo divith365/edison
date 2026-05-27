@@ -237,78 +237,56 @@
 </section>
 
 <!-- MAIN CONTENT PLACEHOLDER -->
-<section class="section services-bg" style="padding: 20px 24px 40px; min-height: auto;">
-  <div class="section-inner">
+<section class="section services-bg" style="padding: 0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center;">
+  <div class="section-inner" style="width: 100%; max-width: 100%; padding: 0;">
     
+    <!-- ELECTRICAL WORK SHOWCASE (MARQUEE) -->
+    <div class="reveal pole-marquee-container" style="margin-top: 0; border-radius: 0;">
+      <div class="pole-marquee-track">
+        <!-- ORIGINAL SET (3 CARDS) -->
+        <div class="pole-card">
+          <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
+          <div class="pole-title">Indian LT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_work.png" alt="Indian HT Substation Work" />
+          <div class="pole-title">Indian HT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
+          <div class="pole-title">Layout Electrification</div>
+        </div>
 
-    <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 0; max-width: 1200px; margin-left: auto; margin-right: auto;">
+        <!-- DUPLICATED SET (FOR SEAMLESS LOOPING) -->
+        <div class="pole-card">
+          <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
+          <div class="pole-title">Indian LT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_work.png" alt="Indian HT Substation Work" />
+          <div class="pole-title">Indian HT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
+          <div class="pole-title">Layout Electrification</div>
+        </div>
+      </div>
       
-      <!-- Indian LT Work Card -->
-      <div class="svc-card reveal" style="cursor: default; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="width: 100%; height: 240px; overflow: hidden; border-bottom: 1.5px solid #f0ecdf; position: relative;">
-          <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+      <!-- CSS Animated Progress Dots & Controls -->
+      <div class="marquee-progress-dots">
+        <!-- Center Dots Grouped -->
+        <div class="m-dots-container">
+          <div class="m-dot" data-index="0"></div>
+          <div class="m-dot" data-index="1"></div>
+          <div class="m-dot" data-index="2"></div>
         </div>
-        <div class="svc-card-top" style="padding: 24px 28px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div class="svc-icon-wrap" style="width: 52px; height: 52px; font-size: 1.5rem; margin-bottom: 15px;">⚡</div>
-            <h3 class="svc-title" style="font-size: 1.3rem; margin-bottom: 12px; color: var(--navy);">Indian LT (Low Tension) Work</h3>
-            <p class="svc-desc" style="font-size: 0.92rem; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
-              Comprehensive Low Tension distribution system installation up to 1000V. We design, supply, install, and test LT panels, main distribution boards, busbar trunking (BBT), cable tray layouts, structured industrial wiring, and reliable safety earthing systems.
-            </p>
-          </div>
-          <div class="svc-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="svc-tag">LT Panels &amp; DBs</span>
-            <span class="svc-tag">Cable Tray Routing</span>
-            <span class="svc-tag">Industrial Wiring</span>
-            <span class="svc-tag">Earthing Systems</span>
-          </div>
+
+        <!-- Speed Slider -->
+        <div class="speed-control">
+          <label for="speedSlider">Speed</label>
+          <input type="range" id="speedSlider" min="0.25" max="8" step="0.25" value="1">
         </div>
       </div>
-
-      <!-- Indian HT Work Card -->
-      <div class="svc-card reveal reveal-delay-1" style="cursor: default; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="width: 100%; height: 240px; overflow: hidden; border-bottom: 1.5px solid #f0ecdf; position: relative;">
-          <img src="images/elec_ht_work.png" alt="Indian HT Substation Work" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-        </div>
-        <div class="svc-card-top" style="padding: 24px 28px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div class="svc-icon-wrap" style="width: 52px; height: 52px; font-size: 1.5rem; margin-bottom: 15px;">🔌</div>
-            <h3 class="svc-title" style="font-size: 1.3rem; margin-bottom: 12px; color: var(--navy);">Indian HT (High Tension) Work</h3>
-            <p class="svc-desc" style="font-size: 0.92rem; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
-              Turnkey High Tension infrastructure installations for 11kV and 33kV substations. Expert setups of outdoor H-pole mounted transformers, Ring Main Units (RMU), Vacuum Circuit Breakers (VCB), HT cable jointing, overhead transmission lines, and complete electrical liaisoning.
-            </p>
-          </div>
-          <div class="svc-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="svc-tag">11kV / 33kV Substations</span>
-            <span class="svc-tag">Power Transformers</span>
-            <span class="svc-tag">RMU &amp; VCB Installation</span>
-            <span class="svc-tag">HT Cable Jointing</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Layout Electrification Work Card -->
-      <div class="svc-card reveal reveal-delay-2" style="cursor: default; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="width: 100%; height: 240px; overflow: hidden; border-bottom: 1.5px solid #f0ecdf; position: relative;">
-          <img src="images/elec_layout_work.png" alt="Layout Electrification Work" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
-        </div>
-        <div class="svc-card-top" style="padding: 24px 28px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div class="svc-icon-wrap" style="width: 52px; height: 52px; font-size: 1.5rem; margin-bottom: 15px;">🏭</div>
-            <h3 class="svc-title" style="font-size: 1.3rem; margin-bottom: 12px; color: var(--navy);">Layout Electrification</h3>
-            <p class="svc-desc" style="font-size: 0.92rem; line-height: 1.6; color: var(--muted); margin-bottom: 20px;">
-              Complete electrical infrastructure setup for residential layouts, townships, and industrial estates. Includes distribution poles erection, overhead lines stringing, corner transformer substations installation, street lighting grids, and underground cabling.
-            </p>
-          </div>
-          <div class="svc-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="svc-tag">Township Electrification</span>
-            <span class="svc-tag">Pole &amp; Line Erection</span>
-            <span class="svc-tag">Corner Substation Setup</span>
-            <span class="svc-tag">Street Light Grids</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -333,6 +311,95 @@
     document.getElementById('mobileMenu').classList.toggle('open');
     document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
   }
+
+  // Continuous JS Scroller with Clickable Dots
+  (function() {
+    const track = document.querySelector('.pole-marquee-track');
+    const dots = document.querySelectorAll('.m-dot');
+    const slider = document.getElementById('speedSlider');
+    
+    if (!track) return;
+
+    // Dynamically inject index badges (1 to 3)
+    const cards = track.querySelectorAll('.pole-card');
+    cards.forEach((card, idx) => {
+      const displayIdx = (idx % 3) + 1;
+      const badge = document.createElement('span');
+      badge.className = 'pole-badge';
+      badge.textContent = displayIdx;
+      card.appendChild(badge);
+    });
+
+    let isPaused = false;
+    let speedMultiplier = 1.0;
+    let animationId;
+
+    // We manually scroll left every frame
+    function scrollLoop() {
+      if (!isPaused) {
+        track.scrollLeft += 1.0 * speedMultiplier;
+        
+        // Infinite Loop logic: if we scrolled past the original set, reset to 0 smoothly
+        if (track.scrollLeft >= track.scrollWidth / 2) {
+          track.scrollLeft -= track.scrollWidth / 2;
+        }
+        
+        updateActiveDot();
+      }
+      animationId = requestAnimationFrame(scrollLoop);
+    }
+
+    // Update active dot based on scroll position
+    function updateActiveDot() {
+      const cardWidth = track.scrollWidth / 6; // 6 total cards (3 original + 3 duplicate)
+      let currentIndex = Math.floor(track.scrollLeft / cardWidth);
+      if (currentIndex >= 3) currentIndex -= 3;
+      
+      dots.forEach(d => d.classList.remove('active'));
+      if(dots[currentIndex]) dots[currentIndex].classList.add('active');
+    }
+
+    // Start loop
+    animationId = requestAnimationFrame(scrollLoop);
+
+    // Pause only on hovering the images (track), not the dots
+    track.addEventListener('mouseenter', () => isPaused = true);
+    track.addEventListener('mouseleave', () => isPaused = false);
+
+    // Dot click to skip
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        const index = parseInt(e.target.getAttribute('data-index'));
+        const cardWidth = track.scrollWidth / 6;
+        
+        // Calculate target scroll position for that index
+        let targetScroll = index * cardWidth;
+        
+        // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
+        if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
+          targetScroll = (index + 3) * cardWidth;
+        }
+
+        // Use native smooth scrolling
+        track.scrollTo({ left: targetScroll, behavior: 'smooth' });
+        
+        // Briefly pause auto-scrolling to let the smooth scroll finish
+        isPaused = true;
+        setTimeout(() => {
+          if(!track.matches(':hover')) {
+             isPaused = false;
+          }
+        }, 1000);
+      });
+    });
+
+    // Speed Slider
+    if(slider) {
+      slider.addEventListener('input', (e) => {
+        speedMultiplier = parseFloat(e.target.value);
+      });
+    }
+  })();
 
   // Scroll Progress functionality (Top progress bar)
   (function(){
