@@ -1378,41 +1378,50 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
 }
 
 /* ===== CORE OFFERINGS GRID & HERO OVERVIEW CARDS ===== */
+@keyframes offeringSlideIn {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
 .core-offerings-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 24px;
-  max-width: 440px;
+  max-width: 395px;
 }
 .offering-card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 12px 18px;
-  background: rgba(237, 228, 213, 0.85); /* Premium light brown/beige background */
+  gap: 14px;
+  padding: 11px 16px;
+  background: rgba(237, 228, 213, 0.85);
   border: 1.5px solid rgba(200, 148, 31, 0.25);
-  border-radius: 16px;
+  border-radius: 14px;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 12px rgba(11, 29, 58, 0.03);
+  opacity: 0;
+  animation: offeringSlideIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+.offering-card:nth-child(1) { animation-delay: 0.1s; }
+.offering-card:nth-child(2) { animation-delay: 0.28s; }
+.offering-card:nth-child(3) { animation-delay: 0.46s; }
 .offering-card:hover {
   transform: translateY(-2px) scale(1.015);
   border-color: var(--gold);
-  background: rgba(228, 215, 194, 0.95); /* Slightly richer warm brown on hover */
+  background: rgba(228, 215, 194, 0.95);
   box-shadow: 0 10px 24px rgba(200, 148, 31, 0.12);
 }
 .offering-icon {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: rgba(200, 148, 31, 0.1);
-  border-radius: 10px;
+  border-radius: 9px;
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
@@ -1421,7 +1430,7 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   transform: rotate(-5deg) scale(1.1);
 }
 .offering-info h3 {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 0;
@@ -1432,7 +1441,7 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   color: var(--gold2);
 }
 .offering-info p {
-  font-size: 0.76rem;
+  font-size: 0.68rem;
   color: var(--muted);
   line-height: 1.4;
   margin: 0;
