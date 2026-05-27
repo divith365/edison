@@ -229,28 +229,72 @@
     <!-- ELECTRICAL WORK SHOWCASE (MARQUEE) -->
     <div class="reveal pole-marquee-container" style="margin-top: 0; border-radius: 0;">
       <div class="pole-marquee-track">
-        <!-- ORIGINAL SET (3 CARDS) -->
+        <!-- SET 1 (4 CARDS) -->
         <div class="pole-card">
           <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
           <div class="pole-title">Indian LT Work</div>
         </div>
         <div class="pole-card">
-          <img src="images/elec_ht_work.png" alt="Indian HT Substation Work" />
-          <div class="pole-title">Indian HT Work</div>
+          <img src="images/elec_ht_rural.png" alt="Rural HT Substation Work" />
+          <div class="pole-title">Rural HT Substation</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_panel_room.png" alt="HT Line and Panel Room Work" />
+          <div class="pole-title">HT Line &amp; Panel Room</div>
         </div>
         <div class="pole-card">
           <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
           <div class="pole-title">Layout Electrification</div>
         </div>
 
-        <!-- DUPLICATED SET (FOR SEAMLESS LOOPING) -->
+        <!-- SET 2 (4 CARDS) -->
         <div class="pole-card">
           <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
           <div class="pole-title">Indian LT Work</div>
         </div>
         <div class="pole-card">
-          <img src="images/elec_ht_work.png" alt="Indian HT Substation Work" />
-          <div class="pole-title">Indian HT Work</div>
+          <img src="images/elec_ht_rural.png" alt="Rural HT Substation Work" />
+          <div class="pole-title">Rural HT Substation</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_panel_room.png" alt="HT Line and Panel Room Work" />
+          <div class="pole-title">HT Line &amp; Panel Room</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
+          <div class="pole-title">Layout Electrification</div>
+        </div>
+
+        <!-- SET 3 (4 CARDS) -->
+        <div class="pole-card">
+          <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
+          <div class="pole-title">Indian LT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_rural.png" alt="Rural HT Substation Work" />
+          <div class="pole-title">Rural HT Substation</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_panel_room.png" alt="HT Line and Panel Room Work" />
+          <div class="pole-title">HT Line &amp; Panel Room</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
+          <div class="pole-title">Layout Electrification</div>
+        </div>
+
+        <!-- SET 4 (4 CARDS) -->
+        <div class="pole-card">
+          <img src="images/elec_lt_work.png" alt="Indian LT Panel Work" />
+          <div class="pole-title">Indian LT Work</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_rural.png" alt="Rural HT Substation Work" />
+          <div class="pole-title">Rural HT Substation</div>
+        </div>
+        <div class="pole-card">
+          <img src="images/elec_ht_panel_room.png" alt="HT Line and Panel Room Work" />
+          <div class="pole-title">HT Line &amp; Panel Room</div>
         </div>
         <div class="pole-card">
           <img src="images/elec_layout_work.png" alt="Layout Electrification Work" />
@@ -265,6 +309,7 @@
           <div class="m-dot" data-index="0"></div>
           <div class="m-dot" data-index="1"></div>
           <div class="m-dot" data-index="2"></div>
+          <div class="m-dot" data-index="3"></div>
         </div>
 
         <!-- Speed Slider -->
@@ -306,10 +351,10 @@
     
     if (!track) return;
 
-    // Dynamically inject index badges (1 to 3)
+    // Dynamically inject index badges (1 to 4)
     const cards = track.querySelectorAll('.pole-card');
     cards.forEach((card, idx) => {
-      const displayIdx = (idx % 3) + 1;
+      const displayIdx = (idx % 4) + 1;
       const badge = document.createElement('span');
       badge.className = 'pole-badge';
       badge.textContent = displayIdx;
@@ -325,9 +370,9 @@
       if (!isPaused) {
         track.scrollLeft += 1.0 * speedMultiplier;
         
-        // Infinite Loop logic: if we scrolled past the original set, reset to 0 smoothly
+        // Infinite Loop logic: if we scrolled past the first half, reset back by one set (4 cards)
         if (track.scrollLeft >= track.scrollWidth / 2) {
-          track.scrollLeft -= track.scrollWidth / 2;
+          track.scrollLeft -= track.scrollWidth / 4;
         }
         
         updateActiveDot();
@@ -337,9 +382,9 @@
 
     // Update active dot based on scroll position
     function updateActiveDot() {
-      const cardWidth = track.scrollWidth / 6; // 6 total cards (3 original + 3 duplicate)
+      const cardWidth = track.scrollWidth / 16; // 16 total cards (4 sets of 4)
       let currentIndex = Math.floor(track.scrollLeft / cardWidth);
-      if (currentIndex >= 3) currentIndex -= 3;
+      currentIndex = currentIndex % 4;
       
       dots.forEach(d => d.classList.remove('active'));
       if(dots[currentIndex]) dots[currentIndex].classList.add('active');
@@ -356,14 +401,14 @@
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
         const index = parseInt(e.target.getAttribute('data-index'));
-        const cardWidth = track.scrollWidth / 6;
+        const cardWidth = track.scrollWidth / 16;
         
         // Calculate target scroll position for that index
         let targetScroll = index * cardWidth;
         
-        // If we are currently far into the duplicated set, jump to the duplicate index for smoother skip
-        if (track.scrollLeft > (track.scrollWidth / 2) - cardWidth) {
-          targetScroll = (index + 3) * cardWidth;
+        // If we are currently far into the sets, target the second set for smoother transition
+        if (track.scrollLeft > (track.scrollWidth / 4) - cardWidth) {
+          targetScroll = (index + 4) * cardWidth;
         }
 
         // Use native smooth scrolling
