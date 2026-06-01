@@ -300,6 +300,10 @@ nav::after{content:'';position:absolute;inset:2px;background:linear-gradient(135
   transition: opacity 1s ease;
   z-index: 0;
 }
+.dark-page-beam {
+  mix-blend-mode: screen !important;
+  opacity: 0.8 !important;
+}
 .hero-light-beam.left-beam {
   left: -25%;
   background: radial-gradient(ellipse at 0% 50%, rgba(14, 165, 233, 0.45) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 80%);
