@@ -289,7 +289,7 @@ nav::after{content:'';position:absolute;inset:2px;background:linear-gradient(135
 
 /* ===== HERO DYNAMIC LED LIGHT BEAMS ===== */
 .hero-light-beam {
-  position: absolute;
+  position: fixed;
   top: -10%;
   width: 80%;
   height: 120%;
