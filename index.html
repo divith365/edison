@@ -1264,40 +1264,6 @@
       alert('There was an error sending your request. Please try again or contact us directly.');
     });
   }
-  // Word-by-word reveal animation for Company Profile / About Us description
-  (function() {
-    function initWordReveal() {
-      const container = document.getElementById('profile-text-container');
-      if (!container) return;
-      
-      const paras = container.querySelectorAll('p');
-      let wordIndexCounter = 0;
-      
-      paras.forEach(p => {
-        const html = p.innerHTML;
-        const tokens = html.match(/(<[^>]+>|[^<>\s]+|\s+)/g);
-        if (!tokens) return;
-        
-        let newHtml = '';
-        tokens.forEach(token => {
-          if (token.startsWith('<')) {
-            newHtml += token;
-          } else if (token.trim() === '') {
-            newHtml += token;
-          } else {
-            newHtml += `<span class="reveal-word" style="--word-index: ${wordIndexCounter++}">${token}</span>`;
-          }
-        });
-        p.innerHTML = newHtml;
-      });
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initWordReveal);
-    } else {
-      initWordReveal();
-    }
-  })();
 
   // Dynamic word-by-word interactive titles wrapper to ensure perfectly uniform spacing
   (function() {
