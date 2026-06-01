@@ -1279,6 +1279,52 @@
       alert('There was an error sending your request. Please try again or contact us directly.');
     });
   }
+  // Word-by-word reveal animation for Company Profile / About Us description
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('profile-text-container');
+    if (!container) return;
+    
+    const paras = container.querySelectorAll('p');
+    let wordIndexCounter = 0;
+    
+    paras.forEach(p => {
+      const newNodes = [];
+      p.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const words = node.textContent.split(/(\s+)/);
+          words.forEach(word => {
+            if (word.trim() === '') {
+              newNodes.push(document.createTextNode(word));
+            } else {
+              const span = document.createElement('span');
+              span.className = 'reveal-word';
+              span.textContent = word;
+              span.style.setProperty('--word-index', wordIndexCounter++);
+              newNodes.push(span);
+            }
+          });
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          const el = node.cloneNode(true);
+          const words = el.textContent.split(/(\s+)/);
+          el.innerHTML = '';
+          words.forEach(word => {
+            if (word.trim() === '') {
+              el.appendChild(document.createTextNode(word));
+            } else {
+              const span = document.createElement('span');
+              span.className = 'reveal-word';
+              span.textContent = word;
+              span.style.setProperty('--word-index', wordIndexCounter++);
+              el.appendChild(span);
+            }
+          });
+          newNodes.push(el);
+        }
+      });
+      p.innerHTML = '';
+      newNodes.forEach(node => p.appendChild(node));
+    });
+  });
 
   // Clear custom validation errors when user types
   document.getElementById('formPhone').addEventListener('input', function() {

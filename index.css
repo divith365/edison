@@ -2116,5 +2116,20 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   }
 }
 
+/* ===== WORD BY WORD REVEAL ANIMATION ===== */
+.reveal-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: revealWordAnim 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: calc(var(--word-index) * 12ms);
+}
+@keyframes revealWordAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
