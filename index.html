@@ -258,13 +258,8 @@
 
     <!-- ══ LEFT PANEL: Core Offerings & Actions ══ -->
     <div>
-      <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:20px;letter-spacing:-0.02em;">
-        <span class="i-word">Our</span>
-        <span class="i-word">Specialized</span>
-        <em class="i-word-em" style="font-family:inherit;font-weight:inherit;font-style:inherit;color:inherit;background:none;-webkit-background-clip:initial;-webkit-text-fill-color:initial;display:inline-block;padding-right:0;">
-          <span class="i-word">Core</span>
-          <span class="i-word">Offerings</span>
-        </em>
+      <h1 class="interactive-title" style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.4rem,2.8vw,2.1rem);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:20px;letter-spacing:-0.02em;">
+        Our Specialized Core Offerings
       </h1>
       
       <p style="font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Click to explore our divisions ↓</p>
@@ -343,9 +338,7 @@
         <p class="sec-eyebrow">The Edison Promise</p>
         <div class="gold-line" style="margin: 0 auto 20px;"></div>
         <h2 class="sec-title interactive-title">
-          <span class="i-word">Why</span>
-          <span class="i-word">Choose</span>
-          <em class="i-word-em"><span class="i-word">Edison</span></em>
+          Why Choose Edison
           <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
             <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
           </svg>
@@ -530,9 +523,7 @@
       <p class="sec-eyebrow">Our Works</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title">
-        <span class="i-word">Projects</span>
-        <span class="i-word">We're</span>
-        <em class="i-word-em"><span class="i-word">Proud</span> <span class="i-word">Of</span></em>
+        Projects We're Proud Of
         <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
           <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
         </svg>
@@ -666,9 +657,7 @@
       <p class="sec-eyebrow">Our Footprints</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title">
-        <span class="i-word">Trusted</span>
-        <span class="i-word">Brands</span>
-        <em class="i-word-em"><span class="i-word">&amp; Partners</span></em>
+        Trusted Brands &amp; Partners
         <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
           <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
         </svg>
@@ -723,9 +712,7 @@
 
         <!-- Heading -->
         <h2 class="sec-title interactive-title" style="margin: 0;">
-          <span class="i-word">What</span>
-          <span class="i-word">Our</span>
-          <em class="i-word-em"><span class="i-word">Clients</span> <span class="i-word">Say</span></em>
+          What Our Clients Say
           <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
             <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
           </svg>
@@ -905,9 +892,7 @@
       <p class="sec-eyebrow">Get in Touch</p>
       <div class="gold-line" style="margin:0 auto 20px;"></div>
       <h2 class="sec-title interactive-title" style="color:var(--navy);">
-        <span class="i-word">Let's</span>
-        <span class="i-word">Work</span>
-        <em class="i-word-em"><span class="i-word">Together</span></em>
+        Let's Work Together
         <svg class="curvy-underline" viewBox="0 0 600 30" xmlns="http://www.w3.org/2000/svg">
           <path class="curvy-path" d="M 10,15 C 100,5 200,25 300,15 C 400,5 500,25 590,15" />
         </svg>
@@ -1289,41 +1274,21 @@
       let wordIndexCounter = 0;
       
       paras.forEach(p => {
-        const newNodes = [];
-        p.childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE) {
-            const words = node.textContent.split(/(\s+)/);
-            words.forEach(word => {
-              if (word.trim() === '') {
-                newNodes.push(document.createTextNode(word));
-              } else {
-                const span = document.createElement('span');
-                span.className = 'reveal-word';
-                span.textContent = word;
-                span.style.setProperty('--word-index', wordIndexCounter++);
-                newNodes.push(span);
-              }
-            });
-          } else if (node.nodeType === Node.ELEMENT_NODE) {
-            const el = node.cloneNode(true);
-            const words = el.textContent.split(/(\s+)/);
-            el.innerHTML = '';
-            words.forEach(word => {
-              if (word.trim() === '') {
-                el.appendChild(document.createTextNode(word));
-              } else {
-                const span = document.createElement('span');
-                span.className = 'reveal-word';
-                span.textContent = word;
-                span.style.setProperty('--word-index', wordIndexCounter++);
-                el.appendChild(span);
-              }
-            });
-            newNodes.push(el);
+        const html = p.innerHTML;
+        const tokens = html.match(/(<[^>]+>|[^<>\s]+|\s+)/g);
+        if (!tokens) return;
+        
+        let newHtml = '';
+        tokens.forEach(token => {
+          if (token.startsWith('<')) {
+            newHtml += token;
+          } else if (token.trim() === '') {
+            newHtml += token;
+          } else {
+            newHtml += `<span class="reveal-word" style="--word-index: ${wordIndexCounter++}">${token}</span>`;
           }
         });
-        p.innerHTML = '';
-        newNodes.forEach(node => p.appendChild(node));
+        p.innerHTML = newHtml;
       });
     }
 
@@ -1331,6 +1296,54 @@
       document.addEventListener('DOMContentLoaded', initWordReveal);
     } else {
       initWordReveal();
+    }
+  })();
+
+  // Dynamic word-by-word interactive titles wrapper to ensure perfectly uniform spacing
+  (function() {
+    function initInteractiveTitles() {
+      const titles = document.querySelectorAll('.interactive-title');
+      titles.forEach(title => {
+        // Save the SVG curvy underline if it exists
+        const svg = title.querySelector('svg');
+        
+        // Gather text from all text nodes or span children
+        let text = '';
+        title.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) {
+            text += node.textContent;
+          } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName.toLowerCase() !== 'svg') {
+            text += node.textContent;
+          }
+        });
+        
+        // Clean double spaces/newlines
+        text = text.replace(/\s+/g, ' ').trim();
+        if (text === '') return;
+        
+        title.innerHTML = '';
+        const words = text.split(' ');
+        words.forEach((word, idx) => {
+          const span = document.createElement('span');
+          span.className = 'i-word';
+          span.textContent = word;
+          title.appendChild(span);
+          
+          if (idx < words.length - 1) {
+            title.appendChild(document.createTextNode(' '));
+          }
+        });
+        
+        if (svg) {
+          title.appendChild(svg);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initInteractiveTitles);
+    } else {
+      initInteractiveTitles();
     }
   })();
 

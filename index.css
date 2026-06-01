@@ -1161,9 +1161,12 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   margin-right: 0;
 }
 .i-word:hover {
-  transform: scale(1.15) translateY(-3px);
-  color: var(--gold);
+  transform: scale(1.18) translateY(-3px);
+  color: var(--gold) !important;
   text-shadow: 0 4px 12px rgba(200, 148, 31, 0.12);
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+  font-weight: 900 !important;
 }
 .i-word-em {
   font-style: normal;
