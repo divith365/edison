@@ -332,16 +332,6 @@ nav::after{content:'';position:absolute;inset:2px;background:linear-gradient(135
   33% { filter: blur(90px) hue-rotate(90deg); }   /* purple shifts to deep pink */
   66% { filter: blur(90px) hue-rotate(-90deg); }  /* purple shifts to electric blue */
 }
-/* Hollow title effect */
-.hero-hollow-title .i-word {
-  color: transparent !important;
-  -webkit-text-stroke: 1.5px var(--heading);
-  text-shadow: none !important;
-}
-.hero-hollow-title .i-word:hover {
-  color: var(--gold) !important;
-  -webkit-text-stroke: 1.5px var(--gold);
-}
 
 .hero-inner{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 1.3fr;gap:60px;align-items:center;position:relative;z-index:1;transform-style:preserve-3d;animation:bookOpen 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;}
 @keyframes bookOpen {
