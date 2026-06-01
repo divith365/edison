@@ -1235,7 +1235,21 @@
       document.head.appendChild(style);
     }
     
-    setTimeout(() => {
+    fetch('https://script.google.com/macros/s/AKfycbxXyzEoTJUBTIGsY2862NyIRHkL_yKUiaAR2wQJta9BZnfhI9UKe6JnSOayik2xWYYB8A/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: document.getElementById('formName').value.trim(),
+        phone: phoneVal,
+        email: emailVal,
+        service: document.getElementById('formService').value,
+        message: document.getElementById('formMessage').value.trim()
+      })
+    })
+    .then(() => {
       btn.style.background = '#25D366';
       btn.style.boxShadow = '0 6px 20px rgba(37, 211, 102, 0.4)';
       btn.innerHTML = '<span>✅ Request Sent! We\'ll call you shortly.</span>';
@@ -1249,7 +1263,16 @@
         btn.style.boxShadow = '';
         btn.innerHTML = '<span>Send Request</span>';
       }, 5000);
-    }, 1500);
+    })
+    .catch((error) => {
+      console.error('Error submitting form:', error);
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.style.boxShadow = '';
+      btn.innerHTML = '<span>Send Request</span>';
+      alert('There was an error sending your request. Please try again or contact us directly.');
+    });
   }
 
   // Clear custom validation errors when user types
