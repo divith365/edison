@@ -437,8 +437,8 @@ nav::after{content:'';position:absolute;inset:2px;background:linear-gradient(135
 .section{padding:90px 24px;}
 .section-inner{max-width:1100px;margin:0 auto;}
 .sec-eyebrow{font-size:.95rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#059669;margin-bottom:12px;}
-.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.26rem,2.8vw,1.96rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
-.sec-title em{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;color:var(--gold);background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:4px;font-size:inherit;}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.26rem,2.8vw,1.96rem);font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;letter-spacing:-0.01em;}
+.sec-title em{font-family:'Space Grotesk',sans-serif;font-weight:800;font-style:italic;color:var(--gold);background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;padding-right:4px;font-size:inherit;}
 .sec-sub{color:#0ea5e9;font-size:1.05rem;font-weight:500;line-height:1.75;max-width:560px;}
 /* ===== CURVY SVG UNDERLINE ===== */
 .interactive-title {
