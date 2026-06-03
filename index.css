@@ -91,7 +91,7 @@ body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg,
 .light-top-left {
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.95) 0%, rgba(56, 189, 248, 0.35) 45%, rgba(56, 189, 248, 0) 85%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 85%);
   clip-path: polygon(0 0, 45% 100%, 15% 100%);
   transform-origin: top left;
   animation: swayTopLeft 8s ease-in-out infinite alternate;
@@ -99,7 +99,7 @@ body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg,
 .light-top-right {
   top: 0;
   right: 0;
-  background: linear-gradient(225deg, rgba(167, 139, 250, 0.95) 0%, rgba(167, 139, 250, 0.35) 45%, rgba(167, 139, 250, 0) 85%);
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 85%);
   clip-path: polygon(100% 0, 55% 100%, 85% 100%);
   transform-origin: top right;
   animation: swayTopRight 9s ease-in-out infinite alternate;
@@ -107,7 +107,7 @@ body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg,
 .light-bottom-left {
   bottom: 0;
   left: 0;
-  background: linear-gradient(45deg, rgba(56, 189, 248, 0.88) 0%, rgba(56, 189, 248, 0.28) 45%, rgba(56, 189, 248, 0) 85%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0) 85%);
   clip-path: polygon(0 100%, 15% 0, 45% 0);
   transform-origin: bottom left;
   animation: swayBottomLeft 10s ease-in-out infinite alternate;
@@ -115,7 +115,7 @@ body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg,
 .light-bottom-right {
   bottom: 0;
   right: 0;
-  background: linear-gradient(315deg, rgba(167, 139, 250, 0.88) 0%, rgba(167, 139, 250, 0.28) 45%, rgba(167, 139, 250, 0) 85%);
+  background: linear-gradient(315deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0) 85%);
   clip-path: polygon(100% 100%, 85% 0, 55% 0);
   transform-origin: bottom right;
   animation: swayBottomRight 11s ease-in-out infinite alternate;
