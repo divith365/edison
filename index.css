@@ -5,9 +5,15 @@
   --navy2:  #0F1E36;
   --heading: #064e3b; /* Deep Emerald */
   --gold:   #FB923C;
-  --nav-bg: linear-gradient(135deg, #FFFDF9 0%, #FAF3E3 100%);
-  --logo-color: #0C3866;
-  --logo-tagline-color: #0ea5e9;
+  --nav-bg: linear-gradient(135deg, #0b1220 0%, #060a12 100%);
+  --logo-color: #ffffff;
+  --logo-tagline-color: #ffffff;
+  --nav-link-color: rgba(255, 255, 255, 0.85);
+  --nav-link-bg: rgba(255, 255, 255, 0.05);
+  --nav-link-border: rgba(255, 255, 255, 0.1);
+  --nav-link-hover-color: #ffffff;
+  --nav-link-hover-bg: rgba(251, 146, 60, 0.15);
+  --nav-link-hover-border: rgba(251, 146, 60, 0.35);
   --gold2:  #FFB000;
   --gold3:  #ffd075;
   --white:  #ffffff;
@@ -144,8 +150,8 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 .nav-brand span{display:none;}
 .nav-logo:hover .nav-brand span{color:#0C3866;}
 .nav-links{display:flex;gap:10px;list-style:none;align-items:center;}
-.nav-links a{font-family:'Space Grotesk',sans-serif;color:#0C3866;text-decoration:none;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;display:inline-block;position:relative;padding:8px 18px;border-radius:10px;background:rgba(12, 56, 102, 0.04);border:1.5px solid rgba(12, 56, 102, 0.06);transition:all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);}
-.nav-links a:hover{color:#5b21b6;background:rgba(91, 33, 182, 0.08);border-color:rgba(91, 33, 182, 0.2);transform:translateY(-2px);box-shadow:0 6px 16px rgba(91, 33, 182, 0.08);}
+.nav-links a{font-family:'Space Grotesk',sans-serif;color:var(--nav-link-color, #0C3866);text-decoration:none;font-size:0.85rem;font-weight:700;letter-spacing:-0.01em;display:inline-block;position:relative;padding:8px 18px;border-radius:10px;background:var(--nav-link-bg, rgba(12, 56, 102, 0.04));border:1.5px solid var(--nav-link-border, rgba(12, 56, 102, 0.06));transition:all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);}
+.nav-links a:hover{color:var(--nav-link-hover-color, #5b21b6);background:var(--nav-link-hover-bg, rgba(91, 33, 182, 0.08));border-color:var(--nav-link-hover-border, rgba(91, 33, 182, 0.2));transform:translateY(-2px);box-shadow:0 6px 16px rgba(251, 146, 60, 0.1);}
 
 /* ===== NAVIGATION DROPDOWN MENU ===== */
 .dropdown {
