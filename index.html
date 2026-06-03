@@ -270,7 +270,13 @@
   </div>
   <div class="hero-bg-badge" style="position: absolute; top: 135px; right: 40px; background: rgba(15, 30, 54, 0.85); border: 1px solid rgba(251, 146, 60, 0.4); color: #fff; padding: 8px 16px; border-radius: 30px; font-size: 0.72rem; font-weight: 700; font-family: system-ui, sans-serif; letter-spacing: 0.05em; z-index: 10; backdrop-filter: blur(8px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
     <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#25D366; box-shadow: 0 0 8px #25D366;"></span>
-    <span id="hero-bg-label">Image 1: Scenery v1 (Original - Clean)</span>
+    <span id="hero-bg-label">1 / 8</span>
+  </div>
+  <div class="camera-viewfinder">
+    <div class="viewfinder-corner viewfinder-tl"></div>
+    <div class="viewfinder-corner viewfinder-tr"></div>
+    <div class="viewfinder-corner viewfinder-bl"></div>
+    <div class="viewfinder-corner viewfinder-br"></div>
   </div>
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
@@ -1895,19 +1901,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
       
-      const bgLabels = [
-        "Image 1: Scenery v1 (Original - Clean)",
-        "Image 2: Scenery v2 (Far High-Mast - Clean)",
-        "Image 3: Scenery v3 (Closer High-Mast)",
-        "Image 4: Scenery v4 (Starry Interior - Clean)",
-        "Image 5: Scenery v5 (Zoom-out v1 - Clean)",
-        "Image 6: Scenery v6 (Zoom-out v2 - Clean)",
-        "Image 7: Scenery v7 (Zoom-out v3 - Closer High-Mast)",
-        "Image 8: Scenery v8 (Zoom-out v4 - Starry Interior)"
-      ];
       const labelEl = document.getElementById('hero-bg-label');
       if (labelEl) {
-        labelEl.textContent = bgLabels[currentSlide];
+        labelEl.textContent = `${currentSlide + 1} / ${slides.length}`;
       }
       
       dots.forEach((dot, idx) => {

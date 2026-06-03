@@ -302,6 +302,37 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   z-index: 0;
   overflow: hidden;
 }
+.camera-viewfinder {
+  position: absolute;
+  top: 135px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  pointer-events: none;
+  border-radius: 12px;
+  z-index: 5;
+}
+.viewfinder-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(251, 146, 60, 0.65);
+  border-style: solid;
+  border-width: 0;
+}
+.viewfinder-tl { top: 0; left: 0; border-top-width: 3px; border-left-width: 3px; border-top-left-radius: 8px; }
+.viewfinder-tr { top: 0; right: 0; border-top-width: 3px; border-right-width: 3px; border-top-right-radius: 8px; }
+.viewfinder-bl { bottom: 0; left: 0; border-bottom-width: 3px; border-left-width: 3px; border-bottom-left-radius: 8px; }
+.viewfinder-br { bottom: 0; right: 0; border-bottom-width: 3px; border-right-width: 3px; border-bottom-right-radius: 8px; }
+
+@media(max-width:640px){
+  .camera-viewfinder {
+    top: 98px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+}
 .hero-bg-slide {
   position: absolute;
   top: 0;
