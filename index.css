@@ -290,6 +290,23 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 .mobile-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;}
 
 /* ===== HERO ===== */
+#home {
+  color: #ffffff;
+}
+#home .stat-lbl {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+#home .stat-divider {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+#home .btn-ghost {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+#home .btn-ghost:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+}
 .hero{min-height:100vh;background:var(--bg-texture), linear-gradient(150deg,rgba(254,252,247,0.94) 0%,rgba(253,248,239,0.94) 50%,rgba(254,251,243,0.94) 100%);display:flex;align-items:center;padding:190px 24px 60px;position:relative;overflow:hidden;perspective:1500px;}
 .hero-bg-grid{display:none;}
 .hero-glow{position:absolute;top:-80px;right:-60px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,148,31,.15) 0%,transparent 65%);}
