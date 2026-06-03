@@ -1300,7 +1300,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 
 /* ===== FOOTER ===== */
-footer{background:var(--bg-texture), linear-gradient(180deg, #1c110b 0%, #0d0805 100%) !important;color:#ffffff !important;padding:24px 24px 16px;border-top:1px solid rgba(255, 255, 255, 0.1) !important;}
+footer{background:var(--bg-texture), linear-gradient(180deg, #b45309 0%, #78350f 100%) !important;color:#ffffff !important;padding:24px 24px 16px;border-top:1px solid rgba(255, 255, 255, 0.1) !important;}
 .footer-inner{max-width:1300px;margin:0 auto;}
 .footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);align-items:flex-start;}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#ffffff !important;margin-bottom:12px;}
