@@ -1173,9 +1173,14 @@
   window.addEventListener('scroll',()=>{
     const nav = document.querySelector('nav');
     const bgBar = document.querySelector('.nav-bg-bar');
+    const slideshow = document.querySelector('.hero-bg-slideshow');
     if(window.innerWidth > 640){
       if(window.scrollY > 20){
         if(bgBar) bgBar.style.height = '84px';
+        if(slideshow) {
+          slideshow.style.top = '84px';
+          slideshow.style.height = 'calc(100% - 84px)';
+        }
         nav.style.top = '8px';
         nav.style.left = '1.5%';
         nav.style.right = '1.5%';
@@ -1183,6 +1188,10 @@
         nav.style.boxShadow = '0 10px 40px rgba(0,0,0,.4)';
       } else {
         if(bgBar) bgBar.style.height = '114px';
+        if(slideshow) {
+          slideshow.style.top = '114px';
+          slideshow.style.height = 'calc(100% - 114px)';
+        }
         nav.style.top = '15px';
         nav.style.left = '3%';
         nav.style.right = '3%';
@@ -1192,6 +1201,10 @@
     } else {
       // Mobile static/native behavior matching CSS
       if(bgBar) bgBar.style.height = '81px';
+      if(slideshow) {
+        slideshow.style.top = '81px';
+        slideshow.style.height = 'calc(100% - 81px)';
+      }
       nav.style.top = '8px';
       nav.style.left = '20px';
       nav.style.right = '20px';
