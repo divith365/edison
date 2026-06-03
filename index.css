@@ -8,9 +8,9 @@
   --nav-bg: linear-gradient(180deg, rgba(45, 55, 72, 0.65) 0%, rgba(26, 32, 44, 0.8) 100%);
   --logo-color: #ffffff;
   --logo-tagline-color: #FB923C;
-  --nav-link-color: rgba(255, 255, 255, 0.85);
-  --nav-link-bg: rgba(255, 255, 255, 0.05);
-  --nav-link-border: rgba(255, 255, 255, 0.1);
+  --nav-link-color: var(--gold2);
+  --nav-link-bg: rgba(56, 189, 248, 0.12);
+  --nav-link-border: rgba(56, 189, 248, 0.4);
   --nav-link-hover-color: #ffffff;
   --nav-link-hover-bg: rgba(251, 146, 60, 0.15);
   --nav-link-hover-border: rgba(251, 146, 60, 0.35);
