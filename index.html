@@ -263,6 +263,14 @@
     <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v2_clean.png');"></div>
     <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v3.png');"></div>
     <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v4_clean.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v5_clean.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v6_clean.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v7.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v8_clean.png');"></div>
+  </div>
+  <div class="hero-bg-badge" style="position: absolute; top: 135px; right: 40px; background: rgba(15, 30, 54, 0.85); border: 1px solid rgba(251, 146, 60, 0.4); color: #fff; padding: 8px 16px; border-radius: 30px; font-size: 0.72rem; font-weight: 700; font-family: system-ui, sans-serif; letter-spacing: 0.05em; z-index: 10; backdrop-filter: blur(8px); box-shadow: 0 4px 12px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+    <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#25D366; box-shadow: 0 0 8px #25D366;"></span>
+    <span id="hero-bg-label">Image 1: Scenery v1 (Original - Clean)</span>
   </div>
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
@@ -341,6 +349,10 @@
   
   <div class="hero-dots" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); z-index: 10;">
     <button class="hero-dot active"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
     <button class="hero-dot"></button>
     <button class="hero-dot"></button>
     <button class="hero-dot"></button>
@@ -1882,6 +1894,21 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.className = 'hero-bg-slide';
         }
       });
+      
+      const bgLabels = [
+        "Image 1: Scenery v1 (Original - Clean)",
+        "Image 2: Scenery v2 (Far High-Mast - Clean)",
+        "Image 3: Scenery v3 (Closer High-Mast)",
+        "Image 4: Scenery v4 (Starry Interior - Clean)",
+        "Image 5: Scenery v5 (Zoom-out v1 - Clean)",
+        "Image 6: Scenery v6 (Zoom-out v2 - Clean)",
+        "Image 7: Scenery v7 (Zoom-out v3 - Closer High-Mast)",
+        "Image 8: Scenery v8 (Zoom-out v4 - Starry Interior)"
+      ];
+      const labelEl = document.getElementById('hero-bg-label');
+      if (labelEl) {
+        labelEl.textContent = bgLabels[currentSlide];
+      }
       
       dots.forEach((dot, idx) => {
         if (idx === currentSlide) {
