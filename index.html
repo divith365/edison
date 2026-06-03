@@ -338,6 +338,13 @@
     -->
 
   </div><!-- /hero-inner -->
+  
+  <div class="hero-dots" style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); z-index: 10;">
+    <button class="hero-dot active"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+    <button class="hero-dot"></button>
+  </div>
 </section>
 
 <!-- WHAT WE DO -->
@@ -1857,12 +1864,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // Hero Background Slideshow script
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.hero-bg-slide');
+  const dots = document.querySelectorAll('.hero-dot');
   if (slides.length > 0) {
     let currentSlide = 0;
+    let slideshowInterval;
     
-    setInterval(() => {
+    function showSlide(index) {
       const prevSlide = currentSlide;
-      currentSlide = (currentSlide + 1) % slides.length;
+      currentSlide = index;
       
       slides.forEach((slide, idx) => {
         if (idx === prevSlide) {
@@ -1873,7 +1882,36 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.className = 'hero-bg-slide';
         }
       });
-    }, 4000); // 3 seconds visible delay + 1 second transition
+      
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+    
+    function startSlideshow() {
+      slideshowInterval = setInterval(() => {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }, 4000); // 3 seconds visible delay + 1 second transition
+    }
+    
+    function stopSlideshow() {
+      clearInterval(slideshowInterval);
+    }
+    
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        stopSlideshow();
+        showSlide(idx);
+        startSlideshow();
+      });
+    });
+    
+    startSlideshow();
   }
 });
 </script>
