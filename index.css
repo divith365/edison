@@ -1300,19 +1300,19 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 
 /* ===== FOOTER ===== */
-footer{background:var(--bg-texture), #F1EFE7 !important;color:#0b1120 !important;padding:24px 24px 16px;border-top:1px solid rgba(11,29,58,.1) !important;}
+footer{background:var(--bg-texture), linear-gradient(180deg, #3b2006 0%, #1f1003 100%) !important;color:#ffffff !important;padding:24px 24px 16px;border-top:1px solid rgba(255,200,100,0.15) !important;}
 .footer-inner{max-width:1300px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(11,29,58,.08);align-items:flex-start;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy) !important;margin-bottom:12px;}
-.footer-brand span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;color:var(--gold) !important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-.footer-desc{font-size:.82rem;line-height:1.7;max-width:280px;color:var(--muted) !important;}
-.footer-col-title{font-size:0.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--navy) !important;margin-bottom:8px;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);align-items:flex-start;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#ffffff !important;margin-bottom:12px;}
+.footer-brand span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;color:var(--gold2) !important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.footer-desc{font-size:.82rem;line-height:1.7;max-width:280px;color:rgba(255,255,255,0.65) !important;}
+.footer-col-title{font-size:0.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2) !important;margin-bottom:8px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
 .footer-links li{white-space:nowrap;}
-.footer-links a{color:var(--navy) !important;text-decoration:none;font-size:0.82rem;transition:color .2s;font-weight:700;}
-.footer-links a:hover{color:var(--gold) !important;}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(11,29,58,.08);}
-.footer-copy{font-size:.75rem;color:rgba(12,21,36,.75) !important;}
+.footer-links a{color:rgba(255,255,255,0.85) !important;text-decoration:none;font-size:0.82rem;transition:color .2s;font-weight:700;}
+.footer-links a:hover{color:var(--gold2) !important;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.1);}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.55) !important;}
 .footer-gold{color:var(--gold);font-weight:600;}
 
 /* ===== REVEAL ANIMATIONS (Book Page Turning Style) ===== */
