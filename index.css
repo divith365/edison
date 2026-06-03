@@ -377,6 +377,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 #home .core-offerings-grid {
   margin-left: 0;
   margin-right: auto;
+}
 #home .hero-btns {
   display: flex;
   flex-direction: row;
