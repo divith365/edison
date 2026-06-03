@@ -5,9 +5,9 @@
   --navy2:  #0F1E36;
   --heading: #064e3b; /* Deep Emerald */
   --gold:   #FB923C;
-  --nav-bg: linear-gradient(135deg, #0b1220 0%, #060a12 100%);
+  --nav-bg: linear-gradient(180deg, #1A100B 0%, #0B0604 100%);
   --logo-color: #ffffff;
-  --logo-tagline-color: #0ea5e9;
+  --logo-tagline-color: #FB923C;
   --nav-link-color: rgba(255, 255, 255, 0.85);
   --nav-link-bg: rgba(255, 255, 255, 0.05);
   --nav-link-border: rgba(255, 255, 255, 0.1);
