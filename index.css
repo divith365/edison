@@ -1606,7 +1606,7 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   align-items: center;
   justify-content: center;
   padding: 14px 28px;
-  background: transparent;
+  background: rgba(56, 189, 248, 0.08);
   border: 1.5px solid rgba(56, 189, 248, 0.6);
   border-radius: 50px;
   text-decoration: none;
