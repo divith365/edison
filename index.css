@@ -405,7 +405,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   align-items: center;
 }
 #home .stat-num {
-  color: #ffffff !important; /* Bright white */
+  color: var(--gold2) !important; /* Gold to match buttons */
   font-size: 1.4rem !important; /* Reduced size */
   font-family: 'Playfair Display', serif;
   font-weight: 900;
