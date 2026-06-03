@@ -5,7 +5,7 @@
   --navy2:  #0F1E36;
   --heading: #064e3b; /* Deep Emerald */
   --gold:   #FB923C;
-  --nav-bg: linear-gradient(180deg, #3b2006 0%, #1f1003 100%);
+  --nav-bg: linear-gradient(180deg, rgba(90, 50, 15, 0.72) 0%, rgba(50, 25, 5, 0.82) 100%);
   --logo-color: #ffffff;
   --logo-tagline-color: #FB923C;
   --nav-link-color: var(--gold2);
@@ -79,7 +79,7 @@ body, .hero, .services-bg, .why-section-bg, .vendors-section, .works-section-bg,
 @keyframes border-spin{to{--border-angle:360deg;}}
 
 /* ===== NAV ===== */
-.nav-bg-bar{position:fixed;top:0;left:0;right:0;height:114px;background:linear-gradient(180deg, #3b2006 0%, #1f1003 100%);z-index:999;border-bottom:1px solid rgba(255,200,100,0.15);transition:all .3s ease;overflow:hidden;}
+.nav-bg-bar{position:fixed;top:0;left:0;right:0;height:114px;background:linear-gradient(180deg, rgba(90, 50, 15, 0.72) 0%, rgba(50, 25, 5, 0.82) 100%);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:999;border-bottom:1px solid rgba(255,200,100,0.15);transition:all .3s ease;overflow:hidden;}
 .nav-light {
   position: absolute;
   width: 100%;
