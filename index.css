@@ -801,7 +801,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 
 /* ===== SERVICES ===== */
-.services-bg{background:var(--bg-texture), rgba(252,249,242,0.94);}
+.services-bg{background:var(--bg-texture), #0b1120 !important; color: #ffffff !important;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px;}
 
 /* ===== SERVICE CARDS (What We Do) ===== */
@@ -960,7 +960,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 
 /* ===== WHY US ===== */
-.why-section-bg{background:var(--bg-texture), rgba(255,255,255,0.94);}
+.why-section-bg{background:var(--bg-texture), #0b1120 !important; color: #ffffff !important;}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:0;}
 .why-list{display:flex;flex-direction:column;gap:18px;margin-top:36px;}
 .why-item{
@@ -1300,19 +1300,19 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 
 /* ===== FOOTER ===== */
-footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247, 0.94) 0%, rgba(253, 248, 239, 0.94) 100%);color:var(--muted);padding:24px 24px 16px;border-top:1px solid rgba(200, 148, 31, 0.25);}
+footer{background:var(--bg-texture), linear-gradient(180deg, rgba(45, 55, 72, 0.8) 0%, rgba(26, 32, 44, 0.92) 100%) !important;color:#ffffff !important;padding:24px 24px 16px;border-top:1px solid rgba(255, 255, 255, 0.1) !important;}
 .footer-inner{max-width:1300px;margin:0 auto;}
-.footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(11,29,58,.08);align-items:flex-start;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
-.footer-brand span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;color:var(--gold);font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-.footer-desc{font-size:.82rem;line-height:1.7;max-width:280px;color:var(--muted);}
-.footer-col-title{font-size:0.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 2fr;gap:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);align-items:flex-start;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#ffffff !important;margin-bottom:12px;}
+.footer-brand span{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;color:#38bdf8 !important;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.footer-desc{font-size:.82rem;line-height:1.7;max-width:280px;color:rgba(255,255,255,0.7) !important;}
+.footer-col-title{font-size:0.85rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#38bdf8 !important;margin-bottom:8px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
 .footer-links li{white-space:nowrap;}
-.footer-links a{color:var(--navy);text-decoration:none;font-size:0.82rem;transition:color .2s;font-weight:700;}
-.footer-links a:hover{color:var(--gold);}
-.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(11,29,58,.08);}
-.footer-copy{font-size:.75rem;color:rgba(12,21,36,.75);}
+.footer-links a{color:#ffffff !important;text-decoration:none;font-size:0.82rem;transition:color .2s;font-weight:700;}
+.footer-links a:hover{color:#38bdf8 !important;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,0.1);}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,0.7) !important;}
 .footer-gold{color:var(--gold);font-weight:600;}
 
 /* ===== REVEAL ANIMATIONS (Book Page Turning Style) ===== */
@@ -2336,6 +2336,40 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
     font-size: 0.7rem !important;
     padding: 4px 10px !important;
   }
+}
+
+/* ===== DARK THEME FOR WHY SECTION & SERVICE SUBPAGES ===== */
+.why-section-bg .sec-title,
+.services-bg .sec-title {
+  color: #ffffff !important;
+}
+.why-section-bg .sec-sub,
+.services-bg .sec-sub {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.why-section-bg .why-card {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
+}
+.why-section-bg .why-card-title {
+  color: var(--gold2) !important;
+}
+.why-section-bg .why-card-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.why-section-bg .why-carousel-wrap::before { background: linear-gradient(to right, #0b1120, transparent) !important; }
+.why-section-bg .why-carousel-wrap::after { background: linear-gradient(to left, #0b1120, transparent) !important; }
+.services-bg p,
+.services-bg span,
+.services-bg h1,
+.services-bg h2,
+.services-bg h3,
+.services-bg h4,
+.services-bg li,
+.services-bg td,
+.services-bg th,
+.services-bg div:not(.pole-card):not(.install-card):not(.svc-card):not(.spec-table) {
+  color: #ffffff !important;
 }
 
 
