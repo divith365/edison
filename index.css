@@ -377,6 +377,22 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 #home .core-offerings-grid {
   margin-left: 0;
   margin-right: auto;
+#home .hero-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  width: auto;
+  max-width: none;
+  justify-content: flex-start;
+}
+#home .hero-btns a {
+  padding: 12px 24px !important; /* 20% reduction */
+  font-size: 0.78rem !important; /* 20% reduction */
+  width: auto;
+  text-align: center;
+  box-sizing: border-box;
 }
 #home .hero-stats {
   position: absolute;
