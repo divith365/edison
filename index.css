@@ -1597,7 +1597,7 @@ footer{background:var(--bg-texture), linear-gradient(180deg, rgba(254, 252, 247,
   justify-content: center;
   padding: 12px 24px;
   background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border: 1.5px solid rgba(56, 189, 248, 0.6);
   border-radius: 50px;
   text-decoration: none;
   color: #ffffff !important;
