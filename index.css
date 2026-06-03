@@ -293,6 +293,37 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 #home {
   color: #ffffff;
 }
+.hero-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: translateX(100%);
+  transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
+}
+.hero-bg-slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+.hero-bg-slide.prev {
+  transform: translateX(-100%);
+  z-index: 1;
+  transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 #home .stat-lbl {
   color: rgba(255, 255, 255, 0.7) !important;
 }

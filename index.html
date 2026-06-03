@@ -257,7 +257,13 @@
 </div>
 
 <!-- HERO -->
-<section id="home" style="min-height:100vh;background:linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery.png') no-repeat center center;background-size:cover;padding:190px 24px 80px;position:relative;overflow:hidden;">
+<section id="home" style="min-height:100vh;padding:190px 24px 80px;position:relative;overflow:hidden;">
+  <div class="hero-bg-slideshow">
+    <div class="hero-bg-slide active" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v1_clean.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v2_clean.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v3.png');"></div>
+    <div class="hero-bg-slide" style="background-image: linear-gradient(rgba(11,18,32,0.45) 0%, rgba(11,18,32,0.8) 100%), url('images/hero_background_scenery_v4_clean.png');"></div>
+  </div>
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
  
@@ -1846,6 +1852,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const children = Array.from(p.childNodes);
     children.forEach(child => processNode(child, p));
   });
+</script>
+<script>
+// Hero Background Slideshow script
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.hero-bg-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    
+    setInterval(() => {
+      const prevSlide = currentSlide;
+      currentSlide = (currentSlide + 1) % slides.length;
+      
+      slides.forEach((slide, idx) => {
+        if (idx === prevSlide) {
+          slide.className = 'hero-bg-slide prev';
+        } else if (idx === currentSlide) {
+          slide.className = 'hero-bg-slide active';
+        } else {
+          slide.className = 'hero-bg-slide';
+        }
+      });
+    }, 4000); // 3 seconds visible delay + 1 second transition
+  }
 });
 </script>
 </body>
