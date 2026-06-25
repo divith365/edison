@@ -355,39 +355,20 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   z-index: 1;
   transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-/* Slides 3,6,7,9 — zoom out 15%, full image visible, no crop */
-.hero-bg-slide:nth-child(3),
-.hero-bg-slide:nth-child(6),
-.hero-bg-slide:nth-child(7),
-.hero-bg-slide:nth-child(9) {
-  background-size: 85% auto !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #0a1428 !important;
-}
-/* Slides 12-19 (product page images) — show full image, no crop */
-.hero-bg-slide:nth-child(12),
-.hero-bg-slide:nth-child(13),
-.hero-bg-slide:nth-child(14),
-.hero-bg-slide:nth-child(15),
-.hero-bg-slide:nth-child(16),
-.hero-bg-slide:nth-child(17),
-.hero-bg-slide:nth-child(18),
-.hero-bg-slide:nth-child(19) {
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #0a1428 !important;
-}
-/* Slides 13,14 — shift down to clear fixed 114px navbar */
-.hero-bg-slide:nth-child(13),
-.hero-bg-slide:nth-child(14) {
-  background-position: center calc(50% + 57px) !important;
-}
-/* Slide 15 — extra 10% zoom out, centered */
-.hero-bg-slide:nth-child(15) {
-  background-size: 80% auto !important;
-}
+/* Slides 3,6,7,9 — cover full screen, position adjusted to show more content */
+.hero-bg-slide:nth-child(3)  { background-size: cover !important; background-position: center 20% !important; }
+.hero-bg-slide:nth-child(6)  { background-size: cover !important; background-position: center 20% !important; }
+.hero-bg-slide:nth-child(7)  { background-size: cover !important; background-position: center 20% !important; }
+.hero-bg-slide:nth-child(9)  { background-size: cover !important; background-position: center 20% !important; }
+/* Slides 12-19 — cover full screen, position adjusted */
+.hero-bg-slide:nth-child(12) { background-size: cover !important; background-position: center 30% !important; }
+.hero-bg-slide:nth-child(13) { background-size: cover !important; background-position: center 25% !important; }
+.hero-bg-slide:nth-child(14) { background-size: cover !important; background-position: center 25% !important; }
+.hero-bg-slide:nth-child(15) { background-size: cover !important; background-position: center 30% !important; }
+.hero-bg-slide:nth-child(16) { background-size: cover !important; background-position: center 30% !important; }
+.hero-bg-slide:nth-child(17) { background-size: cover !important; background-position: center 30% !important; }
+.hero-bg-slide:nth-child(18) { background-size: cover !important; background-position: center 30% !important; }
+.hero-bg-slide:nth-child(19) { background-size: cover !important; background-position: center 30% !important; }
 #home .stat-lbl {
   color: rgba(255, 255, 255, 0.7) !important;
 }
