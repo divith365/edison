@@ -379,12 +379,6 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
 }
-/* Slides 13,14 — zoom out + anchor to top so full image top is visible */
-.hero-bg-slide:nth-child(13),
-.hero-bg-slide:nth-child(14) {
-  background-size: 75% auto !important;
-  background-position: center top !important;
-}
 /* Slide 15 — extra 10% zoom out, centered */
 .hero-bg-slide:nth-child(15) {
   background-size: 80% auto !important;
