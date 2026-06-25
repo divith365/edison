@@ -365,11 +365,23 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
 }
-/* Slides 12,13,14 — zoomed out more to avoid header overlap */
-.hero-bg-slide:nth-child(12),
-.hero-bg-slide:nth-child(13),
+/* Slide 12 — zoom out more */
+.hero-bg-slide:nth-child(12) {
+  background-size: 50% auto !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0a1428 !important;
+}
+/* Slide 13 — zoom out a bit more */
+.hero-bg-slide:nth-child(13) {
+  background-size: 55% auto !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0a1428 !important;
+}
+/* Slide 14 — zoom out more */
 .hero-bg-slide:nth-child(14) {
-  background-size: 65% auto !important;
+  background-size: 50% auto !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
