@@ -355,15 +355,21 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   z-index: 1;
   transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-/* Slides 3,6,7,9,12,13,14 — zoomed out, full image visible, dark bg fill */
+/* Slides 3,6,7,9 — zoomed out, full image visible, dark bg fill */
 .hero-bg-slide:nth-child(3),
 .hero-bg-slide:nth-child(6),
 .hero-bg-slide:nth-child(7),
-.hero-bg-slide:nth-child(9),
+.hero-bg-slide:nth-child(9) {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0a1428 !important;
+}
+/* Slides 12,13,14 — zoomed out more to avoid header overlap */
 .hero-bg-slide:nth-child(12),
 .hero-bg-slide:nth-child(13),
 .hero-bg-slide:nth-child(14) {
-  background-size: contain !important;
+  background-size: 65% auto !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
