@@ -360,6 +360,20 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-size: 90% auto !important;
   background-position: center top !important;
 }
+/* Slides 12-19 (product page images) — show full image, no crop */
+.hero-bg-slide:nth-child(12),
+.hero-bg-slide:nth-child(13),
+.hero-bg-slide:nth-child(14),
+.hero-bg-slide:nth-child(15),
+.hero-bg-slide:nth-child(16),
+.hero-bg-slide:nth-child(17),
+.hero-bg-slide:nth-child(18),
+.hero-bg-slide:nth-child(19) {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0a1428 !important;
+}
 #home .stat-lbl {
   color: rgba(255, 255, 255, 0.7) !important;
 }
