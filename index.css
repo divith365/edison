@@ -386,12 +386,18 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
 }
-/* Slides 15-19 — cover full screen, position adjusted */
+/* Slides 15, 16, 18 — cover full screen, position adjusted */
 .hero-bg-slide:nth-child(15) { background-size: cover !important; background-position: center 30% !important; }
 .hero-bg-slide:nth-child(16) { background-size: cover !important; background-position: center 30% !important; }
-.hero-bg-slide:nth-child(17) { background-size: cover !important; background-position: center 30% !important; }
 .hero-bg-slide:nth-child(18) { background-size: cover !important; background-position: center 30% !important; }
-.hero-bg-slide:nth-child(19) { background-size: cover !important; background-position: center 30% !important; }
+/* Slides 17, 19 — zoomed out, full image visible, dark bg fill */
+.hero-bg-slide:nth-child(17),
+.hero-bg-slide:nth-child(19) {
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #0a1428 !important;
+}
 #home .stat-lbl {
   color: rgba(255, 255, 255, 0.7) !important;
 }
