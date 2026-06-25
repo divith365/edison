@@ -379,6 +379,11 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
 }
+/* Slides 13,14 — shift down to clear fixed 114px navbar */
+.hero-bg-slide:nth-child(13),
+.hero-bg-slide:nth-child(14) {
+  background-position: center calc(50% + 57px) !important;
+}
 /* Slide 15 — extra 10% zoom out, centered */
 .hero-bg-slide:nth-child(15) {
   background-size: 80% auto !important;
