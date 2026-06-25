@@ -380,7 +380,7 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
 }
 /* Slide 13 — zoom out a bit more */
 .hero-bg-slide:nth-child(13) {
-  background-size: 55% auto !important;
+  background-size: 45% auto !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
