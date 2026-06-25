@@ -374,6 +374,12 @@ nav::after{content:'';position:absolute;inset:2px;background:var(--nav-bg);borde
   background-repeat: no-repeat !important;
   background-color: #0a1428 !important;
 }
+/* Slides 13,14,15 — extra 10% zoom out */
+.hero-bg-slide:nth-child(13),
+.hero-bg-slide:nth-child(14),
+.hero-bg-slide:nth-child(15) {
+  background-size: 80% auto !important;
+}
 #home .stat-lbl {
   color: rgba(255, 255, 255, 0.7) !important;
 }
